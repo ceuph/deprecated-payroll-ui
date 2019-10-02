@@ -70,6 +70,13 @@ class LeaveApplication extends \yii\db\ActiveRecord
         ];
     }
 
+    public function afterFind() {
+        parent::afterFind ();
+        $this->date_from=Yii::$app->formatter->asDateTime($this->date_from);
+        $this->date_to=Yii::$app->formatter->asDateTime($this->date_to);
+    }
+
+
     public function setDateFromText($date)
     {
         $date = $date instanceof DateTimeInterface ? $date : new DateTime($date);

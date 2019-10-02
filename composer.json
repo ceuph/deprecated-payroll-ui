@@ -16,7 +16,8 @@
         "yiisoft/yii2-swiftmailer": "*",
         "kartik-v/yii2-password": "@dev",
         "kartik-v/yii2-builder": "@dev",
-        "kartik-v/yii2-widget-activeform": "@dev"
+        "kartik-v/yii2-widget-activeform": "@dev",
+        "kartik-v/yii2-widget-datetimepicker": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

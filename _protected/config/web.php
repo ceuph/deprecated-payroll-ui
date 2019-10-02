@@ -70,6 +70,13 @@ $config = [
                 ],
             ],
         ],
+        'formatter' => [
+            'class' => 'yii\i18n\Formatter',
+            'datetimeFormat' => 'yyyy-MM-dd HH:mm',
+            'defaultTimeZone' => 'Asia/Manila',
+
+        ],
+        
         'i18n' => [
             'translations' => [
                 'app*' => [

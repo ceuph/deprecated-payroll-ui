@@ -109,8 +109,8 @@ class LeaveApplicationController extends Controller
         if ($model->load(Yii::$app->request->post())) {
 
             $model->status =LeaveApplication::STATUS_PENDING;
-            $model->date_created = date('Y-m-d');
-            $model->date_updated = date('Y-m-d');
+            $model->date_created = date('Y-m-d H:i:s');
+            $model->date_updated = date('Y-m-d H:i:s');
             if($model->save())
             {
                 return $this->redirect(['view', 'date_to' => $model->date_to, 'EmpID' => $model->EmpID]);
@@ -137,8 +137,13 @@ class LeaveApplicationController extends Controller
     {
         $model = $this->findModel($date_to, $EmpID);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'date_to' => $model->date_to, 'EmpID' => $model->EmpID]);
+        if ($model->load(Yii::$app->request->post())) {
+
+            $model->date_updated = date('Y-m-d H:i:s');
+            
+            if($model->save()){
+                return $this->redirect(['view', 'date_to' => $model->date_to, 'EmpID' => $model->EmpID]);
+            }
         }
 
         return $this->render('update', [
@@ -191,10 +196,12 @@ class LeaveApplicationController extends Controller
             foreach ($ids as $id) {
 
                 $ugLeave = new UgLeaveCredits;
+
                 $leave = LeaveApplication::find()->where(['EmpID'=>$id['EmpID']])->andWhere(['date_to'=>$id['date_to']])->one();
 
                $payPeriods = PayPeriod::find()->where(['<=','date_from',$leave['date_from']])->andWhere(['>=','date_to',$leave['date_to']])->one();
 
+               
 
                 var_dump($payPeriods['PrdID']);
 
