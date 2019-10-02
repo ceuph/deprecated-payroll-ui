@@ -35548,11 +35548,21 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1569891333.995
     'REQUEST_TIME' => 1569891333
 ]
-2019-10-02 08:29:44 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-    in C:\wamp2\apache2\htdocs\payroll\_protected\views\layouts\main.php:114
-    in C:\wamp2\apache2\htdocs\payroll\_protected\controllers\SiteController.php:89
-2019-10-02 08:29:44 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-2019-10-02 08:29:44 [10.4.252.26][-][-][info][application] $_GET = []
+2019-10-01 05:39:53 [-][-][-][error][yii\console\UnknownCommandException] yii\base\InvalidRouteException: Unable to resolve the request "server". in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('server', Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('server', Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\yii(20): yii\base\Application->run()
+#4 {main}
+
+Next yii\console\UnknownCommandException: Unknown command "server". in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\console\Application.php:183
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('server', Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\yii(20): yii\base\Application->run()
+#3 {main}
+2019-10-01 05:39:53 [-][-][-][info][application] $_GET = []
 
 $_POST = []
 
@@ -35560,460 +35570,178 @@ $_FILES = []
 
 $_COOKIE = []
 
-$_SESSION = [
-    '__flash' => []
-]
-
 $_SERVER = [
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => '10.7.50.10'
-    'HTTP_CONNECTION' => 'keep-alive'
-    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
-    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
-    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
-    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
-    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jdk1.8.0_211'
+    'ChocolateyInstall' => 'C:\\ProgramData\\chocolatey'
+    'OneDriveConsumer' => 'C:\\Users\\jochua\\OneDrive'
+    'PHP_COMMAND' => 'php.exe'
+    'PROMPT' => '$P$G'
+    'YII_PATH' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\_protected\\'
+    '__INTELLIJ_COMMAND_HISTFILE__' => 'C:\\Users\\jochua\\.PhpStorm2019.1\\config\\terminal\\history\\history-'
+    'SystemDrive' => 'C:'
+    'CLASSPATH' => '.;'
+    'LOGONSERVER' => '\\\\ICT-ADSVR'
+    'TEMP' => 'C:\\Users\\jochua\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\jochua\\AppData\\Local\\Temp'
+    'HOMEPATH' => '\\Users\\jochua'
+    'gitdir' => 'C:\\tools\\Cmder\\vendor\\git-for-windows'
+    'EKM_API_KEY' => 'NjUyNDE3MTQ6emxnaFhrOE0'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW'
+    'HOMEDRIVE' => 'C:'
+    'USERNAME' => 'jochua'
+    'ProgramFiles' => 'C:\\Program Files'
+    'USERDOMAIN_ROAMINGPROFILE' => 'MNL'
+    'LOCALAPPDATA' => 'C:\\Users\\jochua\\AppData\\Local'
+    'TERMINAL_EMULATOR' => 'JetBrains-JediTerm'
+    'USERDNSDOMAIN' => 'MNL.CEU.EDU.PH'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 94 Stepping 3, GenuineIntel'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'APPDATA' => 'C:\\Users\\jochua\\AppData\\Roaming'
+    'ChocolateyToolsLocation' => 'C:\\tools'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'USERDOMAIN' => 'MNL'
+    'PROCESSOR_LEVEL' => '6'
+    'ChocolateyLastPathUpdate' => '132126427201407391'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PUBLIC' => 'C:\\Users\\Public'
     'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => '10.7.50.10'
-    'SERVER_ADDR' => '10.7.50.10'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '10.4.252.26'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '49292'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => ''
-    'REQUEST_URI' => '/payroll/'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569976184.227
-    'REQUEST_TIME' => 1569976184
+    'PROCESSOR_REVISION' => '5e03'
+    'OneDrive' => 'C:\\Users\\jochua\\OneDrive'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'Path' => 'C:\\ProgramData\\DockerDesktop\\version-bin;C:\\Program Files\\Docker\\Docker\\Resources\\bin;C:\\Program Files\\ImageMagick-7.0.8-Q16;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python37\\Scripts\\;C:\\Python37\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files (x86)\\vim\\vim80;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Java\\jdk1.8.0_211\\bin;C:\\Program Files\\Symfony;C:\\Program Files (x86)\\Yarn\\bin\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\tools\\Cmder\\bin;C:\\tools\\Cmder\\vendor\\git-for-windows\\cmd;C:\\Users\\jochua\\AppData\\Local\\Microsoft\\WindowsApps;C:\\tools\\Cmder;C:\\Users\\jochua\\AppData\\Local\\atom\\bin'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'USERPROFILE' => 'C:\\Users\\jochua'
+    'SESSIONNAME' => 'Console'
+    'windir' => 'C:\\WINDOWS'
+    'ProgramW6432' => 'C:\\Program Files'
+    'ProgramData' => 'C:\\ProgramData'
+    'OS' => 'Windows_NT'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'COMPUTERNAME' => 'ICT-JOEY'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'PHP_SELF' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\_protected\\yii'
+    'SCRIPT_NAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\_protected\\yii'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\_protected\\yii'
+    'PATH_TRANSLATED' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\_protected\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1569901193.1515
+    'REQUEST_TIME' => 1569901193
+    'argv' => [
+        0 => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\_protected\\yii'
+        1 => 'server'
+    ]
+    'argc' => 2
 ]
-2019-10-02 08:29:48 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-    in C:\wamp2\apache2\htdocs\payroll\_protected\views\layouts\main.php:114
-    in C:\wamp2\apache2\htdocs\payroll\_protected\controllers\UgLeaveCreditsController.php:43
-2019-10-02 08:29:48 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-2019-10-02 08:29:48 [10.4.252.26][-][-][info][application] $_GET = []
-
-$_POST = []
-
-$_FILES = []
-
-$_COOKIE = [
-    'PHPSESSID' => 'ft2r4vq55tjmpqho5c63rrmgn5'
-    '_csrf' => 'd7ae88ed9ee3d7935b28b183a3e70d3a7f97b3b6fa004a69763f781fe5a13f44a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"yHe0RmF0Z_eFBMKcV5QRcU8JZ4Zbs8WB\";}'
-]
-
-$_SESSION = [
-    '__flash' => []
-]
-
-$_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => '10.7.50.10'
-    'HTTP_CONNECTION' => 'keep-alive'
-    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
-    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
-    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
-    'HTTP_REFERER' => 'http://10.7.50.10/payroll/'
-    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
-    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => 'PHPSESSID=ft2r4vq55tjmpqho5c63rrmgn5; _csrf=d7ae88ed9ee3d7935b28b183a3e70d3a7f97b3b6fa004a69763f781fe5a13f44a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22yHe0RmF0Z_eFBMKcV5QRcU8JZ4Zbs8WB%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => '10.7.50.10'
-    'SERVER_ADDR' => '10.7.50.10'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '10.4.252.26'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '49294'
-    'REDIRECT_URL' => '/payroll/ug-leave-credits/index'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => ''
-    'REQUEST_URI' => '/payroll/ug-leave-credits/index'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569976188.085
-    'REQUEST_TIME' => 1569976188
-]
-2019-10-02 08:29:51 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-    in C:\wamp2\apache2\htdocs\payroll\_protected\views\layouts\main.php:114
-    in C:\wamp2\apache2\htdocs\payroll\_protected\controllers\UgLeaveCreditsController.php:75
-2019-10-02 08:29:51 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-2019-10-02 08:29:51 [10.4.252.26][-][-][info][application] $_GET = []
-
-$_POST = []
-
-$_FILES = []
-
-$_COOKIE = [
-    'PHPSESSID' => 'ft2r4vq55tjmpqho5c63rrmgn5'
-    '_csrf' => 'd7ae88ed9ee3d7935b28b183a3e70d3a7f97b3b6fa004a69763f781fe5a13f44a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"yHe0RmF0Z_eFBMKcV5QRcU8JZ4Zbs8WB\";}'
-]
-
-$_SESSION = [
-    '__flash' => []
-]
-
-$_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => '10.7.50.10'
-    'HTTP_CONNECTION' => 'keep-alive'
-    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
-    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
-    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
-    'HTTP_REFERER' => 'http://10.7.50.10/payroll/ug-leave-credits/index'
-    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
-    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => 'PHPSESSID=ft2r4vq55tjmpqho5c63rrmgn5; _csrf=d7ae88ed9ee3d7935b28b183a3e70d3a7f97b3b6fa004a69763f781fe5a13f44a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22yHe0RmF0Z_eFBMKcV5QRcU8JZ4Zbs8WB%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => '10.7.50.10'
-    'SERVER_ADDR' => '10.7.50.10'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '10.4.252.26'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '49294'
-    'REDIRECT_URL' => '/payroll/ug-leave-credits/create'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => ''
-    'REQUEST_URI' => '/payroll/ug-leave-credits/create'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569976191.357
-    'REQUEST_TIME' => 1569976191
-]
-2019-10-02 08:33:43 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-    in C:\wamp2\apache2\htdocs\payroll\_protected\views\layouts\main.php:114
-    in C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php:46
-2019-10-02 08:33:43 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-2019-10-02 08:33:41 [10.4.252.26][-][-][info][application] $_GET = []
-
-$_POST = []
-
-$_FILES = []
-
-$_COOKIE = [
-    'PHPSESSID' => 'ft2r4vq55tjmpqho5c63rrmgn5'
-    '_csrf' => 'd7ae88ed9ee3d7935b28b183a3e70d3a7f97b3b6fa004a69763f781fe5a13f44a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"yHe0RmF0Z_eFBMKcV5QRcU8JZ4Zbs8WB\";}'
-]
-
-$_SESSION = [
-    '__flash' => []
-]
-
-$_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => '10.7.50.10'
-    'HTTP_CONNECTION' => 'keep-alive'
-    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
-    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
-    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
-    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
-    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => 'PHPSESSID=ft2r4vq55tjmpqho5c63rrmgn5; _csrf=d7ae88ed9ee3d7935b28b183a3e70d3a7f97b3b6fa004a69763f781fe5a13f44a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22yHe0RmF0Z_eFBMKcV5QRcU8JZ4Zbs8WB%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => '10.7.50.10'
-    'SERVER_ADDR' => '10.7.50.10'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '10.4.252.26'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '49326'
-    'REDIRECT_URL' => '/payroll/leave-application'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => ''
-    'REQUEST_URI' => '/payroll/leave-application'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569976421.78
-    'REQUEST_TIME' => 1569976421
-]
-2019-10-02 08:33:50 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-    in C:\wamp2\apache2\htdocs\payroll\_protected\views\layouts\main.php:114
-    in C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php:120
-2019-10-02 08:33:50 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-2019-10-02 08:33:50 [10.4.252.26][-][-][info][application] $_GET = []
-
-$_POST = []
-
-$_FILES = []
-
-$_COOKIE = [
-    'PHPSESSID' => 'ft2r4vq55tjmpqho5c63rrmgn5'
-    '_csrf' => 'd7ae88ed9ee3d7935b28b183a3e70d3a7f97b3b6fa004a69763f781fe5a13f44a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"yHe0RmF0Z_eFBMKcV5QRcU8JZ4Zbs8WB\";}'
-]
-
-$_SESSION = [
-    '__flash' => []
-]
-
-$_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => '10.7.50.10'
-    'HTTP_CONNECTION' => 'keep-alive'
-    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
-    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
-    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
-    'HTTP_REFERER' => 'http://10.7.50.10/payroll/leave-application'
-    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
-    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => 'PHPSESSID=ft2r4vq55tjmpqho5c63rrmgn5; _csrf=d7ae88ed9ee3d7935b28b183a3e70d3a7f97b3b6fa004a69763f781fe5a13f44a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22yHe0RmF0Z_eFBMKcV5QRcU8JZ4Zbs8WB%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => '10.7.50.10'
-    'SERVER_ADDR' => '10.7.50.10'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '10.4.252.26'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '49327'
-    'REDIRECT_URL' => '/payroll/leave-application/create'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => ''
-    'REQUEST_URI' => '/payroll/leave-application/create'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569976430.562
-    'REQUEST_TIME' => 1569976430
-]
-2019-10-02 08:34:23 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-    in C:\wamp2\apache2\htdocs\payroll\_protected\views\layouts\main.php:114
-    in C:\wamp2\apache2\htdocs\payroll\_protected\controllers\UgLeaveCreditsController.php:43
-2019-10-02 08:34:23 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-2019-10-02 08:34:23 [10.4.252.26][-][-][info][application] $_GET = []
-
-$_POST = []
-
-$_FILES = []
-
-$_COOKIE = [
-    'PHPSESSID' => 'ft2r4vq55tjmpqho5c63rrmgn5'
-    '_csrf' => 'd7ae88ed9ee3d7935b28b183a3e70d3a7f97b3b6fa004a69763f781fe5a13f44a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"yHe0RmF0Z_eFBMKcV5QRcU8JZ4Zbs8WB\";}'
-]
-
-$_SESSION = [
-    '__flash' => []
-]
-
-$_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => '10.7.50.10'
-    'HTTP_CONNECTION' => 'keep-alive'
-    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
-    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
-    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
-    'HTTP_REFERER' => 'http://10.7.50.10/payroll/leave-application/create'
-    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
-    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => 'PHPSESSID=ft2r4vq55tjmpqho5c63rrmgn5; _csrf=d7ae88ed9ee3d7935b28b183a3e70d3a7f97b3b6fa004a69763f781fe5a13f44a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22yHe0RmF0Z_eFBMKcV5QRcU8JZ4Zbs8WB%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => '10.7.50.10'
-    'SERVER_ADDR' => '10.7.50.10'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '10.4.252.26'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '49330'
-    'REDIRECT_URL' => '/payroll/ug-leave-credits/index'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => ''
-    'REQUEST_URI' => '/payroll/ug-leave-credits/index'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569976463.091
-    'REQUEST_TIME' => 1569976463
-]
-2019-10-02 08:34:25 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-    in C:\wamp2\apache2\htdocs\payroll\_protected\views\layouts\main.php:114
-    in C:\wamp2\apache2\htdocs\payroll\_protected\controllers\UgLeaveCreditsController.php:75
-2019-10-02 08:34:25 [10.4.252.26][-][-][warning][yii\debug\Module::checkAccess] Access to debugger is denied due to IP address restriction. The requesting IP address is 10.4.252.26
-2019-10-02 08:34:24 [10.4.252.26][-][-][info][application] $_GET = []
-
-$_POST = []
-
-$_FILES = []
-
-$_COOKIE = [
-    'PHPSESSID' => 'ft2r4vq55tjmpqho5c63rrmgn5'
-    '_csrf' => 'd7ae88ed9ee3d7935b28b183a3e70d3a7f97b3b6fa004a69763f781fe5a13f44a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"yHe0RmF0Z_eFBMKcV5QRcU8JZ4Zbs8WB\";}'
-]
-
-$_SESSION = [
-    '__flash' => []
-]
-
-$_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => '10.7.50.10'
-    'HTTP_CONNECTION' => 'keep-alive'
-    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
-    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
-    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
-    'HTTP_REFERER' => 'http://10.7.50.10/payroll/ug-leave-credits/index'
-    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
-    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => 'PHPSESSID=ft2r4vq55tjmpqho5c63rrmgn5; _csrf=d7ae88ed9ee3d7935b28b183a3e70d3a7f97b3b6fa004a69763f781fe5a13f44a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22yHe0RmF0Z_eFBMKcV5QRcU8JZ4Zbs8WB%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => '10.7.50.10'
-    'SERVER_ADDR' => '10.7.50.10'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '10.4.252.26'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '49330'
-    'REDIRECT_URL' => '/payroll/ug-leave-credits/create'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => ''
-    'REQUEST_URI' => '/payroll/ug-leave-credits/create'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569976464.723
-    'REQUEST_TIME' => 1569976464
-]
-2019-10-02 09:38:59 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][error][Error] Error: Class 'kartik\widgets\DateTimePicker' not found in C:\wamp2\apache2\htdocs\payroll\_protected\views\leave-application\_form.php:27
+2019-10-01 11:41:09 [::1][-][-][error][yii\base\InvalidArgumentException] yii\base\InvalidArgumentException: The file or directory to be published does not exist: C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\bower/jquery/dist in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetManager.php:455
 Stack trace:
-#0 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(348): require()
-#1 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp2\\apache...', Array)
-#2 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp2\\apache...', Array, NULL)
-#3 C:\wamp2\apache2\htdocs\payroll\_protected\views\leave-application\create.php(17): yii\base\View->render('_form', Array)
-#4 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp2\\apache...')
-#5 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp2\\apache...', Array)
-#6 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp2\\apache...', Array, Object(app\controllers\LeaveApplicationController))
-#7 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('create', Array, Object(app\controllers\LeaveApplicationController))
-#8 C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php(120): yii\base\Controller->render('create', Array)
-#9 [internal function]: app\controllers\LeaveApplicationController->actionCreate()
-#10 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
-#11 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
-#12 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
-#13 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('leave-applicati...', Array)
-#14 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
-#15 C:\wamp2\apache2\htdocs\payroll\index.php(12): yii\base\Application->run()
-#16 {main}
-2019-10-02 09:38:58 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][info][application] $_GET = []
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetBundle.php(185): yii\web\AssetManager->publish('C:\\Users\\jochua...', Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\View.php(286): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\View.php(291): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...', NULL)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\View.php(291): yii\web\View->registerAssetBundle('yii\\web\\YiiAsse...', NULL)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetBundle.php(125): yii\web\View->registerAssetBundle('app\\assets\\AppA...')
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\views\layouts\main.php(12): yii\web\AssetBundle::register(Object(yii\web\View))
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jochua...')
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\Users\\jochua...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(401): yii\base\View->renderFile('C:\\Users\\jochua...', Array, Object(app\controllers\SiteController))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(387): yii\base\Controller->renderContent('\r\n\r\n<div class=...')
+#12 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SiteController.php(89): yii\base\Controller->render('index')
+#13 [internal function]: app\controllers\SiteController->actionIndex()
+#14 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#16 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#17 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#18 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#20 {main}
+2019-10-01 11:41:08 [::1][-][-][info][application] $_GET = []
 
 $_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
-    '_identity-backend' => '1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"tArp_Kv4z1JlzBUZYCL33N24AZL-_77p\",2592000]\";}'
-    'PHPSESSID' => '592ivbcb3uahhn2mfvp1r54tsj'
-    '_csrf' => 'b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT\";}'
-]
-
-$_SESSION = [
-    '__flash' => []
+    'default-theme' => 'ngax'
 ]
 
 $_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => 'localhost'
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '56454'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax'
+    'REQUEST_TIME_FLOAT' => 1569901268.9526
+    'REQUEST_TIME' => 1569901268
+]
+2019-10-01 12:57:42 [::1][-][-][error][yii\base\InvalidArgumentException] yii\base\InvalidArgumentException: The file or directory to be published does not exist: C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\bower/jquery/dist in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetManager.php:455
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetBundle.php(185): yii\web\AssetManager->publish('C:\\Users\\jochua...', Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\View.php(286): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\View.php(291): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...', NULL)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\View.php(291): yii\web\View->registerAssetBundle('yii\\web\\YiiAsse...', NULL)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetBundle.php(125): yii\web\View->registerAssetBundle('app\\assets\\AppA...')
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\views\layouts\main.php(12): yii\web\AssetBundle::register(Object(yii\web\View))
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jochua...')
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\Users\\jochua...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(401): yii\base\View->renderFile('C:\\Users\\jochua...', Array, Object(app\controllers\SiteController))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(387): yii\base\Controller->renderContent('\r\n\r\n<div class=...')
+#12 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SiteController.php(89): yii\base\Controller->render('index')
+#13 [internal function]: app\controllers\SiteController->actionIndex()
+#14 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#16 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#17 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#18 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#20 {main}
+2019-10-01 12:57:42 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57553'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
     'HTTP_CONNECTION' => 'keep-alive'
     'HTTP_CACHE_CONTROL' => 'max-age=0'
     'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
@@ -36024,77 +35752,57 @@ $_SERVER = [
     'HTTP_SEC_FETCH_SITE' => 'none'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
     'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => '_identity-backend=1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22tArp_Kv4z1JlzBUZYCL33N24AZL-_77p%22%2C2592000%5D%22%3B%7D; PHPSESSID=592ivbcb3uahhn2mfvp1r54tsj; _csrf=b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => 'localhost'
-    'SERVER_ADDR' => '::1'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '::1'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '50834'
-    'REDIRECT_URL' => '/payroll/leave-application/create'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => ''
-    'REQUEST_URI' => '/payroll/leave-application/create'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569980338.552
-    'REQUEST_TIME' => 1569980338
+    'HTTP_COOKIE' => 'default-theme=ngax'
+    'REQUEST_TIME_FLOAT' => 1569905862.0322
+    'REQUEST_TIME' => 1569905862
 ]
-2019-10-02 09:43:32 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][error][Error] Error: Class 'kartik\widgets\DateTimePicker' not found in C:\wamp2\apache2\htdocs\payroll\_protected\views\leave-application\_form.php:27
+2019-10-01 13:15:41 [::1][-][-][error][yii\base\InvalidArgumentException] yii\base\InvalidArgumentException: The file or directory to be published does not exist: C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\bower/jquery/dist in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetManager.php:455
 Stack trace:
-#0 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(348): require()
-#1 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp2\\apache...', Array)
-#2 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp2\\apache...', Array, NULL)
-#3 C:\wamp2\apache2\htdocs\payroll\_protected\views\leave-application\create.php(17): yii\base\View->render('_form', Array)
-#4 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp2\\apache...')
-#5 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp2\\apache...', Array)
-#6 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp2\\apache...', Array, Object(app\controllers\LeaveApplicationController))
-#7 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('create', Array, Object(app\controllers\LeaveApplicationController))
-#8 C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php(120): yii\base\Controller->render('create', Array)
-#9 [internal function]: app\controllers\LeaveApplicationController->actionCreate()
-#10 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
-#11 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
-#12 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
-#13 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('leave-applicati...', Array)
-#14 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
-#15 C:\wamp2\apache2\htdocs\payroll\index.php(12): yii\base\Application->run()
-#16 {main}
-2019-10-02 09:43:31 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][info][application] $_GET = []
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetBundle.php(185): yii\web\AssetManager->publish('C:\\Users\\jochua...', Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\View.php(286): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\View.php(291): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...', NULL)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\View.php(291): yii\web\View->registerAssetBundle('yii\\web\\YiiAsse...', NULL)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetBundle.php(125): yii\web\View->registerAssetBundle('app\\assets\\AppA...')
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\views\layouts\main.php(12): yii\web\AssetBundle::register(Object(yii\web\View))
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jochua...')
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\Users\\jochua...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(401): yii\base\View->renderFile('C:\\Users\\jochua...', Array, Object(app\controllers\SiteController))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(387): yii\base\Controller->renderContent('\r\n\r\n<div class=...')
+#12 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SiteController.php(89): yii\base\Controller->render('index')
+#13 [internal function]: app\controllers\SiteController->actionIndex()
+#14 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#16 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#17 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#18 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#20 {main}
+2019-10-01 13:15:41 [::1][-][-][info][application] $_GET = []
 
 $_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
-    '_identity-backend' => '1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"tArp_Kv4z1JlzBUZYCL33N24AZL-_77p\",2592000]\";}'
-    'PHPSESSID' => '592ivbcb3uahhn2mfvp1r54tsj'
-    '_csrf' => 'b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT\";}'
-]
-
-$_SESSION = [
-    '__flash' => []
+    'default-theme' => 'ngax'
 ]
 
 $_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => 'localhost'
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57765'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
     'HTTP_CONNECTION' => 'keep-alive'
     'HTTP_CACHE_CONTROL' => 'max-age=0'
     'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
@@ -36105,80 +35813,57 @@ $_SERVER = [
     'HTTP_SEC_FETCH_SITE' => 'none'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
     'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => '_identity-backend=1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22tArp_Kv4z1JlzBUZYCL33N24AZL-_77p%22%2C2592000%5D%22%3B%7D; PHPSESSID=592ivbcb3uahhn2mfvp1r54tsj; _csrf=b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => 'localhost'
-    'SERVER_ADDR' => '::1'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '::1'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '50847'
-    'REDIRECT_URL' => '/payroll/leave-application/create'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => ''
-    'REQUEST_URI' => '/payroll/leave-application/create'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569980611.739
-    'REQUEST_TIME' => 1569980611
+    'HTTP_COOKIE' => 'default-theme=ngax'
+    'REQUEST_TIME_FLOAT' => 1569906941.1175
+    'REQUEST_TIME' => 1569906941
 ]
-2019-10-02 10:05:42 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][error][Error] Error: Class 'DateControl' not found in C:\wamp2\apache2\htdocs\payroll\_protected\views\leave-application\_form.php:29
+2019-10-01 13:22:36 [::1][-][-][error][yii\base\InvalidArgumentException] yii\base\InvalidArgumentException: The file or directory to be published does not exist: C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\bower/jquery/dist in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetManager.php:455
 Stack trace:
-#0 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(348): require()
-#1 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp2\\apache...', Array)
-#2 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp2\\apache...', Array, NULL)
-#3 C:\wamp2\apache2\htdocs\payroll\_protected\views\leave-application\update.php(18): yii\base\View->render('_form', Array)
-#4 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(348): require('C:\\wamp2\\apache...')
-#5 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\wamp2\\apache...', Array)
-#6 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\wamp2\\apache...', Array, Object(app\controllers\LeaveApplicationController))
-#7 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('update', Array, Object(app\controllers\LeaveApplicationController))
-#8 C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php(143): yii\base\Controller->render('update', Array)
-#9 [internal function]: app\controllers\LeaveApplicationController->actionUpdate('2019-09-20 14:0...', '4334-5')
-#10 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
-#11 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
-#12 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('update', Array)
-#13 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('leave-applicati...', Array)
-#14 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
-#15 C:\wamp2\apache2\htdocs\payroll\index.php(12): yii\base\Application->run()
-#16 {main}
-2019-10-02 10:05:41 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][info][application] $_GET = [
-    'date_to' => '2019-09-20 14:00:00.000'
-    'EmpID' => '4334-5'
-]
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetBundle.php(185): yii\web\AssetManager->publish('C:\\Users\\jochua...', Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\View.php(286): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\View.php(291): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...', NULL)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\View.php(291): yii\web\View->registerAssetBundle('yii\\web\\YiiAsse...', NULL)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\AssetBundle.php(125): yii\web\View->registerAssetBundle('app\\assets\\AppA...')
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\views\layouts\main.php(12): yii\web\AssetBundle::register(Object(yii\web\View))
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jochua...')
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\Users\\jochua...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(401): yii\base\View->renderFile('C:\\Users\\jochua...', Array, Object(app\controllers\SiteController))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(387): yii\base\Controller->renderContent('\r\n\r\n<div class=...')
+#12 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SiteController.php(89): yii\base\Controller->render('index')
+#13 [internal function]: app\controllers\SiteController->actionIndex()
+#14 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#15 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#16 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('', Array)
+#17 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('', Array)
+#18 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#20 {main}
+2019-10-01 13:22:36 [::1][-][-][info][application] $_GET = []
 
 $_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
-    '_identity-backend' => '1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"tArp_Kv4z1JlzBUZYCL33N24AZL-_77p\",2592000]\";}'
-    'PHPSESSID' => '592ivbcb3uahhn2mfvp1r54tsj'
-    '_csrf' => 'b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT\";}'
-]
-
-$_SESSION = [
-    '__flash' => []
+    'default-theme' => 'ngax'
 ]
 
 $_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => 'localhost'
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '57829'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
     'HTTP_CONNECTION' => 'keep-alive'
     'HTTP_CACHE_CONTROL' => 'max-age=0'
     'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
@@ -36186,109 +35871,63 @@ $_SERVER = [
     'HTTP_SEC_FETCH_MODE' => 'navigate'
     'HTTP_SEC_FETCH_USER' => '?1'
     'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
-    'HTTP_SEC_FETCH_SITE' => 'same-origin'
-    'HTTP_REFERER' => 'http://localhost/payroll/leave-application/view?date_to=2019-09-20+14%3A00&EmpID=4334-5'
+    'HTTP_SEC_FETCH_SITE' => 'none'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
     'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => '_identity-backend=1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22tArp_Kv4z1JlzBUZYCL33N24AZL-_77p%22%2C2592000%5D%22%3B%7D; PHPSESSID=592ivbcb3uahhn2mfvp1r54tsj; _csrf=b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => 'localhost'
-    'SERVER_ADDR' => '::1'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '::1'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '51057'
-    'REDIRECT_URL' => '/payroll/leave-application/update'
-    'REDIRECT_QUERY_STRING' => 'date_to=2019-09-20+14%3A00%3A00.000&EmpID=4334-5'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => 'date_to=2019-09-20+14%3A00%3A00.000&EmpID=4334-5'
-    'REQUEST_URI' => '/payroll/leave-application/update?date_to=2019-09-20+14%3A00%3A00.000&EmpID=4334-5'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569981941.723
-    'REQUEST_TIME' => 1569981941
+    'HTTP_COOKIE' => 'default-theme=ngax'
+    'REQUEST_TIME_FLOAT' => 1569907356.4813
+    'REQUEST_TIME' => 1569907356
 ]
-2019-10-02 10:32:31 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][error][yii\base\InvalidArgumentException] Exception: DateTime::__construct(): Failed to parse time string (19191919-1010-0202 1010:3232) at position 7 (9): Unexpected character in C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\i18n\Formatter.php:848
+2019-10-01 14:45:26 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\db\Exception] PDOException: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'AS'. in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php:1290
 Stack trace:
-#0 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\i18n\Formatter.php(848): DateTime->__construct('19191919-1010-0...', Object(DateTimeZone))
-#1 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\i18n\Formatter.php(744): yii\i18n\Formatter->normalizeDatetimeValue('19191919-1010-0...')
-#2 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\i18n\Formatter.php(707): yii\i18n\Formatter->formatDateTimeValue('19191919-1010-0...', 'yyyy-mm-dd hh:i...', 'datetime')
-#3 C:\wamp2\apache2\htdocs\payroll\_protected\models\LeaveApplication.php(73): yii\i18n\Formatter->asDatetime('19191919-1010-0...')
-#4 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\LeaveApplication->afterFind()
-#5 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(306): yii\db\ActiveQuery->populate(Array)
-#6 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveQuery->one()
-#7 C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php(172): yii\db\BaseActiveRecord::findOne(Array)
-#8 C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php(136): app\controllers\LeaveApplicationController->findModel('2019-09-16 14:0...', '4334-5')
-#9 [internal function]: app\controllers\LeaveApplicationController->actionUpdate('2019-09-16 14:0...', '4334-5')
-#10 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
-#11 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
-#12 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('update', Array)
-#13 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('leave-applicati...', Array)
-#14 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
-#15 C:\wamp2\apache2\htdocs\payroll\index.php(12): yii\base\Application->run()
-#16 {main}
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT CONCAT(P...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(317): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(139): yii\db\Query->column()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#12 {main}
 
-Next yii\base\InvalidArgumentException: '19191919-1010-0202 1010:3232' is not a valid date time value: DateTime::__construct(): Failed to parse time string (19191919-1010-0202 1010:3232) at position 7 (9): Unexpected character
+Next yii\db\Exception: SQLSTATE[42000]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'AS'.
+The SQL being executed was: SELECT CONCAT(PrdId, date_from, "-", AS [date_to], [Payroll_pay_period].[PrdId] FROM [Payroll_pay_period] ORDER BY [PrdId] in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Schema.php:674
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'SELECT CONCAT(P...')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT CONCAT(P...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(317): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(139): yii\db\Query->column()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#12 {main}
+Additional Information:
 Array
 (
-    [warning_count] => 2
-    [warnings] => Array
-        (
-            [13] => Double timezone specification
-            [29] => The parsed date was invalid
-        )
-
-    [error_count] => 2
-    [errors] => Array
-        (
-            [7] => Unexpected character
-            [23] => Unexpected character
-        )
-
+    [0] => 42000
+    [1] => 156
+    [2] => [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Incorrect syntax near the keyword 'AS'.
 )
- in C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\i18n\Formatter.php:850
-Stack trace:
-#0 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\i18n\Formatter.php(744): yii\i18n\Formatter->normalizeDatetimeValue('19191919-1010-0...')
-#1 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\i18n\Formatter.php(707): yii\i18n\Formatter->formatDateTimeValue('19191919-1010-0...', 'yyyy-mm-dd hh:i...', 'datetime')
-#2 C:\wamp2\apache2\htdocs\payroll\_protected\models\LeaveApplication.php(73): yii\i18n\Formatter->asDatetime('19191919-1010-0...')
-#3 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\LeaveApplication->afterFind()
-#4 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(306): yii\db\ActiveQuery->populate(Array)
-#5 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveQuery->one()
-#6 C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php(172): yii\db\BaseActiveRecord::findOne(Array)
-#7 C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php(136): app\controllers\LeaveApplicationController->findModel('2019-09-16 14:0...', '4334-5')
-#8 [internal function]: app\controllers\LeaveApplicationController->actionUpdate('2019-09-16 14:0...', '4334-5')
-#9 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
-#10 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
-#11 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('update', Array)
-#12 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('leave-applicati...', Array)
-#13 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
-#14 C:\wamp2\apache2\htdocs\payroll\index.php(12): yii\base\Application->run()
-#15 {main}
-2019-10-02 10:32:30 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][info][application] $_GET = [
-    'date_to' => '2019-09-16 14:00:00.000'
-    'EmpID' => '4334-5'
-]
+
+2019-10-01 14:45:25 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
 
 $_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
-    '_identity-backend' => '1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"tArp_Kv4z1JlzBUZYCL33N24AZL-_77p\",2592000]\";}'
-    'PHPSESSID' => '592ivbcb3uahhn2mfvp1r54tsj'
-    '_csrf' => 'b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT\";}'
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
 ]
 
 $_SESSION = [
@@ -36296,12 +35935,20 @@ $_SESSION = [
 ]
 
 $_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => 'localhost'
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59995'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/ug-leave-credits/process'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/ug-leave-credits/process'
+    'PHP_SELF' => '/index.php/ug-leave-credits/process'
+    'HTTP_HOST' => 'localhost:8080'
     'HTTP_CONNECTION' => 'keep-alive'
     'HTTP_CACHE_CONTROL' => 'max-age=0'
     'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
@@ -36312,146 +35959,60 @@ $_SERVER = [
     'HTTP_SEC_FETCH_SITE' => 'none'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
     'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => '_identity-backend=1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22tArp_Kv4z1JlzBUZYCL33N24AZL-_77p%22%2C2592000%5D%22%3B%7D; PHPSESSID=592ivbcb3uahhn2mfvp1r54tsj; _csrf=b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => 'localhost'
-    'SERVER_ADDR' => '::1'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '::1'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '51343'
-    'REDIRECT_URL' => '/payroll/leave-application/update'
-    'REDIRECT_QUERY_STRING' => 'date_to=2019-09-16+14%3A00%3A00.000&EmpID=4334-5'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => 'date_to=2019-09-16+14%3A00%3A00.000&EmpID=4334-5'
-    'REQUEST_URI' => '/payroll/leave-application/update?date_to=2019-09-16+14%3A00%3A00.000&EmpID=4334-5'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569983550.572
-    'REQUEST_TIME' => 1569983550
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1569912325.6624
+    'REQUEST_TIME' => 1569912325
 ]
-2019-10-02 10:32:46 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][error][ArgumentCountError] ArgumentCountError: Too few arguments to function yii\i18n\Formatter::asDatetime(), 0 passed in C:\wamp2\apache2\htdocs\payroll\_protected\models\LeaveApplication.php on line 73 and at least 1 expected in C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\i18n\Formatter.php:701
+2019-10-01 14:47:10 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name '-'. in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php:1290
 Stack trace:
-#0 C:\wamp2\apache2\htdocs\payroll\_protected\models\LeaveApplication.php(73): yii\i18n\Formatter->asDatetime()
-#1 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\LeaveApplication->afterFind()
-#2 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(306): yii\db\ActiveQuery->populate(Array)
-#3 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveQuery->one()
-#4 C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php(172): yii\db\BaseActiveRecord::findOne(Array)
-#5 C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php(136): app\controllers\LeaveApplicationController->findModel('2019-09-16 14:0...', '4334-5')
-#6 [internal function]: app\controllers\LeaveApplicationController->actionUpdate('2019-09-16 14:0...', '4334-5')
-#7 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
-#8 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
-#9 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('update', Array)
-#10 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('leave-applicati...', Array)
-#11 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
-#12 C:\wamp2\apache2\htdocs\payroll\index.php(12): yii\base\Application->run()
-#13 {main}
-2019-10-02 10:32:46 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][info][application] $_GET = [
-    'date_to' => '2019-09-16 14:00:00.000'
-    'EmpID' => '4334-5'
-]
-
-$_POST = []
-
-$_FILES = []
-
-$_COOKIE = [
-    '_identity-backend' => '1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"tArp_Kv4z1JlzBUZYCL33N24AZL-_77p\",2592000]\";}'
-    'PHPSESSID' => '592ivbcb3uahhn2mfvp1r54tsj'
-    '_csrf' => 'b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT\";}'
-]
-
-$_SESSION = [
-    '__flash' => []
-]
-
-$_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => 'localhost'
-    'HTTP_CONNECTION' => 'keep-alive'
-    'HTTP_CACHE_CONTROL' => 'max-age=0'
-    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
-    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
-    'HTTP_SEC_FETCH_MODE' => 'navigate'
-    'HTTP_SEC_FETCH_USER' => '?1'
-    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
-    'HTTP_SEC_FETCH_SITE' => 'none'
-    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
-    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => '_identity-backend=1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22tArp_Kv4z1JlzBUZYCL33N24AZL-_77p%22%2C2592000%5D%22%3B%7D; PHPSESSID=592ivbcb3uahhn2mfvp1r54tsj; _csrf=b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => 'localhost'
-    'SERVER_ADDR' => '::1'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '::1'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '51347'
-    'REDIRECT_URL' => '/payroll/leave-application/update'
-    'REDIRECT_QUERY_STRING' => 'date_to=2019-09-16+14%3A00%3A00.000&EmpID=4334-5'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => 'date_to=2019-09-16+14%3A00%3A00.000&EmpID=4334-5'
-    'REQUEST_URI' => '/payroll/leave-application/update?date_to=2019-09-16+14%3A00%3A00.000&EmpID=4334-5'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569983566.216
-    'REQUEST_TIME' => 1569983566
-]
-2019-10-02 10:33:45 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][error][Error] Error: Class 'app\models\DateTime' not found in C:\wamp2\apache2\htdocs\payroll\_protected\models\LeaveApplication.php:73
-Stack trace:
-#0 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\LeaveApplication->afterFind()
-#1 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(306): yii\db\ActiveQuery->populate(Array)
-#2 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveQuery->one()
-#3 C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php(172): yii\db\BaseActiveRecord::findOne(Array)
-#4 C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php(136): app\controllers\LeaveApplicationController->findModel('2019-09-16 14:0...', '4334-5')
-#5 [internal function]: app\controllers\LeaveApplicationController->actionUpdate('2019-09-16 14:0...', '4334-5')
-#6 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
-#7 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
-#8 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('update', Array)
-#9 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('leave-applicati...', Array)
-#10 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
-#11 C:\wamp2\apache2\htdocs\payroll\index.php(12): yii\base\Application->run()
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT CONCAT(P...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(317): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(139): yii\db\Query->column()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
 #12 {main}
-2019-10-02 10:33:45 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][info][application] $_GET = [
-    'date_to' => '2019-09-16 14:00:00.000'
-    'EmpID' => '4334-5'
-]
+
+Next yii\db\Exception: SQLSTATE[42S22]: [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name '-'.
+The SQL being executed was: SELECT CONCAT(PrdId, date_from, "-", date_to) AS [name], [Payroll_pay_period].[PrdId] FROM [Payroll_pay_period] ORDER BY [PrdId] in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Schema.php:674
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'SELECT CONCAT(P...')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT CONCAT(P...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(317): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(139): yii\db\Query->column()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 207
+    [2] => [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]Invalid column name '-'.
+)
+
+2019-10-01 14:47:10 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
 
 $_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
-    '_identity-backend' => '1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"tArp_Kv4z1JlzBUZYCL33N24AZL-_77p\",2592000]\";}'
-    'PHPSESSID' => '592ivbcb3uahhn2mfvp1r54tsj'
-    '_csrf' => 'b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT\";}'
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
 ]
 
 $_SESSION = [
@@ -36459,12 +36020,20 @@ $_SESSION = [
 ]
 
 $_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => 'localhost'
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '60014'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/ug-leave-credits/process'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/ug-leave-credits/process'
+    'PHP_SELF' => '/index.php/ug-leave-credits/process'
+    'HTTP_HOST' => 'localhost:8080'
     'HTTP_CONNECTION' => 'keep-alive'
     'HTTP_CACHE_CONTROL' => 'max-age=0'
     'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
@@ -36475,53 +36044,33 @@ $_SERVER = [
     'HTTP_SEC_FETCH_SITE' => 'none'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
     'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => '_identity-backend=1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22tArp_Kv4z1JlzBUZYCL33N24AZL-_77p%22%2C2592000%5D%22%3B%7D; PHPSESSID=592ivbcb3uahhn2mfvp1r54tsj; _csrf=b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => 'localhost'
-    'SERVER_ADDR' => '::1'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '::1'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '51354'
-    'REDIRECT_URL' => '/payroll/leave-application/update'
-    'REDIRECT_QUERY_STRING' => 'date_to=2019-09-16+14%3A00%3A00.000&EmpID=4334-5'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => 'date_to=2019-09-16+14%3A00%3A00.000&EmpID=4334-5'
-    'REQUEST_URI' => '/payroll/leave-application/update?date_to=2019-09-16+14%3A00%3A00.000&EmpID=4334-5'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569983625.091
-    'REQUEST_TIME' => 1569983625
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1569912430.4632
+    'REQUEST_TIME' => 1569912430
 ]
-2019-10-02 10:53:47 [::1][-][-][error][yii\i18n\PhpMessageSource::loadFallbackMessages] The message file for category 'yii' does not exist: C:\wamp2\apache2\htdocs\payroll\_protected/translations/de-DE/yii.php Fallback file does not exist as well: C:\wamp2\apache2\htdocs\payroll\_protected/translations/de/yii.php
-    in C:\wamp2\apache2\htdocs\payroll\_protected\models\LeaveApplication.php:73
-    in C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php:172
-    in C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php:136
-2019-10-02 10:53:47 [::1][-][-][info][application] $_GET = [
-    'date_to' => '2019-09-18 14:00:00.000'
-    'EmpID' => '4334-5'
-]
+2019-10-01 15:15:33 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\InvalidArgumentException] yii\base\InvalidArgumentException: Key "PrdId" is not a column name and can not be used as a filter in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php:238
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php(191): yii\db\ActiveRecord::filterCondition(Array, Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition(Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(146): yii\db\BaseActiveRecord::findOne(Array)
+#3 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#10 {main}
+2019-10-01 15:15:33 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
 
 $_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
-    '_identity-backend' => '1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"tArp_Kv4z1JlzBUZYCL33N24AZL-_77p\",2592000]\";}'
-    'PHPSESSID' => '592ivbcb3uahhn2mfvp1r54tsj'
-    '_csrf' => 'b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT\";}'
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
 ]
 
 $_SESSION = [
@@ -36529,12 +36078,20 @@ $_SESSION = [
 ]
 
 $_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => 'localhost'
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '60628'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/ug-leave-credits/process'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/ug-leave-credits/process'
+    'PHP_SELF' => '/index.php/ug-leave-credits/process'
+    'HTTP_HOST' => 'localhost:8080'
     'HTTP_CONNECTION' => 'keep-alive'
     'HTTP_CACHE_CONTROL' => 'max-age=0'
     'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
@@ -36545,64 +36102,91 @@ $_SERVER = [
     'HTTP_SEC_FETCH_SITE' => 'none'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
     'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => '_identity-backend=1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22tArp_Kv4z1JlzBUZYCL33N24AZL-_77p%22%2C2592000%5D%22%3B%7D; PHPSESSID=592ivbcb3uahhn2mfvp1r54tsj; _csrf=b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => 'localhost'
-    'SERVER_ADDR' => '::1'
-    'SERVER_PORT' => '80'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1569914133.2172
+    'REQUEST_TIME' => 1569914133
+]
+2019-10-01 15:15:56 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\InvalidArgumentException] yii\base\InvalidArgumentException: Key "PrdId" is not a column name and can not be used as a filter in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php:238
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php(191): yii\db\ActiveRecord::filterCondition(Array, Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition(Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(146): yii\db\BaseActiveRecord::findOne(Array)
+#3 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#10 {main}
+2019-10-01 15:15:56 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
     'REMOTE_ADDR' => '::1'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '51568'
-    'REDIRECT_URL' => '/payroll/leave-application/update'
-    'REDIRECT_QUERY_STRING' => 'date_to=2019-09-18+14%3A00%3A00.000&EmpID=4334-5'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '60636'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
     'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/ug-leave-credits/process'
     'REQUEST_METHOD' => 'GET'
-    'QUERY_STRING' => 'date_to=2019-09-18+14%3A00%3A00.000&EmpID=4334-5'
-    'REQUEST_URI' => '/payroll/leave-application/update?date_to=2019-09-18+14%3A00%3A00.000&EmpID=4334-5'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569984827.267
-    'REQUEST_TIME' => 1569984827
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/ug-leave-credits/process'
+    'PHP_SELF' => '/index.php/ug-leave-credits/process'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1569914156.1173
+    'REQUEST_TIME' => 1569914156
 ]
-2019-10-02 10:59:24 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][error][Error] Error: Call to undefined function app\controllers\dateTime() in C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php:110
+2019-10-01 15:16:29 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\InvalidArgumentException] yii\base\InvalidArgumentException: Key "prd_id" is not a column name and can not be used as a filter in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php:238
 Stack trace:
-#0 [internal function]: app\controllers\LeaveApplicationController->actionCreate()
-#1 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
-#2 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
-#3 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
-#4 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('leave-applicati...', Array)
-#5 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
-#6 C:\wamp2\apache2\htdocs\payroll\index.php(12): yii\base\Application->run()
-#7 {main}
-2019-10-02 10:59:23 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][info][application] $_GET = []
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php(191): yii\db\ActiveRecord::filterCondition(Array, Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition(Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(146): yii\db\BaseActiveRecord::findOne(Array)
+#3 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#10 {main}
+2019-10-01 15:16:28 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
 
-$_POST = [
-    '_csrf' => '7V-zTFD16Y8wGeThI1Flv0oc4m7Ho7tQc_dSxlbaYzukNYcCJaWd2ENXgZBMPgCSDHGVB5PyyAcEvjqPDq46bw=='
-    'LeaveApplication' => [
-        'EmpID' => '4334-5'
-        'type_leave' => 'LEC_UGSLHAWP'
-        'date_from' => '2019-09-16 13:00'
-        'date_to' => '2019-09-19 14:00'
-    ]
-]
+$_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
-    '_identity-backend' => '1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"tArp_Kv4z1JlzBUZYCL33N24AZL-_77p\",2592000]\";}'
-    'PHPSESSID' => '592ivbcb3uahhn2mfvp1r54tsj'
-    '_csrf' => 'b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT\";}'
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
 ]
 
 $_SESSION = [
@@ -36610,83 +36194,57 @@ $_SESSION = [
 ]
 
 $_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => 'localhost'
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '60646'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/ug-leave-credits/process'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/ug-leave-credits/process'
+    'PHP_SELF' => '/index.php/ug-leave-credits/process'
+    'HTTP_HOST' => 'localhost:8080'
     'HTTP_CONNECTION' => 'keep-alive'
-    'CONTENT_LENGTH' => '279'
     'HTTP_CACHE_CONTROL' => 'max-age=0'
-    'HTTP_ORIGIN' => 'http://localhost'
     'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
-    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
     'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
     'HTTP_SEC_FETCH_MODE' => 'navigate'
     'HTTP_SEC_FETCH_USER' => '?1'
     'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
-    'HTTP_SEC_FETCH_SITE' => 'same-origin'
-    'HTTP_REFERER' => 'http://localhost/payroll/leave-application/create'
+    'HTTP_SEC_FETCH_SITE' => 'none'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
     'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => '_identity-backend=1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22tArp_Kv4z1JlzBUZYCL33N24AZL-_77p%22%2C2592000%5D%22%3B%7D; PHPSESSID=592ivbcb3uahhn2mfvp1r54tsj; _csrf=b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => 'localhost'
-    'SERVER_ADDR' => '::1'
-    'SERVER_PORT' => '80'
-    'REMOTE_ADDR' => '::1'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '51619'
-    'REDIRECT_URL' => '/payroll/leave-application/create'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
-    'SERVER_PROTOCOL' => 'HTTP/1.1'
-    'REQUEST_METHOD' => 'POST'
-    'QUERY_STRING' => ''
-    'REQUEST_URI' => '/payroll/leave-application/create'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569985163.886
-    'REQUEST_TIME' => 1569985163
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1569914188.9502
+    'REQUEST_TIME' => 1569914188
 ]
-2019-10-02 10:59:47 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][error][Error] Error: Call to undefined function app\controllers\dateTime() in C:\wamp2\apache2\htdocs\payroll\_protected\controllers\LeaveApplicationController.php:110
+2019-10-01 15:16:49 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\InvalidArgumentException] yii\base\InvalidArgumentException: Key "PrdId" is not a column name and can not be used as a filter in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php:238
 Stack trace:
-#0 [internal function]: app\controllers\LeaveApplicationController->actionCreate()
-#1 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
-#2 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
-#3 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
-#4 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('leave-applicati...', Array)
-#5 C:\wamp2\apache2\htdocs\payroll\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
-#6 C:\wamp2\apache2\htdocs\payroll\index.php(12): yii\base\Application->run()
-#7 {main}
-2019-10-02 10:59:47 [::1][-][592ivbcb3uahhn2mfvp1r54tsj][info][application] $_GET = []
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php(191): yii\db\ActiveRecord::filterCondition(Array, Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition(Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(146): yii\db\BaseActiveRecord::findOne(Array)
+#3 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#10 {main}
+2019-10-01 15:16:49 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
 
-$_POST = [
-    '_csrf' => '7V-zTFD16Y8wGeThI1Flv0oc4m7Ho7tQc_dSxlbaYzukNYcCJaWd2ENXgZBMPgCSDHGVB5PyyAcEvjqPDq46bw=='
-    'LeaveApplication' => [
-        'EmpID' => '4334-5'
-        'type_leave' => 'LEC_UGSLHAWP'
-        'date_from' => '2019-09-16 13:00'
-        'date_to' => '2019-09-19 14:00'
-    ]
-]
+$_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
-    '_identity-backend' => '1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[2,\"tArp_Kv4z1JlzBUZYCL33N24AZL-_77p\",2592000]\";}'
-    'PHPSESSID' => '592ivbcb3uahhn2mfvp1r54tsj'
-    '_csrf' => 'b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT\";}'
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
 ]
 
 $_SESSION = [
@@ -36694,52 +36252,587 @@ $_SESSION = [
 ]
 
 $_SERVER = [
-    'REDIRECT_OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'REDIRECT_PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'REDIRECT_STATUS' => '200'
-    'OPENSSL_CONF' => 'C:\\wamp2/apache2/conf/openssl.cnf'
-    'PATH' => 'C:\\wamp2/apache2/bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp2\\php;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\PuTTY\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
-    'HTTP_HOST' => 'localhost'
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '60653'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/ug-leave-credits/process'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/ug-leave-credits/process'
+    'PHP_SELF' => '/index.php/ug-leave-credits/process'
+    'HTTP_HOST' => 'localhost:8080'
     'HTTP_CONNECTION' => 'keep-alive'
-    'CONTENT_LENGTH' => '279'
     'HTTP_CACHE_CONTROL' => 'max-age=0'
     'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
     'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
     'HTTP_SEC_FETCH_MODE' => 'navigate'
     'HTTP_SEC_FETCH_USER' => '?1'
-    'HTTP_ORIGIN' => 'http://localhost'
-    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
     'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
-    'HTTP_SEC_FETCH_SITE' => 'same-origin'
-    'HTTP_REFERER' => 'http://localhost/payroll/leave-application/create'
+    'HTTP_SEC_FETCH_SITE' => 'none'
     'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
     'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
-    'HTTP_COOKIE' => '_identity-backend=1440f10bd78186b27dcde1a9292a1ed20b8e709158aa42b56c6aac02251b4c70a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B2%2C%22tArp_Kv4z1JlzBUZYCL33N24AZL-_77p%22%2C2592000%5D%22%3B%7D; PHPSESSID=592ivbcb3uahhn2mfvp1r54tsj; _csrf=b374fdcf007ab3a552b262f29a42c466a39e81baecf14d89a0531f9a9ac51cb8a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Ij4NuPtWsNeqooe-FmwiTQsWwIhIXtYT%22%3B%7D'
-    'SystemRoot' => 'C:\\WINDOWS'
-    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
-    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
-    'WINDIR' => 'C:\\WINDOWS'
-    'SERVER_SIGNATURE' => ''
-    'SERVER_SOFTWARE' => 'Apache'
-    'SERVER_NAME' => 'localhost'
-    'SERVER_ADDR' => '::1'
-    'SERVER_PORT' => '80'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1569914209.4612
+    'REQUEST_TIME' => 1569914209
+]
+2019-10-01 15:29:55 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\db\Exception] PDOException: SQLSTATE[07002]: [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php:1290
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT [EmpID],...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(154): yii\db\Query->all()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#12 {main}
+
+Next yii\db\Exception: SQLSTATE[07002]: [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error
+The SQL being executed was: SELECT [EmpID], [type_leave], COUNT(*) AS [count] FROM [Payroll_leave_application] WHERE (date_from >= :from AND date_from <= :to) OR
+                (date_to >= :from AND date_to <= :to) GROUP BY [EmpID], [type_leave] ORDER BY [EmpID], [type_leave] in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Schema.php:674
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'SELECT [EmpID],...')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT [EmpID],...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(154): yii\db\Query->all()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 07002
+    [1] => 0
+    [2] => [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error
+)
+
+2019-10-01 15:29:54 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => 'h-Ugxh2TlZvTd7l25zKXQKeCT0tSJJrDG8nghvYmWYndukaUJMnx4oIQ5geydcMB8cYlADpQ97BuqofKrgsI4Q=='
+    'UgLeaveCreditsProcessForm' => [
+        'currentPeriod' => 'S201902'
+        'processPeriod' => 'S201901'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
     'REMOTE_ADDR' => '::1'
-    'DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'REQUEST_SCHEME' => 'http'
-    'CONTEXT_PREFIX' => ''
-    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp2/apache2/htdocs'
-    'SERVER_ADMIN' => 'admin@example.com'
-    'SCRIPT_FILENAME' => 'C:/wamp2/apache2/htdocs/payroll/index.php'
-    'REMOTE_PORT' => '51622'
-    'REDIRECT_URL' => '/payroll/leave-application/create'
-    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '60892'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
     'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/ug-leave-credits/process'
     'REQUEST_METHOD' => 'POST'
-    'QUERY_STRING' => ''
-    'REQUEST_URI' => '/payroll/leave-application/create'
-    'SCRIPT_NAME' => '/payroll/index.php'
-    'PHP_SELF' => '/payroll/index.php'
-    'REQUEST_TIME_FLOAT' => 1569985187.467
-    'REQUEST_TIME' => 1569985187
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/ug-leave-credits/process'
+    'PHP_SELF' => '/index.php/ug-leave-credits/process'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '204'
+    'HTTP_CONTENT_LENGTH' => '204'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/ug-leave-credits/process'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1569914994.6848
+    'REQUEST_TIME' => 1569914994
+]
+2019-10-01 15:31:47 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\db\Exception] PDOException: SQLSTATE[07002]: [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php:1290
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT [EmpID],...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(157): yii\db\Query->all()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#12 {main}
+
+Next yii\db\Exception: SQLSTATE[07002]: [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error
+The SQL being executed was: SELECT [EmpID], [type_leave], COUNT(*) AS [count] FROM [Payroll_leave_application] WHERE (date_from >= '2019-09-16' AND date_from <= '2019-09-30') OR
+                (date_to >= '2019-09-16' AND date_to <= '2019-09-30') GROUP BY [EmpID], [type_leave] ORDER BY [EmpID], [type_leave] in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Schema.php:674
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'SELECT [EmpID],...')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT [EmpID],...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(157): yii\db\Query->all()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 07002
+    [1] => 0
+    [2] => [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error
+)
+
+2019-10-01 15:31:46 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => 'h-Ugxh2TlZvTd7l25zKXQKeCT0tSJJrDG8nghvYmWYndukaUJMnx4oIQ5geydcMB8cYlADpQ97BuqofKrgsI4Q=='
+    'UgLeaveCreditsProcessForm' => [
+        'currentPeriod' => 'S201902'
+        'processPeriod' => 'S201901'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '60911'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/ug-leave-credits/process'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/ug-leave-credits/process'
+    'PHP_SELF' => '/index.php/ug-leave-credits/process'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '204'
+    'HTTP_CONTENT_LENGTH' => '204'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/ug-leave-credits/process'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1569915106.5559
+    'REQUEST_TIME' => 1569915106
+]
+2019-10-01 15:32:25 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\db\Exception] PDOException: SQLSTATE[07002]: [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php:1290
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT [EmpID],...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(157): yii\db\Query->all()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#12 {main}
+
+Next yii\db\Exception: SQLSTATE[07002]: [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error
+The SQL being executed was: SELECT [EmpID], [type_leave], COUNT(*) AS [c] FROM [Payroll_leave_application] WHERE (date_from >= '2019-09-16' AND date_from <= '2019-09-30') OR
+                (date_to >= '2019-09-16' AND date_to <= '2019-09-30') GROUP BY [EmpID], [type_leave] ORDER BY [EmpID], [type_leave] in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Schema.php:674
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'SELECT [EmpID],...')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT [EmpID],...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(157): yii\db\Query->all()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 07002
+    [1] => 0
+    [2] => [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error
+)
+
+2019-10-01 15:32:25 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => 'h-Ugxh2TlZvTd7l25zKXQKeCT0tSJJrDG8nghvYmWYndukaUJMnx4oIQ5geydcMB8cYlADpQ97BuqofKrgsI4Q=='
+    'UgLeaveCreditsProcessForm' => [
+        'currentPeriod' => 'S201902'
+        'processPeriod' => 'S201901'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '60925'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/ug-leave-credits/process'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/ug-leave-credits/process'
+    'PHP_SELF' => '/index.php/ug-leave-credits/process'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '204'
+    'HTTP_CONTENT_LENGTH' => '204'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/ug-leave-credits/process'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1569915145.4136
+    'REQUEST_TIME' => 1569915145
+]
+2019-10-01 15:32:56 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\db\Exception] PDOException: SQLSTATE[07002]: [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php:1290
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT [EmpID],...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(157): yii\db\Query->all()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#12 {main}
+
+Next yii\db\Exception: SQLSTATE[07002]: [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error
+The SQL being executed was: SELECT [EmpID], [type_leave], COUNT(EmpID) AS [c] FROM [Payroll_leave_application] WHERE (date_from >= '2019-09-16' AND date_from <= '2019-09-30') OR
+                (date_to >= '2019-09-16' AND date_to <= '2019-09-30') GROUP BY [EmpID], [type_leave] ORDER BY [EmpID], [type_leave] in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Schema.php:674
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'SELECT [EmpID],...')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT [EmpID],...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(157): yii\db\Query->all()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 07002
+    [1] => 0
+    [2] => [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error
+)
+
+2019-10-01 15:32:56 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => 'h-Ugxh2TlZvTd7l25zKXQKeCT0tSJJrDG8nghvYmWYndukaUJMnx4oIQ5geydcMB8cYlADpQ97BuqofKrgsI4Q=='
+    'UgLeaveCreditsProcessForm' => [
+        'currentPeriod' => 'S201902'
+        'processPeriod' => 'S201901'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '60933'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/ug-leave-credits/process'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/ug-leave-credits/process'
+    'PHP_SELF' => '/index.php/ug-leave-credits/process'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '204'
+    'HTTP_CONTENT_LENGTH' => '204'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/ug-leave-credits/process'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1569915176.4141
+    'REQUEST_TIME' => 1569915176
+]
+2019-10-01 15:34:16 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\db\Exception] PDOException: SQLSTATE[07002]: [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php:1290
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT [EmpID],...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(157): yii\db\Query->all()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#12 {main}
+
+Next yii\db\Exception: SQLSTATE[07002]: [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error
+The SQL being executed was: SELECT [EmpID], [type_leave], COUNT(*) AS [c] FROM [Payroll_leave_application] WHERE (date_from >= '2019-09-16' AND date_from <= '2019-09-30') OR
+                (date_to >= '2019-09-16' AND date_to <= '2019-09-30') GROUP BY [EmpID], [type_leave] ORDER BY [EmpID], [type_leave] in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Schema.php:674
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'SELECT [EmpID],...')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(1158): yii\db\Command->internalExecute('SELECT [EmpID],...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(237): yii\db\Command->queryAll()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\UgLeaveCreditsController.php(157): yii\db\Query->all()
+#5 [internal function]: app\controllers\UgLeaveCreditsController->actionProcess()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('process', Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ug-leave-credit...', Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#12 {main}
+Additional Information:
+Array
+(
+    [0] => 07002
+    [1] => 0
+    [2] => [Microsoft][ODBC Driver 17 for SQL Server]COUNT field incorrect or syntax error
+)
+
+2019-10-01 15:34:16 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => 'h-Ugxh2TlZvTd7l25zKXQKeCT0tSJJrDG8nghvYmWYndukaUJMnx4oIQ5geydcMB8cYlADpQ97BuqofKrgsI4Q=='
+    'UgLeaveCreditsProcessForm' => [
+        'currentPeriod' => 'S201902'
+        'processPeriod' => 'S201901'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '61049'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/ug-leave-credits/process'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/ug-leave-credits/process'
+    'PHP_SELF' => '/index.php/ug-leave-credits/process'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '204'
+    'HTTP_CONTENT_LENGTH' => '204'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/ug-leave-credits/process'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1569915256.0923
+    'REQUEST_TIME' => 1569915256
+]
+2019-10-02 10:15:50 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'date_from' of non-object in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\LeaveApplicationController.php:232
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): app\controllers\LeaveApplicationController->runAction()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\web\Application->run()
+#6 {main}
+2019-10-02 10:15:49 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => 'nnpiLDCE8uZNrKKbDRkvN8K4GutsYRyf6YU7KZpXOljEJQR-Cd6WnxzL_epYXnt2lPxwoAQVceyc5lxlwnprMA=='
+    'LeaveCreditsProcessForm' => [
+        'currentPeriod' => 'S201902'
+        'processPeriod' => 'S201901'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '56453'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/leave-application/process2'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/leave-application/process2'
+    'PHP_SELF' => '/index.php/leave-application/process2'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '200'
+    'HTTP_CONTENT_LENGTH' => '200'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/leave-application/process2'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1569982549.8387
+    'REQUEST_TIME' => 1569982549
 ]
