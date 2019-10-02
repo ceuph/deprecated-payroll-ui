@@ -45,4 +45,17 @@ class PayPeriod extends \yii\db\ActiveRecord
             'date_to' => 'Date To',
         ];
     }
+
+    /**
+     * @return array
+     */
+    public static function listItems()
+    {
+        return self::find()
+            ->select(["CONCAT(CONVERT(varchar, date_from, 1), ' - ', CONVERT(varchar, date_to, 1)) AS name"])
+            ->indexBy('PrdID')
+            ->orderBy('date_from desc, date_to desc')
+            ->column()
+        ;
+    }
 }

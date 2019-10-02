@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use Faker\Provider\DateTime;
+use DateTimeInterface;
 use Yii;
 
 /**
@@ -66,5 +68,27 @@ class LeaveApplication extends \yii\db\ActiveRecord
             'date_approve_hrd' => 'Date Approve Hrd',
             'status' => 'Status',
         ];
+    }
+
+    public function setDateFromText($date)
+    {
+        $date = $date instanceof DateTimeInterface ? $date : new DateTime($date);
+        $this->date_from = $date->format('Y-m-d H:i:s');
+    }
+
+    public function getDateFromText()
+    {
+        return date('D, d M y', $this->date_from);
+    }
+
+    public function setDateToText($date)
+    {
+        $date = $date instanceof DateTimeInterface ? $date : new DateTime($date);
+        $this->date_to = $date->format('Y-m-d H:i:s');
+    }
+
+    public function getDateToText()
+    {
+        return date('D, d M y', $this->date_to);
     }
 }

@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\helpers\Payroll;
+use app\models\LeaveCreditsProcessForm;
 use Yii;
 use app\models\LeaveApplication;
 use app\models\search\LeaveApplicationSearch;
@@ -211,6 +213,32 @@ class LeaveApplicationController extends Controller
             return 2;
         }
         
+    }
+
+    public function actionProcess2()
+    {
+        $model = new LeaveCreditsProcessForm();
+        $payPeriods = PayPeriod::listItems();
+        $model->currentPeriod = array_keys($payPeriods)[0];
+        $model->processPeriod = array_keys($payPeriods)[1];
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $processPeriod = PayPeriod::findOne(['PrdID' => $model->processPeriod]);
+            $rows = Payroll::leaveQuery(LeaveApplication::tableName(), $processPeriod->date_from, $processPeriod->date_to)
+                ->orderBy('EmpID, type_leave')
+                ->each()
+            ;
+            foreach ($rows as $row) {
+                $from = Payroll::dateFrom($processPeriod->date_from, $row->date_from);
+                $to = Payroll::dateTo($processPeriod->date_to, $row->date_to);
+                var_dump(Payroll::daysDiff($from, $to));
+            }
+        }
+
+        return $this->render('process2', [
+            'model' => $model,
+            'payPeriods' => $payPeriods
+        ]);
     }
 
     protected function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
