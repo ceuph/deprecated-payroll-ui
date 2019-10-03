@@ -2,15 +2,17 @@
 
 namespace app\models;
 
-use Faker\Provider\DateTime;
+use app\helpers\Payroll;
+use DateInterval;
+use DateTime;
 use DateTimeInterface;
 use Yii;
+use yii\db\Exception;
 
 /**
  * This is the model class for table "leave_application".
  *
  * @property string $EmpID
- * @property string $PrdID
  * @property string $type_leave
  * @property string $date_from
  * @property string $date_to
@@ -76,6 +78,69 @@ class LeaveApplication extends \yii\db\ActiveRecord
         $this->date_to=Yii::$app->formatter->asDateTime($this->date_to);
     }
 
+    public function beforeDelete()
+    {
+        // Delete details related to this leave application.
+        LeaveApplicationDetail::deleteAll(['EmpID' => $this->EmpID, 'date_to' => $this->date_to]);
+        return parent::beforeDelete();
+    }
+
+    public function beforeSave($insert)
+    {
+        $START_DATE = Payroll::strToDate($this->date_from);
+        $date_iterator = Payroll::strToDate($this->date_from);
+        $END_DATE = Payroll::strToDate($this->date_to);
+        $transact = Yii::$app->db->beginTransaction();
+        if (!$insert) {
+            try {
+                // Delete details related to this leave application.
+                LeaveApplicationDetail::deleteAll(['EmpID' => $this->EmpID, 'date_to' => $this->date_to]);
+            } catch (\Exception $e) {
+                $transact->rollBack();
+                throw $e;
+            }
+        }
+        // start creating the details
+        do {
+            if (0 == $date_iterator->format('w')
+                || Payroll::getSetting(Payroll::SETTING_DAY_OFF, $this->EmpID, null)
+                == $date_iterator->format('w')) {
+                $date_iterator->add(new DateInterval('P1D'));
+                continue;
+            }
+
+            $leaveApplicationDetail = new LeaveApplicationDetail();
+            $leaveApplicationDetail->EmpID = $this->EmpID;
+            $leaveApplicationDetail->dateToText = $this->date_to;
+
+            if ($START_DATE == $date_iterator) {
+                // Get date and time set by user to determine if afternoon half-day or under-time.
+                $leaveApplicationDetail->dateBreakFromText = $date_iterator;
+            } else {
+                // If not the first day of leave, set the start of office hour as starting time.
+                $leaveApplicationDetail->dateBreakFromText = $date_iterator->format('Y-m-d ')
+                    . Payroll::getSetting(Payroll::SETTING_OFFICE_BEGIN_HOUR, $this->EmpID, ' 08:00');
+            }
+
+            if ($END_DATE->format('Ymd') == $date_iterator->format('Ymd')) {
+                // Get date and time set by user to determine if morning half-day or under-time.
+                $leaveApplicationDetail->dateBreakToText = $END_DATE;
+            } else {
+                // If not the last day of leave, set the end of office hour as ending time.
+                $leaveApplicationDetail->dateBreakToText = $date_iterator->format('Y-m-d ')
+                    . Payroll::getSetting(Payroll::SETTING_OFFICE_END_HOUR, $this->EmpID, ' 17:00');
+            }
+
+            if (!$leaveApplicationDetail->save()) {
+                $transact->rollBack();
+                throw new Exception('An error occurred while saving leave application.');
+            }
+
+            $date_iterator->add(new DateInterval('P1D'));
+        } while ($date_iterator->format('Ymd') <= $END_DATE->format('Ymd'));
+        $transact->commit();
+        return parent::beforeSave($insert);
+    }
 
     public function setDateFromText($date)
     {

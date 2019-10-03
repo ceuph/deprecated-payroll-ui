@@ -36836,3 +36836,1958 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1569982549.8387
     'REQUEST_TIME' => 1569982549
 ]
+2019-10-03 10:01:24 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][Error] Error: Class 'kartik\datetime\DateTimePicker' not found in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\views\leave-application\_form.php:27
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(348): require()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\Users\\jochua...', Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\Users\\jochua...', Array, NULL)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\views\leave-application\create.php(17): yii\base\View->render('_form', Array)
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jochua...')
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\Users\\jochua...', Array)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\Users\\jochua...', Array, Object(app\controllers\LeaveApplicationController))
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('create', Array, Object(app\controllers\LeaveApplicationController))
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\LeaveApplicationController.php(122): yii\base\Controller->render('create', Array)
+#9 [internal function]: app\controllers\LeaveApplicationController->actionCreate()
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#12 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#13 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('leave-applicati...', Array)
+#14 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#16 {main}
+2019-10-03 10:01:24 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58143'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/leave-application/create'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/leave-application/create'
+    'PHP_SELF' => '/index.php/leave-application/create'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/leave-application/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570068084.1308
+    'REQUEST_TIME' => 1570068084
+]
+2019-10-03 10:03:37 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][TypeError] TypeError: DateTime::__construct() expects parameter 1 to be string, object given in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\LeaveApplicationDetail.php:70
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\LeaveApplicationDetail.php(70): DateTime->__construct(Object(app\models\LeaveApplicationDetail))
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Component.php(180): app\models\LeaveApplicationDetail->setDateBreakText(Object(app\models\LeaveApplicationDetail))
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(324): yii\base\Component->__set('dateBreakText', Object(app\models\LeaveApplicationDetail))
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\LeaveApplication.php(111): yii\db\BaseActiveRecord->__set('dateBreakText', Object(app\models\LeaveApplicationDetail))
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php(596): app\models\LeaveApplication->beforeSave(true)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\LeaveApplicationController.php(114): yii\db\BaseActiveRecord->save()
+#8 [internal function]: app\controllers\LeaveApplicationController->actionCreate()
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#12 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('leave-applicati...', Array)
+#13 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#15 {main}
+2019-10-03 10:03:37 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => 'GMvGehymT6csW5Qq92Nezc8cXe1IKfBPC9PKrUE-ioxClKAoJfwr3n08y1uiJAqMmVg3piBdnTx-sK3hGRPb5A=='
+    'LeaveApplication' => [
+        'EmpID' => '4049-4'
+        'type_leave' => 'LEC_UGVLHAWP'
+        'date_from' => '2019-10-04 07:30'
+        'date_to' => '2019-10-08 16:30'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58190'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/leave-application/create'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/leave-application/create'
+    'PHP_SELF' => '/index.php/leave-application/create'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '279'
+    'HTTP_CONTENT_LENGTH' => '279'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/leave-application/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570068217.0626
+    'REQUEST_TIME' => 1570068217
+]
+2019-10-03 11:03:49 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: site/settings in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('settings', Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/settings', Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#2 {main}
+2019-10-03 11:03:48 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58970'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/settings'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/settings'
+    'PHP_SELF' => '/index.php/settings'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570071828.7271
+    'REQUEST_TIME' => 1570071828
+]
+2019-10-03 11:03:55 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: site/setting in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('setting', Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/setting', Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#2 {main}
+2019-10-03 11:03:55 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '58987'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting'
+    'PHP_SELF' => '/index.php/setting'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570071835.0078
+    'REQUEST_TIME' => 1570071835
+]
+2019-10-03 11:04:37 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: site/setting in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('setting', Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/setting', Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#2 {main}
+2019-10-03 11:04:37 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59023'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting'
+    'PHP_SELF' => '/index.php/setting'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570071877.169
+    'REQUEST_TIME' => 1570071877
+]
+2019-10-03 11:05:45 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: site/employee in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('employee', Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/employee', Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#2 {main}
+2019-10-03 11:05:45 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59055'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/employee'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/employee'
+    'PHP_SELF' => '/index.php/employee'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570071945.1844
+    'REQUEST_TIME' => 1570071945
+]
+2019-10-03 11:05:48 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: site/setting in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('setting', Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/setting', Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#2 {main}
+2019-10-03 11:05:48 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59062'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting'
+    'PHP_SELF' => '/index.php/setting'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570071948.8752
+    'REQUEST_TIME' => 1570071948
+]
+2019-10-03 11:23:54 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\ErrorException:8] yii\base\ErrorException: unserialize(): Error at offset 0 of 10 bytes in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\Setting.php:55
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\Setting->afterFind()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(306): yii\db\ActiveQuery->populate()
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveQuery->one()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(121): yii\db\BaseActiveRecord::findOne()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(87): app\controllers\SettingController->findModel()
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): app\controllers\SettingController->actionUpdate()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): app\controllers\SettingController->runAction()
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\web\Application->run()
+#12 {main}
+2019-10-03 11:23:53 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = [
+    'id' => 'DEFAULT_OFFICE_BEGIN_HOUR                                                                                                       '
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59365'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting/update?id=DEFAULT_OFFICE_BEGIN_HOUR+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting/update'
+    'PHP_SELF' => '/index.php/setting/update'
+    'QUERY_STRING' => 'id=DEFAULT_OFFICE_BEGIN_HOUR+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/setting/view?id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570073033.6423
+    'REQUEST_TIME' => 1570073033
+]
+2019-10-03 11:23:59 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\ErrorException:8] yii\base\ErrorException: unserialize(): Error at offset 0 of 10 bytes in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\Setting.php:55
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\Setting->afterFind()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(306): yii\db\ActiveQuery->populate()
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveQuery->one()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(121): yii\db\BaseActiveRecord::findOne()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(56): app\controllers\SettingController->findModel()
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): app\controllers\SettingController->actionView()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): app\controllers\SettingController->runAction()
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\web\Application->run()
+#12 {main}
+2019-10-03 11:23:59 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = [
+    'id' => 'DEFAULT_OFFICE_BEGIN_HOUR'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59364'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting/view?id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting/view'
+    'PHP_SELF' => '/index.php/setting/view'
+    'QUERY_STRING' => 'id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/setting/update?id=DEFAULT_OFFICE_BEGIN_HOUR+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570073039.0223
+    'REQUEST_TIME' => 1570073039
+]
+2019-10-03 11:24:00 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\ErrorException:8] yii\base\ErrorException: unserialize(): Error at offset 0 of 10 bytes in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\Setting.php:55
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\Setting->afterFind()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(306): yii\db\ActiveQuery->populate()
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveQuery->one()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(121): yii\db\BaseActiveRecord::findOne()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(87): app\controllers\SettingController->findModel()
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): app\controllers\SettingController->actionUpdate()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): app\controllers\SettingController->runAction()
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\web\Application->run()
+#12 {main}
+2019-10-03 11:24:00 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = [
+    'id' => 'DEFAULT_OFFICE_BEGIN_HOUR                                                                                                       '
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59369'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting/update?id=DEFAULT_OFFICE_BEGIN_HOUR+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting/update'
+    'PHP_SELF' => '/index.php/setting/update'
+    'QUERY_STRING' => 'id=DEFAULT_OFFICE_BEGIN_HOUR+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/setting/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570073040.0594
+    'REQUEST_TIME' => 1570073040
+]
+2019-10-03 11:24:05 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\ErrorException:8] yii\base\ErrorException: unserialize(): Error at offset 0 of 10 bytes in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\Setting.php:55
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\Setting->afterFind()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(238): yii\db\ActiveQuery->populate()
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\ActiveQuery->all()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\ActiveDataProvider.php(116): yii\db\ActiveQuery->all()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\BaseDataProvider.php(101): yii\data\ActiveDataProvider->prepareModels()
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\BaseDataProvider.php(114): yii\data\ActiveDataProvider->prepare()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\BaseDataProvider.php(155): yii\data\ActiveDataProvider->getModels()
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(190): yii\data\ActiveDataProvider->getCount()
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(158): yii\grid\GridView->renderSummary()
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\grid\GridView.php(326): yii\grid\GridView->renderSection()
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(135): yii\grid\GridView->renderSection()
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(138): yii\grid\GridView->yii\widgets\{closure:C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php:134-138}()
+#12 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(138): ::preg_replace_callback()
+#13 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\grid\GridView.php(301): yii\grid\GridView->run()
+#14 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Widget.php(140): yii\grid\GridView->run()
+#15 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\views\setting\index.php(24): yii\base\Widget::widget()
+#16 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#17 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#18 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#19 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#20 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(43): app\controllers\SettingController->render()
+#21 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): app\controllers\SettingController->actionIndex()
+#22 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#23 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#24 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): app\controllers\SettingController->runAction()
+#25 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#26 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#27 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\web\Application->run()
+#28 {main}
+2019-10-03 11:24:04 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59370'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting/index'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting/index'
+    'PHP_SELF' => '/index.php/setting/index'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/setting/view?id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570073044.5967
+    'REQUEST_TIME' => 1570073044
+]
+2019-10-03 11:24:36 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\ErrorException:8] yii\base\ErrorException: unserialize(): Error at offset 0 of 24 bytes in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\Setting.php:55
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\Setting->afterFind()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(306): yii\db\ActiveQuery->populate()
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveQuery->one()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(121): yii\db\BaseActiveRecord::findOne()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(56): app\controllers\SettingController->findModel()
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): app\controllers\SettingController->actionView()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): app\controllers\SettingController->runAction()
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\web\Application->run()
+#12 {main}
+2019-10-03 11:24:36 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = [
+    'id' => 'DEFAULT_OFFICE_BEGIN_HOUR'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59429'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting/view?id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting/view'
+    'PHP_SELF' => '/index.php/setting/view'
+    'QUERY_STRING' => 'id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/setting/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570073076.5105
+    'REQUEST_TIME' => 1570073076
+]
+2019-10-03 11:26:36 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\ErrorException:8] yii\base\ErrorException: unserialize(): Error at offset 0 of 24 bytes in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\Setting.php:55
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\Setting->afterFind()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(306): yii\db\ActiveQuery->populate()
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveQuery->one()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(121): yii\db\BaseActiveRecord::findOne()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(56): app\controllers\SettingController->findModel()
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): app\controllers\SettingController->actionView()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): app\controllers\SettingController->runAction()
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\web\Application->run()
+#12 {main}
+2019-10-03 11:26:35 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = [
+    'id' => 'DEFAULT_OFFICE_BEGIN_HOUR'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59480'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting/view?id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting/view'
+    'PHP_SELF' => '/index.php/setting/view'
+    'QUERY_STRING' => 'id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/setting/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570073195.5619
+    'REQUEST_TIME' => 1570073195
+]
+2019-10-03 11:30:53 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\ErrorException:8] yii\base\ErrorException: unserialize(): Error at offset 0 of 24 bytes in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\Setting.php:55
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\Setting->afterFind()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(238): yii\db\ActiveQuery->populate()
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\ActiveQuery->all()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\ActiveDataProvider.php(116): yii\db\ActiveQuery->all()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\BaseDataProvider.php(101): yii\data\ActiveDataProvider->prepareModels()
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\BaseDataProvider.php(114): yii\data\ActiveDataProvider->prepare()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\BaseDataProvider.php(155): yii\data\ActiveDataProvider->getModels()
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(190): yii\data\ActiveDataProvider->getCount()
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(158): yii\grid\GridView->renderSummary()
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\grid\GridView.php(326): yii\grid\GridView->renderSection()
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(135): yii\grid\GridView->renderSection()
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(138): yii\grid\GridView->yii\widgets\{closure:C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php:134-138}()
+#12 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(138): ::preg_replace_callback()
+#13 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\grid\GridView.php(301): yii\grid\GridView->run()
+#14 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Widget.php(140): yii\grid\GridView->run()
+#15 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\views\setting\index.php(24): yii\base\Widget::widget()
+#16 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#17 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#18 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#19 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#20 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(43): app\controllers\SettingController->render()
+#21 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): app\controllers\SettingController->actionIndex()
+#22 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#23 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#24 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): app\controllers\SettingController->runAction()
+#25 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#26 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#27 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\web\Application->run()
+#28 {main}
+2019-10-03 11:30:52 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59605'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting/index'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting/index'
+    'PHP_SELF' => '/index.php/setting/index'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/setting/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570073452.5952
+    'REQUEST_TIME' => 1570073452
+]
+2019-10-03 11:31:03 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\ErrorException:8] yii\base\ErrorException: unserialize(): Error at offset 0 of 23 bytes in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\Setting.php:55
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\Setting->afterFind()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(238): yii\db\ActiveQuery->populate()
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\ActiveQuery->all()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\ActiveDataProvider.php(116): yii\db\ActiveQuery->all()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\BaseDataProvider.php(101): yii\data\ActiveDataProvider->prepareModels()
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\BaseDataProvider.php(114): yii\data\ActiveDataProvider->prepare()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\BaseDataProvider.php(155): yii\data\ActiveDataProvider->getModels()
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(190): yii\data\ActiveDataProvider->getCount()
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(158): yii\grid\GridView->renderSummary()
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\grid\GridView.php(326): yii\grid\GridView->renderSection()
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(135): yii\grid\GridView->renderSection()
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(138): yii\grid\GridView->yii\widgets\{closure:C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php:134-138}()
+#12 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(138): ::preg_replace_callback()
+#13 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\grid\GridView.php(301): yii\grid\GridView->run()
+#14 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Widget.php(140): yii\grid\GridView->run()
+#15 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\views\setting\index.php(24): yii\base\Widget::widget()
+#16 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#17 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#18 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#19 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#20 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(43): app\controllers\SettingController->render()
+#21 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): app\controllers\SettingController->actionIndex()
+#22 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#23 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#24 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): app\controllers\SettingController->runAction()
+#25 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#26 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#27 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\web\Application->run()
+#28 {main}
+2019-10-03 11:31:03 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59609'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting/index'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting/index'
+    'PHP_SELF' => '/index.php/setting/index'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/setting/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570073463.0998
+    'REQUEST_TIME' => 1570073463
+]
+2019-10-03 11:31:10 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\ErrorException:8] yii\base\ErrorException: unserialize(): Error at offset 0 of 24 bytes in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\Setting.php:55
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\Setting->afterFind()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\Query.php(238): yii\db\ActiveQuery->populate()
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(133): yii\db\ActiveQuery->all()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\ActiveDataProvider.php(116): yii\db\ActiveQuery->all()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\BaseDataProvider.php(101): yii\data\ActiveDataProvider->prepareModels()
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\BaseDataProvider.php(114): yii\data\ActiveDataProvider->prepare()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\data\BaseDataProvider.php(155): yii\data\ActiveDataProvider->getModels()
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(190): yii\data\ActiveDataProvider->getCount()
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(158): yii\grid\GridView->renderSummary()
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\grid\GridView.php(326): yii\grid\GridView->renderSection()
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(135): yii\grid\GridView->renderSection()
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(138): yii\grid\GridView->yii\widgets\{closure:C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php:134-138}()
+#12 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\widgets\BaseListView.php(138): ::preg_replace_callback()
+#13 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\grid\GridView.php(301): yii\grid\GridView->run()
+#14 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Widget.php(140): yii\grid\GridView->run()
+#15 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\views\setting\index.php(24): yii\base\Widget::widget()
+#16 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#17 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#18 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#19 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#20 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(43): app\controllers\SettingController->render()
+#21 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): app\controllers\SettingController->actionIndex()
+#22 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#23 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#24 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): app\controllers\SettingController->runAction()
+#25 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#26 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#27 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\web\Application->run()
+#28 {main}
+2019-10-03 11:31:10 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59610'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting/index'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting/index'
+    'PHP_SELF' => '/index.php/setting/index'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/setting/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570073470.8208
+    'REQUEST_TIME' => 1570073470
+]
+2019-10-03 11:33:05 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\ErrorException:8] yii\base\ErrorException: unserialize(): Error at offset 11 of 11 bytes in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\Setting.php:55
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(233): app\models\Setting->afterFind()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveQuery.php(306): yii\db\ActiveQuery->populate()
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveQuery->one()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(121): yii\db\BaseActiveRecord::findOne()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(56): app\controllers\SettingController->findModel()
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): app\controllers\SettingController->actionView()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): app\controllers\SettingController->runAction()
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\web\Application->run()
+#12 {main}
+2019-10-03 11:33:05 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = [
+    'id' => 'DEFAULT_OFFICE_BEGIN_HOUR'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59673'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting/view?id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting/view'
+    'PHP_SELF' => '/index.php/setting/view'
+    'QUERY_STRING' => 'id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/setting/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570073585.0714
+    'REQUEST_TIME' => 1570073585
+]
+2019-10-03 11:35:48 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: "app\models\Setting" must have a primary key. in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php:187
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(112): yii\db\ActiveRecord::findByCondition('DEFAULT_OFFICE_...')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(121): yii\db\BaseActiveRecord::findOne('DEFAULT_OFFICE_...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(56): app\controllers\SettingController->findModel('DEFAULT_OFFICE_...')
+#3 [internal function]: app\controllers\SettingController->actionView('DEFAULT_OFFICE_...')
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('view', Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('setting/view', Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#10 {main}
+2019-10-03 11:35:47 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = [
+    'id' => 'DEFAULT_OFFICE_BEGIN_HOUR'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59774'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting/view?id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting/view'
+    'PHP_SELF' => '/index.php/setting/view'
+    'QUERY_STRING' => 'id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/setting/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570073747.8921
+    'REQUEST_TIME' => 1570073747
+]
+2019-10-03 11:39:18 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: The requested page does not exist. in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php:125
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\SettingController.php(56): app\controllers\SettingController->findModel('DEFAULT_OFFICE_...')
+#1 [internal function]: app\controllers\SettingController->actionView('DEFAULT_OFFICE_...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('view', Array)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('setting/view', Array)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#8 {main}
+2019-10-03 11:39:18 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = [
+    'id' => 'DEFAULT_OFFICE_BEGIN_HOUR'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '59838'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting/view?id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting/view'
+    'PHP_SELF' => '/index.php/setting/view'
+    'QUERY_STRING' => 'id=DEFAULT_OFFICE_BEGIN_HOUR'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/setting/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570073958.3814
+    'REQUEST_TIME' => 1570073958
+]
+2019-10-03 11:57:45 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\EmployeeSettingSearch::empid in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('empid')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\EmployeeSettingSearch.php(59): yii\db\BaseActiveRecord->__get('empid')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\EmployeeSettingController.php(39): app\models\EmployeeSettingSearch->search(Array)
+#3 [internal function]: app\controllers\EmployeeSettingController->actionIndex()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('employee-settin...', Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#10 {main}
+2019-10-03 11:57:32 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '60445'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/employee-setting/index'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/employee-setting/index'
+    'PHP_SELF' => '/index.php/employee-setting/index'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570075052.8982
+    'REQUEST_TIME' => 1570075052
+]
+2019-10-03 11:59:12 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\EmployeeSettingSearch::empID in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('empID')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\EmployeeSettingSearch.php(59): yii\db\BaseActiveRecord->__get('empID')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\EmployeeSettingController.php(39): app\models\EmployeeSettingSearch->search(Array)
+#3 [internal function]: app\controllers\EmployeeSettingController->actionIndex()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('employee-settin...', Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#10 {main}
+2019-10-03 11:59:10 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '60466'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/employee-setting/index'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/employee-setting/index'
+    'PHP_SELF' => '/index.php/employee-setting/index'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570075150.9348
+    'REQUEST_TIME' => 1570075150
+]
+2019-10-03 13:04:59 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\EmployeeSettingSearch::Empid in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('Empid')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\EmployeeSettingSearch.php(59): yii\db\BaseActiveRecord->__get('Empid')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\EmployeeSettingController.php(39): app\models\EmployeeSettingSearch->search(Array)
+#3 [internal function]: app\controllers\EmployeeSettingController->actionIndex()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('employee-settin...', Array)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#10 {main}
+2019-10-03 13:04:55 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '61208'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/employee-setting/index'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/employee-setting/index'
+    'PHP_SELF' => '/index.php/employee-setting/index'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570079095.2959
+    'REQUEST_TIME' => 1570079095
+]
+2019-10-03 13:06:12 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\EmployeeSetting::empid in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('empid')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\EmployeeSettingController.php(71): yii\db\BaseActiveRecord->__get('empid')
+#2 [internal function]: app\controllers\EmployeeSettingController->actionCreate()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('employee-settin...', Array)
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#9 {main}
+2019-10-03 13:06:11 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = [
+    '_csrf' => '0VqSxzOKqOz0ZisUyKwr7MxyhNNh0vSbVC0jaQfSEryLBfSVCtDMlaUBdGWd63-tmjbumAmmmeghTkQlX_9D1A=='
+    'EmployeeSetting' => [
+        'EmpID' => '4049-4'
+        'name' => 'DEFAULT_OFFICE_BEGIN_HOUR'
+        'value' => '07:30'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '61245'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/employee-setting/create'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/employee-setting/create'
+    'PHP_SELF' => '/index.php/employee-setting/create'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '219'
+    'HTTP_CONTENT_LENGTH' => '219'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/employee-setting/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570079171.3902
+    'REQUEST_TIME' => 1570079171
+]
+2019-10-03 13:08:25 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Missing required parameters: empID in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Controller.php:149
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(51): yii\web\Controller->bindActionParams(Object(yii\base\InlineAction), Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('update', Array)
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('employee-settin...', Array)
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#6 {main}
+2019-10-03 13:08:25 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = [
+    'EmpID' => '4049-4                                            '
+    'name' => 'DEFAULT_OFFICE_BEGIN_HOUR                                                                                                                                                                                                                                      '
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '61292'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/employee-setting/update?EmpID=4049-4++++++++++++++++++++++++++++++++++++++++++++&name=DEFAULT_OFFICE_BEGIN_HOUR++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/employee-setting/update'
+    'PHP_SELF' => '/index.php/employee-setting/update'
+    'QUERY_STRING' => 'EmpID=4049-4++++++++++++++++++++++++++++++++++++++++++++&name=DEFAULT_OFFICE_BEGIN_HOUR++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/employee-setting/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570079305.8306
+    'REQUEST_TIME' => 1570079305
+]
+2019-10-03 13:10:52 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\EmployeeSetting::empid in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Component.php:154
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('empid')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\views\employee-setting\update.php(10): yii\db\BaseActiveRecord->__get('empid')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(348): require('C:\\Users\\jochua...')
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile('C:\\Users\\jochua...', Array)
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile('C:\\Users\\jochua...', Array, Object(app\controllers\EmployeeSettingController))
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(386): yii\base\View->render('update', Array, Object(app\controllers\EmployeeSettingController))
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\EmployeeSettingController.php(96): yii\base\Controller->render('update', Array)
+#7 [internal function]: app\controllers\EmployeeSettingController->actionUpdate('4049-4         ...', 'DEFAULT_OFFICE_...')
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('update', Array)
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('employee-settin...', Array)
+#12 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#14 {main}
+2019-10-03 13:10:52 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = [
+    'EmpID' => '4049-4                                            '
+    'name' => 'DEFAULT_OFFICE_BEGIN_HOUR                                                                                                                                                                                                                                      '
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '61331'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/employee-setting/update?EmpID=4049-4++++++++++++++++++++++++++++++++++++++++++++&name=DEFAULT_OFFICE_BEGIN_HOUR++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/employee-setting/update'
+    'PHP_SELF' => '/index.php/employee-setting/update'
+    'QUERY_STRING' => 'EmpID=4049-4++++++++++++++++++++++++++++++++++++++++++++&name=DEFAULT_OFFICE_BEGIN_HOUR++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/employee-setting/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570079452.2167
+    'REQUEST_TIME' => 1570079452
+]
+2019-10-03 13:39:02 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: site/setting in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('setting', Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/setting', Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#2 {main}
+2019-10-03 13:39:02 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '61943'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting'
+    'PHP_SELF' => '/index.php/setting'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570081142.8675
+    'REQUEST_TIME' => 1570081142
+]
+2019-10-03 13:39:18 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request: site/setting in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php:128
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('setting', Array)
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/setting', Array)
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#4 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#2 {main}
+2019-10-03 13:39:18 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '61973'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/setting'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/setting'
+    'PHP_SELF' => '/index.php/setting'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'none'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570081158.4207
+    'REQUEST_TIME' => 1570081158
+]
+2019-10-03 14:34:17 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\ErrorException:1] yii\base\ErrorException: Maximum execution time of 300 seconds exceeded in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\LeaveApplication.php:105
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php(676): app\models\LeaveApplication->updateInternal()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(681): app\models\LeaveApplication->update()
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\LeaveApplicationController.php(144): app\models\LeaveApplication->save()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): app\controllers\LeaveApplicationController->actionUpdate()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): app\controllers\LeaveApplicationController->runAction()
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\web\Application->run()
+#10 {main}
+2019-10-03 14:29:17 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = [
+    'date_to' => '2019-10-08 11:30'
+    'EmpID' => '4049-4'
+]
+
+$_POST = [
+    '_csrf' => '5q_YTJReP5f9v8iRmgA0fjQh9M7yHnvVqRGUj3xfRpG88L4erQRb7qzYl-DPR2A_YmWehZpqFqbccvPDJHIX-Q=='
+    'LeaveApplication' => [
+        'EmpID' => '4049-4'
+        'type_leave' => 'LEC_UGVLHAWP'
+        'date_from' => '2019-10-03 11:30'
+        'date_to' => '2019-10-08 11:30'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '62704'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/leave-application/update?date_to=2019-10-08+11%3A30&EmpID=4049-4'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/leave-application/update'
+    'PHP_SELF' => '/index.php/leave-application/update'
+    'QUERY_STRING' => 'date_to=2019-10-08+11%3A30&EmpID=4049-4'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '279'
+    'HTTP_CONTENT_LENGTH' => '279'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/leave-application/update?date_to=2019-10-08+11%3A30&EmpID=4049-4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570084157.6522
+    'REQUEST_TIME' => 1570084157
+]
+2019-10-03 15:46:29 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\InvalidCallException] yii\base\InvalidCallException: Getting write-only property: app\models\LeaveApplicationDetail::dateBreakFromText in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Component.php:151
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(298): yii\base\Component->__get('dateBreakFromTe...')
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\LeaveApplicationDetail.php(103): yii\db\BaseActiveRecord->__get('dateBreakFromTe...')
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\LeaveApplicationDetail.php(93): app\models\LeaveApplicationDetail->computeDays()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php(596): app\models\LeaveApplicationDetail->beforeSave(true)
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\LeaveApplication.php(134): yii\db\BaseActiveRecord->save()
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(794): app\models\LeaveApplication->beforeSave(false)
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php(676): yii\db\BaseActiveRecord->updateInternal(NULL)
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(681): yii\db\ActiveRecord->update(true, NULL)
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\LeaveApplicationController.php(144): yii\db\BaseActiveRecord->save()
+#11 [internal function]: app\controllers\LeaveApplicationController->actionUpdate('2019-10-08 11:3...', '4049-4')
+#12 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#13 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#14 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('update', Array)
+#15 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('leave-applicati...', Array)
+#16 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#17 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\base\Application->run()
+#18 {main}
+2019-10-03 15:46:29 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = [
+    'date_to' => '2019-10-08 11:30'
+    'EmpID' => '4049-4'
+]
+
+$_POST = [
+    '_csrf' => '9A_62L7xT8b-t6hQYsQJSHhaeow1E8TlVqajxTsPueiuUJyKh6srv6_Q9yE3g10JLh4Qx11nqZYjxcSJYyLogA=='
+    'LeaveApplication' => [
+        'EmpID' => '4049-4'
+        'type_leave' => 'LEC_UGVLHAWP'
+        'date_from' => '2019-10-03 11:30'
+        'date_to' => '2019-10-08 11:30'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '63906'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/leave-application/update?date_to=2019-10-08+11%3A30&EmpID=4049-4'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/leave-application/update'
+    'PHP_SELF' => '/index.php/leave-application/update'
+    'QUERY_STRING' => 'date_to=2019-10-08+11%3A30&EmpID=4049-4'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '279'
+    'HTTP_CONTENT_LENGTH' => '279'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/leave-application/update?date_to=2019-10-08+11%3A30&EmpID=4049-4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570088789.4335
+    'REQUEST_TIME' => 1570088789
+]
+2019-10-03 16:03:45 [::1][-][55b98vif5d4tnr71l0cf92o8ja][error][yii\base\ErrorException:8] yii\base\ErrorException: Undefined offset: 1 in C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\LeaveApplicationDetail.php:117
+Stack trace:
+#0 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php(596): app\models\LeaveApplicationDetail->beforeSave()
+#1 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php(566): app\models\LeaveApplicationDetail->insertInternal()
+#2 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): app\models\LeaveApplicationDetail->insert()
+#3 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\models\LeaveApplication.php(134): app\models\LeaveApplicationDetail->save()
+#4 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(794): app\models\LeaveApplication->beforeSave()
+#5 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\ActiveRecord.php(676): app\models\LeaveApplication->updateInternal()
+#6 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\db\BaseActiveRecord.php(681): app\models\LeaveApplication->update()
+#7 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\controllers\LeaveApplicationController.php(144): app\models\LeaveApplication->save()
+#8 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): app\controllers\LeaveApplicationController->actionUpdate()
+#9 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#10 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#11 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Module.php(528): app\controllers\LeaveApplicationController->runAction()
+#12 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#13 C:\Users\jochua\Workspace\ceu-payroll-ui\_protected\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#14 C:\Users\jochua\Workspace\ceu-payroll-ui\index.php(12): yii\web\Application->run()
+#15 {main}
+2019-10-03 16:03:44 [::1][-][55b98vif5d4tnr71l0cf92o8ja][info][application] $_GET = [
+    'date_to' => '2019-10-08 11:30'
+    'EmpID' => '4049-4'
+]
+
+$_POST = [
+    '_csrf' => '4DYeqdHsxsc2lxBtwBGKm4dyuTQqOnbXvkEzr_Iyeb26aXj76LaivmfwTxyVVt7a0TbTf0JOG6TLIlTjqh8o1Q=='
+    'LeaveApplication' => [
+        'EmpID' => '4049-4'
+        'type_leave' => 'LEC_UGVLHAWP'
+        'date_from' => '2019-10-03 11:30'
+        'date_to' => '2019-10-08 11:30'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'default-theme' => 'ngax'
+    'PHPSESSID' => '55b98vif5d4tnr71l0cf92o8ja'
+    '_csrf' => '8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui'
+    'REMOTE_ADDR' => '::1'
+    'REMOTE_PORT' => '64444'
+    'SERVER_SOFTWARE' => 'PHP 7.3.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/leave-application/update?date_to=2019-10-08+11%3A30&EmpID=4049-4'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => 'C:\\Users\\jochua\\Workspace\\ceu-payroll-ui\\index.php'
+    'PATH_INFO' => '/leave-application/update'
+    'PHP_SELF' => '/index.php/leave-application/update'
+    'QUERY_STRING' => 'date_to=2019-10-08+11%3A30&EmpID=4049-4'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '279'
+    'HTTP_CONTENT_LENGTH' => '279'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://localhost:8080'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'
+    'HTTP_SEC_FETCH_MODE' => 'navigate'
+    'HTTP_SEC_FETCH_USER' => '?1'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_SEC_FETCH_SITE' => 'same-origin'
+    'HTTP_REFERER' => 'http://localhost:8080/leave-application/update?date_to=2019-10-08+11%3A30&EmpID=4049-4'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9'
+    'HTTP_COOKIE' => 'default-theme=ngax; PHPSESSID=55b98vif5d4tnr71l0cf92o8ja; _csrf=8713b18bc09593594f96fe99de6c6ee4615540f81e7da0f054a0f8588cd858fda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Z_fR9ZdyQg_qUGTAVDjKhtmsucgLX-Qh%22%3B%7D'
+    'REQUEST_TIME_FLOAT' => 1570089824.8144
+    'REQUEST_TIME' => 1570089824
+]
