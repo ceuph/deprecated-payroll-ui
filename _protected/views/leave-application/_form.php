@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use app\models\LeaveApplication;
 
 use yii\helpers\ArrayHelper;
 use app\models\TypeLeave;
@@ -20,8 +21,18 @@ use kartik\datetime\DateTimePicker;
     <?= $form->field($model, 'EmpID')->textInput(['maxlength' => true]) ?>
 
 
-    <?= $form->field($model, "type_leave")->dropDownList(ArrayHelper::map(TypeLeave::find()->where(['type'=>1])->all(), 'id', 'description'),['prompt'=>'Select Leave', 'class'=>'form-control'
-                ]) ?>
+    <?= $form->field($model, "type_leave")->dropDownList([
+        LeaveApplication::TYPE_LEAVE => 'Leave',
+        LeaveApplication::TYPE_ABSENCE => 'Absent'
+    ],['prompt'=>'Select Type', 'class'=>'form-control']) ?>
+
+    <?= $form->field($model, "status")->dropDownList([
+        LeaveApplication::STATUS_PENDING => 'Pending',
+        LeaveApplication::STATUS_APPROVE_HEAD => 'Approved by Head',
+        LeaveApplication::STATUS_DISAPPROVE_HEAD => 'Disapproved by Head',
+        LeaveApplication::STATUS_APPROVE_HRD => 'Approved by HRD',
+        LeaveApplication::STATUS_DISAPPROVE_HRD => 'Disapproved by HRD'
+    ],['class'=>'form-control']) ?>
 
     <?php 
         echo $form->field($model, 'date_from')->widget(DateTimePicker::classname(), [

@@ -4,6 +4,8 @@
 namespace app\helpers;
 
 use app\models\EmployeeSetting;
+use app\models\LeaveApplication;
+use app\models\LeaveApplicationDetail;
 use app\models\Setting;
 use DateTimeInterface;
 use DateTime;
@@ -63,32 +65,44 @@ class Payroll
     {
         return self::strToDate($date)->format(self::DATE_FORMAT);
     }
+
     /**
-     * @param $tableName string table to query
-     * @param $dateFrom DateTimeInterface|string starting date of pay period
-     * @param $dateTo DateTimeInterface|string end date of pay period
+     * @param $dateFrom DateTimeInterface|string starting date of pay period.
+     * @param $dateTo DateTimeInterface|string end date of pay period.
+     * @param $joinDetails bool set to true to inner join details.
      * @return Query
      * @throws Exception
      */
-    public static function leaveQuery($tableName, $dateFrom, $dateTo)
+    public static function leaveQuery($dateFrom, $dateTo, $joinDetails = false)
     {
-        return (new Query())
-            ->from($tableName)
-            ->where('(date_from >= :start_from AND date_from <= :start_to) OR
-            (date_to >= :end_from AND date_to <= :end_to) OR
-            (date_to < :between_from AND date_to > :between_to)', [
-                ':start_from' => self::dateFormat($dateFrom),
-                ':start_to' => self::dateFormat($dateTo),
-                ':end_from' => self::dateFormat($dateFrom),
-                ':end_to' => self::dateFormat($dateTo),
-                ':between_from' => self::dateFormat($dateFrom),
-                ':between_to' => self::dateFormat($dateTo),
-            ])
-        ;
+        $query = new Query();
+        $query->from(LeaveApplication::tableName() . ' hdr');
+
+        if ($joinDetails) {
+            $query->innerJoin(LeaveApplicationDetail::tableName() . ' dtl', 'hdr.EmpID = dtl.EmpID AND hdr.date_to = dtl.date_to');
+        }
+
+        $query->where('hdr.status <> :status
+        AND (
+            (hdr.date_from >= :start_from AND hdr.date_from <= :start_to)
+            OR (hdr.date_to >= :end_from AND hdr.date_to <= :end_to)
+            OR (hdr.date_to < :between_from AND hdr.date_to > :between_to)
+        )', [
+            ':status' => LeaveApplication::STATUS_PENDING,
+            ':start_from' => self::dateFormat($dateFrom),
+            ':start_to' => self::dateFormat($dateTo),
+            ':end_from' => self::dateFormat($dateFrom),
+            ':end_to' => self::dateFormat($dateTo),
+            ':between_from' => self::dateFormat($dateFrom),
+            ':between_to' => self::dateFormat($dateTo),
+        ]);
+
+        return $query;
     }
+
     /**
-     * @param $processDate|DateTimeInterface string start date of pay period
-     * @param $userDate|DateTimeInterface string start date from employee leave, absence, etc.
+     * @param $processDate |DateTimeInterface string start date of pay period
+     * @param $userDate |DateTimeInterface string start date from employee leave, absence, etc.
      * @return DateTimeInterface
      * @throws Exception
      */

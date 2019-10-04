@@ -231,15 +231,14 @@ class LeaveApplicationController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $processPeriod = PayPeriod::findOne(['PrdID' => $model->processPeriod]);
-            $rows = Payroll::leaveQuery(LeaveApplication::tableName(), $processPeriod->date_from, $processPeriod->date_to)
-                ->orderBy('EmpID, type_leave')
+            $rows = Payroll::leaveQuery($processPeriod->date_from, $processPeriod->date_to, true)
+                ->orderBy('hdr.EmpID, type_leave')
                 ->each()
             ;
             foreach ($rows as $row) {
-                $from = Payroll::dateFrom($processPeriod->date_from, $row->date_from);
-                $to = Payroll::dateTo($processPeriod->date_to, $row->date_to);
-                var_dump(Payroll::daysDiff($from, $to));
+                var_dump($row);
             }
+            exit;
         }
 
         return $this->render('process2', [

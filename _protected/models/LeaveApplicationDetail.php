@@ -24,6 +24,7 @@ use yii\log\Logger;
  */
 class LeaveApplicationDetail extends \yii\db\ActiveRecord
 {
+    const TYPE_NOT_PROCESSED = 'NOT_PROCESSED';
     /**
      * {@inheritdoc}
      */
@@ -40,7 +41,7 @@ class LeaveApplicationDetail extends \yii\db\ActiveRecord
         return [
             [['EmpID', 'date_to', 'date_break_from', 'date_break_to', 'type'], 'required'],
             [['date_to', 'date_break_from', 'date_break_to'], 'safe'],
-            [['hours', 'days', 'type'], 'number'],
+            [['hours', 'days'], 'number'],
             [['EmpID'], 'string', 'max' => 50],
             [['date_to', 'EmpID', 'date_break_from', 'date_break_to'], 'unique', 'targetAttribute' => ['date_to', 'EmpID', 'date_break_from', 'date_break_to']],
         ];
@@ -97,9 +98,8 @@ class LeaveApplicationDetail extends \yii\db\ActiveRecord
 
     public function beforeValidate()
     {
-        if (null === $this->type) {
-            // Type has no use yet. Set to -1 as default.
-            $this->type = -1;
+        if (null == $this->type) {
+            $this->type = self::TYPE_NOT_PROCESSED;
         }
         return parent::beforeValidate();
     }
@@ -111,6 +111,17 @@ class LeaveApplicationDetail extends \yii\db\ActiveRecord
         return parent::beforeSave($insert);
     }
 
+    public function afterFind()
+    {
+        $this->type = trim($this->type);
+        parent::afterFind();
+    }
+
+    /**
+     * Sets the $this->days based on computed value. Result is based on the number of hours
+     * leave per day divided by the number of required office hours per day.
+     * @throws \Exception
+     */
     public function computeDays()
     {
         // TODO skip function if pure teaching
