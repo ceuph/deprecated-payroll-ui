@@ -16,7 +16,10 @@ use yii\log\Logger;
  * @property string $date_break_from
  * @property string $date_break_to
  * @property string $days
- * @property string $hours
+ * @property string $ug_lec
+ * @property string $ug_lab
+ * @property string $gs_lec
+ * @property string $gs_lab
  * @property int $type
  * @property string|DateTimeInterface $dateToText
  * @property string|DateTimeInterface $dateBreakFromText
@@ -25,6 +28,12 @@ use yii\log\Logger;
 class LeaveApplicationDetail extends \yii\db\ActiveRecord
 {
     const TYPE_NOT_PROCESSED = 'NOT_PROCESSED';
+    const TYPE_NON_TEACHING = 'NON_TEACHING';
+    const TYPE_TEACHING_LECTURE = 'TEACHING_LECTURE';
+    const TYPE_TEACHING_LABORATORY = 'TEACHING_LABORATORY';
+    const TYPE_GRADUATE_SCHOOL_LECTURE = 'GRADUATE_SCHOOL_LECTURE';
+    const TYPE_GRADUATE_SCHOOL_LABORATORY = 'GRADUATE_SCHOOL_LABORATORY';
+
     /**
      * {@inheritdoc}
      */
@@ -41,8 +50,8 @@ class LeaveApplicationDetail extends \yii\db\ActiveRecord
         return [
             [['EmpID', 'date_to', 'date_break_from', 'date_break_to', 'type'], 'required'],
             [['date_to', 'date_break_from', 'date_break_to'], 'safe'],
-            [['hours', 'days'], 'number'],
-            [['EmpID'], 'string', 'max' => 50],
+            [['days', 'ug_lec', 'ug_lab', 'gs_lec', 'gs_lab'], 'number'],
+            [['EmpID'], 'string', 'max' => 150],
             [['date_to', 'EmpID', 'date_break_from', 'date_break_to'], 'unique', 'targetAttribute' => ['date_to', 'EmpID', 'date_break_from', 'date_break_to']],
         ];
     }
@@ -113,6 +122,7 @@ class LeaveApplicationDetail extends \yii\db\ActiveRecord
 
     public function afterFind()
     {
+        $this->EmpID = trim($this->EmpID);
         $this->type = trim($this->type);
         parent::afterFind();
     }
@@ -154,10 +164,54 @@ class LeaveApplicationDetail extends \yii\db\ActiveRecord
         if ($interval->i > 0) {
             $this->days += $interval->i / 60 / 8;
         }
+
+        if ($this->days > 0) {
+            $this->addType(self::TYPE_NON_TEACHING);
+        }
     }
 
     public function computeHours()
     {
-        // TODO compute teaching hours affected based on class schedule
+        // TODO compute teaching hours affected based on class schedule, if done, don't forget 'to remove' lines below
+        $this->ug_lec = 1; // to remove
+        $this->ug_lab = 1.5; // to remove
+        $this->gs_lec = 2; // to remove
+        $this->gs_lab = 2.5; // to remove
+
+        if ($this->ug_lec > 0) {
+            $this->addType(self::TYPE_TEACHING_LECTURE);
+        }
+
+        if ($this->ug_lab > 0) {
+            $this->addType(self::TYPE_TEACHING_LABORATORY);
+        }
+
+        if ($this->gs_lec > 0) {
+            $this->addType(self::TYPE_GRADUATE_SCHOOL_LECTURE);
+        }
+
+        if ($this->gs_lab > 0) {
+            $this->addType(self::TYPE_GRADUATE_SCHOOL_LABORATORY);
+        }
+    }
+
+    public function addType($type)
+    {
+        $types = explode('|', $this->type);
+
+        if (in_array(self::TYPE_NOT_PROCESSED, $types)) {
+            unset($types[array_search(self::TYPE_NOT_PROCESSED, $types)]);
+        }
+
+        if (!in_array($type, $types)) {
+            $types[] = $type;
+        }
+
+        $this->type = implode('|', $types);
+    }
+
+    public function isType($type)
+    {
+        return in_array($type, explode('|', $this->type));
     }
 }

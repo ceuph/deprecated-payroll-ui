@@ -20,10 +20,23 @@ use kartik\datetime\DateTimePicker;
 
     <?= $form->field($model, 'EmpID')->textInput(['maxlength' => true]) ?>
 
-
-    <?= $form->field($model, "type_leave")->dropDownList([
+    <?= $form->field($model, "type")->dropDownList([
         LeaveApplication::TYPE_LEAVE => 'Leave',
         LeaveApplication::TYPE_ABSENCE => 'Absent'
+    ],['prompt'=>'Select Type', 'class'=>'form-control']) ?>
+
+    <?= $form->field($model, "type_leave")->dropDownList([
+        LeaveApplication::TYPE_LEAVE_VACATION => 'Vacation',
+        LeaveApplication::TYPE_LEAVE_SICK => 'Sick',
+        LeaveApplication::TYPE_LEAVE_BIRTHDAY => 'Birthday',
+        LeaveApplication::TYPE_LEAVE_EMERGENCY => 'Emergency',
+        LeaveApplication::TYPE_LEAVE_SOLO_PARENT => 'Solo Parent',
+        LeaveApplication::TYPE_LEAVE_PATERNITY => 'Paternity',
+        LeaveApplication::TYPE_LEAVE_MATERNITY => 'Maternity',
+        LeaveApplication::TYPE_LEAVE_UNION => 'Union',
+        LeaveApplication::TYPE_LEAVE_SPECIAL_WOMEN => 'Special Women',
+        LeaveApplication::TYPE_LEAVE_NUPTIAL => 'Nuptial',
+        LeaveApplication::TYPE_LEAVE_OFFICIAL_BUSINESS => 'Official Business',
     ],['prompt'=>'Select Type', 'class'=>'form-control']) ?>
 
     <?= $form->field($model, "status")->dropDownList([

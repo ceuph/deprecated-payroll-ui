@@ -3,10 +3,14 @@
 namespace app\controllers;
 
 use app\helpers\Payroll;
+use app\models\GsLeaveCredits;
+use app\models\LeaveApplicationDetail;
 use app\models\LeaveCreditsProcessForm;
+use app\models\NtLeaveCredits;
 use Yii;
 use app\models\LeaveApplication;
 use app\models\search\LeaveApplicationSearch;
+use yii\log\Logger;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -222,6 +226,15 @@ class LeaveApplicationController extends Controller
         
     }
 
+    /**
+     * Iterate the leave application and its corresponding details based on selected process period.
+     *
+     * The associated leave credit model is created based on the determined type. The EmpID from the leave detail
+     * and the PrdID from selected process period is used when creating the associated leave credit.
+     *
+     * @return string
+     * @throws \yii\db\Exception
+     */
     public function actionProcess2()
     {
         $model = new LeaveCreditsProcessForm();
@@ -231,14 +244,32 @@ class LeaveApplicationController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $processPeriod = PayPeriod::findOne(['PrdID' => $model->processPeriod]);
+            $transaction = Yii::$app->db->beginTransaction();
+
+            NtLeaveCredits::deleteAll(['PrdID' => $model->currentPeriod]);
+            UgLeaveCredits::deleteAll(['PrdID' => $model->currentPeriod]);
+            GsLeaveCredits::deleteAll(['PrdID' => $model->currentPeriod]);
+
             $rows = Payroll::leaveQuery($processPeriod->date_from, $processPeriod->date_to, true)
                 ->orderBy('hdr.EmpID, type_leave')
-                ->each()
+                ->all()
             ;
             foreach ($rows as $row) {
-                var_dump($row);
+                foreach (explode('|', $row['dtl_type']) as $dtl_type) {
+                    $leaveCreditModel = Payroll::getLeaveCreditModel($dtl_type, $row['EmpID'], $model->currentPeriod);
+                    $source = null;
+                    $field = Payroll::getFieldSource($row['hdr_type'], $row['type_leave'], $dtl_type, $source);
+                    $leaveCreditModel->$field += $row[$source];
+                    if (!$leaveCreditModel->save()) {
+                        $transaction->rollBack();
+                        foreach ($leaveCreditModel->getErrors() as $attr => $error) {
+                            Yii::getLogger()->log($attr . ' : ' . $error, Logger::LEVEL_ERROR, 'LeaveApplicationController::actionProcess2');
+                        }
+                        throw new \Exception('An error occurred while processing.');
+                    }
+                }
             }
-            exit;
+            $transaction->commit();
         }
 
         return $this->render('process2', [

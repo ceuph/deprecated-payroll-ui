@@ -30,6 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'EmpID',
+            'type',
             'type_leave',
             'date_from',
             'date_to',

@@ -34,6 +34,18 @@ class LeaveApplication extends \yii\db\ActiveRecord
     const STATUS_APPROVE_HRD = 4;
     const STATUS_DISAPPROVE_HRD = 5;
 
+    const TYPE_LEAVE_VACATION = 'TYPE_LEAVE_VACATION';
+    const TYPE_LEAVE_SICK = 'TYPE_LEAVE_SICK';
+    const TYPE_LEAVE_BIRTHDAY = 'TYPE_LEAVE_BIRTHDAY';
+    const TYPE_LEAVE_EMERGENCY = 'TYPE_LEAVE_EMERGENCY';
+    const TYPE_LEAVE_SOLO_PARENT = 'TYPE_LEAVE_SOLO_PARENT';
+    const TYPE_LEAVE_PATERNITY = 'TYPE_LEAVE_PATERNITY';
+    const TYPE_LEAVE_MATERNITY = 'TYPE_LEAVE_MATERNITY';
+    const TYPE_LEAVE_UNION = 'TYPE_LEAVE_UNION';
+    const TYPE_LEAVE_SPECIAL_WOMEN = 'TYPE_LEAVE_SPECIAL_WOMEN';
+    const TYPE_LEAVE_NUPTIAL = 'TYPE_LEAVE_NUPTIAL';
+    const TYPE_LEAVE_OFFICIAL_BUSINESS = 'TYPE_LEAVE_OFFICIAL_BUSINESS';
+
     const TYPE_LEAVE = 'TYPE_LEAVE';
     const TYPE_ABSENCE = 'TYPE_ABSENCE';
 
@@ -48,10 +60,10 @@ class LeaveApplication extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['EmpID', 'type_leave', 'date_from', 'date_to'], 'required'],
+            [['EmpID', 'type_leave', 'date_from', 'date_to', 'type'], 'required'],
             [['date_from', 'date_to', 'date_created', 'date_updated', 'date_approve_head', 'date_approve_hrd'], 'safe'],
             [['status'], 'integer'],
-            [['EmpID', 'type_leave'], 'string', 'max' => 50],
+            [['EmpID', 'type_leave', 'type'], 'string', 'max' => 50],
             [['date_to', 'EmpID'], 'unique', 'targetAttribute' => ['date_to', 'EmpID']],
         ];
     }
@@ -63,7 +75,8 @@ class LeaveApplication extends \yii\db\ActiveRecord
     {
         return [
             'EmpID' => 'Emp ID',
-            'type_leave' => 'Type',
+            'type' => 'Type',
+            'type_leave' => 'Sub-Type',
             'date_from' => 'Date From',
             'date_to' => 'Date To',
             'date_created' => 'Date Created',
@@ -93,7 +106,7 @@ class LeaveApplication extends \yii\db\ActiveRecord
             $this->status = self::STATUS_PENDING;
         }
 
-        if (self::STATUS_PENDING === $this->status) {
+        if (self::STATUS_PENDING == $this->status) {
             $this->createDetails();
         }
 

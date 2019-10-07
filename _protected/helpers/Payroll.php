@@ -4,9 +4,12 @@
 namespace app\helpers;
 
 use app\models\EmployeeSetting;
+use app\models\GsLeaveCredits;
 use app\models\LeaveApplication;
 use app\models\LeaveApplicationDetail;
+use app\models\NtLeaveCredits;
 use app\models\Setting;
+use app\models\UgLeaveCredits;
 use DateTimeInterface;
 use DateTime;
 use Exception;
@@ -67,6 +70,7 @@ class Payroll
     }
 
     /**
+     * Get the leave application and its corresponding details.
      * @param $dateFrom DateTimeInterface|string starting date of pay period.
      * @param $dateTo DateTimeInterface|string end date of pay period.
      * @param $joinDetails bool set to true to inner join details.
@@ -76,10 +80,17 @@ class Payroll
     public static function leaveQuery($dateFrom, $dateTo, $joinDetails = false)
     {
         $query = new Query();
-        $query->from(LeaveApplication::tableName() . ' hdr');
+        $query
+            ->select(
+                'hdr.EmpID, hdr.type hdr_type, type_leave, date_from, hdr.date_to,
+                date_approve_head, date_approve_hrd, status'
+            )
+            ->from(LeaveApplication::tableName() . ' hdr');
 
         if ($joinDetails) {
-            $query->innerJoin(LeaveApplicationDetail::tableName() . ' dtl', 'hdr.EmpID = dtl.EmpID AND hdr.date_to = dtl.date_to');
+            $query
+                ->addSelect('dtl.type dtl_type, date_break_from, date_break_to, days, ug_lec, ug_lab, gs_lec, gs_lab')
+                ->innerJoin(LeaveApplicationDetail::tableName() . ' dtl', 'hdr.EmpID = dtl.EmpID AND hdr.date_to = dtl.date_to');
         }
 
         $query->where('hdr.status <> :status
@@ -162,5 +173,115 @@ class Payroll
         }
 
         return $setting;
+    }
+
+    /**
+     * Determine the field to set the value and the source to get the value based on 3 different types.
+     * @param $type string LeaveApplication::TYPE_LEAVE|LeaveApplication::TYPE_ABSENCE
+     * @param $type_leave  string LeaveApplication::TYPE_LEAVE_*
+     * @param $type_detail string LeaveApplicationDetail::TYPE_TEACHING_*
+     * @param $source set source based on type_detail
+     * @return string
+     */
+    public static function getFieldSource($type, $type_leave, $type_detail, &$source)
+    {
+        $field = null;
+        $prefix = null;
+        $suffix = null;
+        $hour_suffix = null;
+        $field = null;
+
+        if (LeaveApplicationDetail::TYPE_NON_TEACHING == $type_detail) {
+            $prefix = 'LC_NT_';
+            $hour_suffix = LeaveApplication::TYPE_ABSENCE == $type ? 'DAWP' : '';
+            $source = 'days';
+        }
+
+        if (LeaveApplicationDetail::TYPE_TEACHING_LECTURE == $type_detail || LeaveApplicationDetail::TYPE_TEACHING_LABORATORY == $type_detail) {
+            $prefix = LeaveApplicationDetail::TYPE_TEACHING_LECTURE == $type_detail ? 'LEC_UG' : 'LAB_UG';
+            $hour_suffix = LeaveApplication::TYPE_ABSENCE == $type ? 'HAWP' : '';
+            $source = LeaveApplicationDetail::TYPE_TEACHING_LECTURE == $type_detail ? 'ug_lec' : 'ug_lab';
+        }
+
+        if (LeaveApplicationDetail::TYPE_GRADUATE_SCHOOL_LECTURE == $type_detail || LeaveApplicationDetail::TYPE_GRADUATE_SCHOOL_LABORATORY == $type_detail) {
+            $prefix = LeaveApplicationDetail::TYPE_GRADUATE_SCHOOL_LECTURE == $type_detail ? 'LEC_GS' : 'LAB_GS';
+            $hour_suffix = LeaveApplication::TYPE_ABSENCE == $type ? 'HAWP' : '';
+            $source = LeaveApplicationDetail::TYPE_GRADUATE_SCHOOL_LECTURE == $type_detail ? 'gs_lec' : 'gs_lab';
+        }
+
+        switch ($type_leave) {
+            case LeaveApplication::TYPE_LEAVE_VACATION:
+                $suffix = 'VL' . $hour_suffix;
+                break;
+            case LeaveApplication::TYPE_LEAVE_SICK:
+                $suffix = 'SL' . $hour_suffix;
+                break;
+            case LeaveApplication::TYPE_LEAVE_BIRTHDAY:
+                $suffix = 'BL' . $hour_suffix;
+                break;
+            case LeaveApplication::TYPE_LEAVE_EMERGENCY:
+                $suffix = 'EL' . $hour_suffix;
+                break;
+            case LeaveApplication::TYPE_LEAVE_SOLO_PARENT:
+                $suffix = 'SPL' . $hour_suffix;
+                break;
+            case LeaveApplication::TYPE_LEAVE_PATERNITY:
+                $suffix = 'PL' . $hour_suffix;
+                break;
+            case LeaveApplication::TYPE_LEAVE_MATERNITY:
+                $suffix = 'ML' . $hour_suffix;
+                break;
+            case LeaveApplication::TYPE_LEAVE_UNION:
+                $suffix = 'UL' . $hour_suffix;
+                break;
+            case LeaveApplication::TYPE_LEAVE_SPECIAL_WOMEN:
+                $suffix = 'SLW' . $hour_suffix;
+                break;
+            case LeaveApplication::TYPE_LEAVE_NUPTIAL:
+                $suffix = 'NL' . $hour_suffix;
+                break;
+            case LeaveApplication::TYPE_LEAVE_OFFICIAL_BUSINESS:
+                $suffix = 'OB';
+                break;
+        }
+
+        return $prefix . $suffix;
+    }
+
+    /**
+     * Determine the model to use based on dtl_type.
+     * @param $dtl_type string LeaveApplicationDetail::TYPE_TEACHING_*
+     * @param $emp_id string employee number
+     * @param $period string period id
+     * @return GsLeaveCredits|NtLeaveCredits|UgLeaveCredits|null
+     */
+    public static function getLeaveCreditModel($dtl_type, $emp_id, $period)
+    {
+        $leaveCreditModel = null;
+        if (LeaveApplicationDetail::TYPE_NON_TEACHING == $dtl_type) {
+            $leaveCreditModel = NtLeaveCredits::findOne(['EmpID' => $emp_id, 'PrdID' => $period]);
+            if (null === $leaveCreditModel) {
+                $leaveCreditModel = new NtLeaveCredits();
+            }
+        }
+
+        if (LeaveApplicationDetail::TYPE_TEACHING_LECTURE == $dtl_type || LeaveApplicationDetail::TYPE_TEACHING_LABORATORY == $dtl_type) {
+            $leaveCreditModel = UgLeaveCredits::findOne(['EmpID' => $emp_id, 'PrdID' => $period]);
+            if (null === $leaveCreditModel) {
+                $leaveCreditModel = new UgLeaveCredits();
+            }
+        }
+
+        if (LeaveApplicationDetail::TYPE_GRADUATE_SCHOOL_LECTURE == $dtl_type || LeaveApplicationDetail::TYPE_GRADUATE_SCHOOL_LABORATORY == $dtl_type) {
+            $leaveCreditModel = GsLeaveCredits::findOne(['EmpID' => $emp_id, 'PrdID' => $period]);
+            if (null === $leaveCreditModel) {
+                $leaveCreditModel = new GsLeaveCredits();
+            }
+        }
+
+        $leaveCreditModel->EmpID = $emp_id;
+        $leaveCreditModel->PrdID = $period;
+
+        return $leaveCreditModel;
     }
 }
