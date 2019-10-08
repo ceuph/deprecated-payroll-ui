@@ -111,8 +111,6 @@ class LeaveApplicationController extends Controller
         $model = new LeaveApplication();
 
         if ($model->load(Yii::$app->request->post())) {
-
-            $model->status =LeaveApplication::STATUS_PENDING;
             $model->date_created = date('Y-m-d H:i:s');
             $model->date_updated = date('Y-m-d H:i:s');
             if($model->save())

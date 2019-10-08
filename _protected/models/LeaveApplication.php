@@ -49,6 +49,10 @@ class LeaveApplication extends \yii\db\ActiveRecord
     const TYPE_LEAVE = 'TYPE_LEAVE';
     const TYPE_ABSENCE = 'TYPE_ABSENCE';
 
+    private $_EmpID;
+    private $_date_from;
+    private $_date_to;
+
     public static function tableName()
     {
         return 'Payroll_leave_application';
@@ -91,6 +95,10 @@ class LeaveApplication extends \yii\db\ActiveRecord
         parent::afterFind ();
         $this->date_from=Yii::$app->formatter->asDateTime($this->date_from);
         $this->date_to=Yii::$app->formatter->asDateTime($this->date_to);
+
+        $this->_EmpID = $this->EmpID;
+        $this->_date_from = $this->date_from;
+        $this->_date_to = $this->date_to;
     }
 
     public function beforeDelete()
@@ -104,6 +112,24 @@ class LeaveApplication extends \yii\db\ActiveRecord
     {
         if (null === $this->status) {
             $this->status = self::STATUS_PENDING;
+        }
+
+        if ($this->isNewRecord && self::STATUS_PENDING != $this->status) {
+            $this->addError('status', 'Status should be pending for new applications.');
+        }
+
+        if (!$this->isNewRecord && self::STATUS_PENDING != $this->status) {
+            if ($this->_EmpID != $this->EmpID) {
+                $this->addError('EmpID', 'Status should be pending before changing EmpID');
+            }
+
+            if ($this->_date_from != $this->date_from) {
+                $this->addError('date_from', 'Status should be pending before changing Date From');
+            }
+
+            if ($this->_date_to != $this->date_to) {
+                $this->addError('date_to', 'Status should be pending before changing Date To');
+            }
         }
 
         if (self::STATUS_PENDING == $this->status) {
@@ -229,7 +255,7 @@ class LeaveApplication extends \yii\db\ActiveRecord
         if (!$this->isNewRecord) {
             try {
                 // Delete details related to this leave application.
-                LeaveApplicationDetail::deleteAll(['EmpID' => $this->EmpID, 'date_to' => $this->date_to]);
+                LeaveApplicationDetail::deleteAll(['EmpID' => $this->_EmpID, 'date_to' => $this->_date_to]);
             } catch (\Exception $e) {
                 $transaction->rollBack();
                 throw $e;
