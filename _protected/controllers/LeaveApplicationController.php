@@ -115,7 +115,7 @@ class LeaveApplicationController extends Controller
             $model->date_updated = date('Y-m-d H:i:s');
             if($model->save())
             {
-                return $this->redirect(['view', 'date_to' => $model->date_to, 'EmpID' => $model->EmpID]);
+                return $this->redirect(['index']);
             }
 
         }
@@ -144,7 +144,7 @@ class LeaveApplicationController extends Controller
             $model->date_updated = date('Y-m-d H:i:s');
             
             if($model->save()){
-                return $this->redirect(['view', 'date_to' => $model->date_to, 'EmpID' => $model->EmpID]);
+                return $this->redirect(['index']);
             }
         }
 
