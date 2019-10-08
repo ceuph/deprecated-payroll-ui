@@ -50,6 +50,56 @@ class Payroll
     const SETTING_BREAK_TIME = 'SETTING_BREAK_TIME';
 
     /**
+     * Setting SETTING_VL_CREDITS.
+     */
+    const SETTING_VL_CREDITS = 'SETTING_VL_CREDITS';
+
+    /**
+     * Setting SETTING_SL_CREDITS.
+     */
+    const SETTING_SL_CREDITS = 'SETTING_SL_CREDITS';
+
+    /**
+     * Setting SETTING_BD_CREDITS.
+     */
+    const SETTING_BD_CREDITS = 'SETTING_BD_CREDITS';
+
+    /**
+     * Setting SETTING_EL_CREDITS.
+     */
+    const SETTING_EL_CREDITS = 'SETTING_EL_CREDITS';
+
+    /**
+     * Setting SETTING_SP_CREDITS.
+     */
+    const SETTING_SP_CREDITS = 'SETTING_SP_CREDITS';
+
+    /**
+     * Setting SETTING_PL_CREDITS.
+     */
+    const SETTING_PL_CREDITS = 'SETTING_PL_CREDITS';
+
+    /**
+     * Setting SETTING_ML_CREDITS.
+     */
+    const SETTING_ML_CREDITS = 'SETTING_ML_CREDITS';
+
+    /**
+     * Setting SETTING_UL_CREDITS.
+     */
+    const SETTING_UL_CREDITS = 'SETTING_UL_CREDITS';
+
+    /**
+     * Setting SETTING_SLW_CREDITS.
+     */
+    const SETTING_SLW_CREDITS = 'SETTING_SLW_CREDITS';
+
+    /**
+     * Setting SETTING_NL_CREDITS.
+     */
+    const SETTING_NL_CREDITS = 'SETTING_NL_CREDITS';
+
+    /**
      * @param $date string
      * @return DateTime|DateTimeInterface
      * @throws Exception
@@ -150,6 +200,16 @@ class Payroll
             self::SETTING_OFFICE_END_HOUR => 'End of Office Hour (e.g. 17:00)',
             self::SETTING_OFFICE_HOUR_NUMBER => 'Number of Office Hour per Day (e.g. 8 for 8hrs)',
             self::SETTING_OFFICE_WEEK_HOUR => 'Number of Office Hour per Week (e.g. 40 for 40hrs)',
+            self::SETTING_SL_CREDITS => 'Number of Sick Leave Credits',
+            self::SETTING_VL_CREDITS => 'Number of Vacation Leave Credits',
+            self::SETTING_BD_CREDITS => 'Number of Birth Day Leave Credits',
+            self::SETTING_EL_CREDITS => 'Number of Emergency Leave Credits',
+            self::SETTING_SP_CREDITS => 'Number of Solo Parent Leave Credits',
+            self::SETTING_PL_CREDITS => 'Number of Paternity Leave Credits',
+            self::SETTING_ML_CREDITS => 'Number of Maternity Leave Credits',
+            self::SETTING_UL_CREDITS => 'Number of Union Leave Credits',
+            self::SETTING_SLW_CREDITS => 'Number of Special Leave for Women Credits',
+            self::SETTING_NL_CREDITS => 'Number of Nuptial Leave Credits',
         ];
     }
 

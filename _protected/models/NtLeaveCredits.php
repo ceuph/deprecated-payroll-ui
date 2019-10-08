@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use app\helpers\Payroll;
+
 use Yii;
 
 /**
@@ -127,5 +129,24 @@ class NtLeaveCredits extends \yii\db\ActiveRecord
             'NT_OBRem'  =>  'Non-Teaching Official Business Remarks',
 
         ];
+    }
+
+    public function beforeSave($insert)
+    {
+        if(substr($this->PrdID, -2) == 01)
+        {
+            $this->LC_NT_VLAdj = Payroll::getSetting(Payroll::SETTING_VL_CREDITS);
+            $this->LC_NT_SLAdj = Payroll::getSetting(Payroll::SETTING_SL_CREDITS);
+            $this->LC_NT_BLAdj = Payroll::getSetting(Payroll::SETTING_BD_CREDITS);
+            $this->LC_NT_ELAdj = Payroll::getSetting(Payroll::SETTING_EL_CREDITS);
+            $this->LC_NT_SLAdj = Payroll::getSetting(Payroll::SETTING_SL_CREDITS);
+            $this->LC_NT_PLAdj = Payroll::getSetting(Payroll::SETTING_PL_CREDITS);
+            $this->LC_NT_MLAdj = Payroll::getSetting(Payroll::SETTING_ML_CREDITS);
+            $this->LC_NT_ULAdj = Payroll::getSetting(Payroll::SETTING_UL_CREDITS);
+            $this->LC_NT_SLWAdj = Payroll::getSetting(Payroll::SETTING_SLW_CREDITS);
+            $this->LC_NT_NLAdj = Payroll::getSetting(Payroll::SETTING_NL_CREDITS);
+        }
+        
+        return parent::beforeSave($insert);
     }
 }

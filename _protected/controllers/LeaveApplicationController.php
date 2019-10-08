@@ -263,6 +263,7 @@ class LeaveApplicationController extends Controller
                     $source = null;
                     $field = Payroll::getFieldSource($row['hdr_type'], $row['type_leave'], $dtl_type, $source);
                     $leaveCreditModel->$field += $row[$source];
+
                     if (!$leaveCreditModel->save()) {
                         $transaction->rollBack();
                         foreach ($leaveCreditModel->getErrors() as $attr => $error) {

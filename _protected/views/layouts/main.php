@@ -40,6 +40,7 @@ AppAsset::register($this);
         ['label' => 'Employee-Settings', 'url' => ['/employee-setting/index'],'linkOptions' => ['target'=>'_blank']],
 
         ['label' => 'Settings', 'url' => ['/setting/index'],'linkOptions' => ['target'=>'_blank']],
+        ['label' => 'Pay-Period', 'url' => ['/pay-period/index'],'linkOptions' => ['target'=>'_blank']],
 
     ]];
 
