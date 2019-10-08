@@ -34,7 +34,13 @@ AppAsset::register($this);
     ]);
 
     // everyone can see Home page
-    $menuItems[] = ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']];
+    $menuItems[] = ['label' => Yii::t('app', 'University-Leave'), 'items'=> [
+        ['label' => 'Leave-Application', 'url' => ['/leave-application/index'],'linkOptions' => ['target'=>'_blank']],
+        ['label' => 'Leave-Process', 'url' => ['/leave-application/process2'],'linkOptions' => ['target'=>'_blank']],
+        ['label' => 'Employee-Settings', 'url' => ['/employee-setting/index'],'linkOptions' => ['target'=>'_blank']],
+
+    ]];
+
     $menuItems[] = ['label' => Yii::t('app', 'Leave-Credits'), 'items'=> [
         ['label' => 'Under-Grad', 'url' => ['/ug-leave-credits/index']],
         ['label' => 'Grad-School', 'url' => ['/gs-leave-credits/index']],
