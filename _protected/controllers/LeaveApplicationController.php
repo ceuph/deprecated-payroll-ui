@@ -113,8 +113,7 @@ class LeaveApplicationController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->date_created = date('Y-m-d H:i:s');
             $model->date_updated = date('Y-m-d H:i:s');
-            if($model->save())
-            {
+            if ($model->save()) {
                 return $this->redirect(['index']);
             }
 
@@ -142,8 +141,8 @@ class LeaveApplicationController extends Controller
         if ($model->load(Yii::$app->request->post())) {
 
             $model->date_updated = date('Y-m-d H:i:s');
-            
-            if($model->save()){
+
+            if ($model->save()) {
                 return $this->redirect(['index']);
             }
         }
@@ -188,8 +187,8 @@ class LeaveApplicationController extends Controller
 
     public function actionProcess()
     {
-        
-        if(Yii::$app->request->post('ids')){
+
+        if (Yii::$app->request->post('ids')) {
 
             $ids = Yii::$app->request->post('ids');
 
@@ -199,11 +198,10 @@ class LeaveApplicationController extends Controller
 
                 $ugLeave = new UgLeaveCredits;
 
-                $leave = LeaveApplication::find()->where(['EmpID'=>$id['EmpID']])->andWhere(['date_to'=>$id['date_to']])->one();
+                $leave = LeaveApplication::find()->where(['EmpID' => $id['EmpID']])->andWhere(['date_to' => $id['date_to']])->one();
 
-               $payPeriods = PayPeriod::find()->where(['<=','date_from',$leave['date_from']])->andWhere(['>=','date_to',$leave['date_to']])->one();
+                $payPeriods = PayPeriod::find()->where(['<=', 'date_from', $leave['date_from']])->andWhere(['>=', 'date_to', $leave['date_to']])->one();
 
-               
 
                 var_dump($payPeriods['PrdID']);
 
@@ -215,13 +213,13 @@ class LeaveApplicationController extends Controller
 
             }
 
-            
+
             return 1;
-            
-        }else{
+
+        } else {
             return 2;
         }
-        
+
     }
 
     /**
@@ -250,9 +248,16 @@ class LeaveApplicationController extends Controller
 
             $rows = Payroll::leaveQuery($processPeriod->date_from, $processPeriod->date_to, true)
                 ->orderBy('hdr.EmpID, type_leave')
-                ->all()
-            ;
+                ->all();
             foreach ($rows as $row) {
+                if (!(
+                    date('Ymd', strtotime($row['date_break_from']))
+                    >= date('Ymd', strtotime($processPeriod->date_from))
+                    && date('Ymd', strtotime($row['date_break_from']))
+                    <= date('Ymd', strtotime($processPeriod->date_to))
+                )) {
+                    continue;
+                }
                 foreach (explode('|', $row['dtl_type']) as $dtl_type) {
                     $leaveCreditModel = Payroll::getLeaveCreditModel($dtl_type, $row['EmpID'], $model->currentPeriod);
                     $source = null;
@@ -276,7 +281,7 @@ class LeaveApplicationController extends Controller
         ]);
     }
 
-    protected function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
+    protected function dateDifference($date_1, $date_2, $differenceFormat = '%a')
     {
         $datetime1 = date_create($date_1);
         $datetime2 = date_create($date_2);
