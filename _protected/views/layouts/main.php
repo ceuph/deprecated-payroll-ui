@@ -39,6 +39,8 @@ AppAsset::register($this);
         ['label' => 'Leave-Process', 'url' => ['/leave-application/process2'],'linkOptions' => ['target'=>'_blank']],
         ['label' => 'Employee-Settings', 'url' => ['/employee-setting/index'],'linkOptions' => ['target'=>'_blank']],
 
+        ['label' => 'Settings', 'url' => ['/setting/index'],'linkOptions' => ['target'=>'_blank']],
+
     ]];
 
     $menuItems[] = ['label' => Yii::t('app', 'Leave-Credits'), 'items'=> [
