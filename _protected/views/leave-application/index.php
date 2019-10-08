@@ -22,15 +22,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-<?php Pjax::begin(['id' => 'leave-application']) ?>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'id'=> 'grid',
         'columns' => [
-            ['class' => 'yii\grid\CheckboxColumn'],
-
             'EmpID',
             'type_leave',
             'date_from',
@@ -44,17 +40,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
- <?php Pjax::end() ?>
-
-    <?php
-        echo Html::button(
-        'Process',
-        [
-            'class'=>"btn btn-fill btn-primary",
-            'onclick' => "approve('#grid', '" . Url::to(['leave-application/process']) . "','#leave-application')"
-        ]
-        );
-    ?>
-
 
 </div>
