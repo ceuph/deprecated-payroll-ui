@@ -185,34 +185,41 @@ class LeaveApplicationController extends Controller
     }
 
 
-    public function actionProcess()
+    public function actionApproveHrd()
     {
 
         if (Yii::$app->request->post('ids')) {
 
             $ids = Yii::$app->request->post('ids');
 
-            $leaveApps = array();
+            foreach ($ids as $id) {
+
+                $leaveApp = LeaveApplication::findOne($id);
+                $leaveApp->status = LeaveApplication::STATUS_APPROVE_HRD;
+                $leaveApp->save();
+            }
+
+            return 1;
+
+        } else {
+            return 2;
+        }
+
+    }
+
+    public function actionDisapproveHrd()
+    {
+
+        if (Yii::$app->request->post('ids')) {
+
+            $ids = Yii::$app->request->post('ids');
 
             foreach ($ids as $id) {
 
-                $ugLeave = new UgLeaveCredits;
-
-                $leave = LeaveApplication::find()->where(['EmpID' => $id['EmpID']])->andWhere(['date_to' => $id['date_to']])->one();
-
-                $payPeriods = PayPeriod::find()->where(['<=', 'date_from', $leave['date_from']])->andWhere(['>=', 'date_to', $leave['date_to']])->one();
-
-
-                var_dump($payPeriods['PrdID']);
-
-                /*
-                $ugLeave->EmpID = $leave->EmpID;
-                $ugLeave->PrdID = $payPeriods['PrdID'];
-                $ugLeave->save();
-                */
-
+                $leaveApp = LeaveApplication::findOne($id);
+                $leaveApp->status = LeaveApplication::STATUS_DISAPPROVE_HRD;
+                $leaveApp->save();
             }
-
 
             return 1;
 

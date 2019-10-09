@@ -8,7 +8,10 @@ use yii\web\View;
 /* @var $this yii\web\View */
 /* @var $model app\models\LeaveCreditsProcessForm */
 /* @var $payPeriods string[] */
+?>
+<h1><?= Html::encode('Process Leave-Absence Application') ?></h1>
 
+<?php
 $form = ActiveForm::begin([
     'id' => 'ug-leave-credits-process-form'
 ]);

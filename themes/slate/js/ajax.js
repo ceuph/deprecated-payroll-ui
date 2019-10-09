@@ -6,12 +6,11 @@ function approve(gridId, url,pjaxId)
         url: url, 
         data: {ids: keys},
         success: function(result){
-            /*if(result == 1)
+            if(result == 1)
               {
                 $.pjax.reload({container: pjaxId, async: false}); 
 
-              }*/
-            console.log(result);
+              }
         },
 
         error: function(){

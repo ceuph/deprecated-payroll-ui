@@ -53,6 +53,7 @@ use kartik\datetime\DateTimePicker;
         'pluginOptions' => [
             'autoclose' => true,
             'pickerPosition' => 'top-right',
+            'daysOfWeekDisabled' => [0],
             
         ]
     ]);
@@ -64,6 +65,7 @@ use kartik\datetime\DateTimePicker;
         'pluginOptions' => [
             'autoclose' => true,
             'pickerPosition' => 'top-right',
+            'daysOfWeekDisabled' => [0],
     
         ]
     ]);

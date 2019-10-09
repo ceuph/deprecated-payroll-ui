@@ -91,6 +91,90 @@ class LeaveApplication extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getTypeName($type)
+    {
+        if($type == self::TYPE_LEAVE)
+        {
+            return "LEAVE";
+        }else{
+
+            return "ABSENCE";
+        }
+    }
+
+    public function getSubTypeName($subType)
+    {
+        if($subType == self::TYPE_LEAVE_VACATION)
+        {
+            return "VACATION LEAVE";
+
+        }elseif($subType == self::TYPE_LEAVE_SICK){
+
+            return "SICK LEAVE";
+
+        }elseif($subType == self::TYPE_LEAVE_BIRTHDAY){
+
+            return "BIRTHDAY LEAVE";
+
+        }elseif($subType == self::TYPE_LEAVE_EMERGENCY){
+
+            return "EMERGENCY LEAVE";
+
+        }elseif($subType == self::TYPE_LEAVE_SOLO_PARENT){
+
+            return "SOLO PARENT LEAVE";
+
+        }elseif($subType == self::TYPE_LEAVE_PATERNITY){
+
+            return "PATERNITY LEAVE";
+
+        }elseif($subType == self::TYPE_LEAVE_MATERNITY){
+
+            return "MATERNITY LEAVE";
+
+        }elseif($subType == self::TYPE_LEAVE_UNION){
+
+            return "UNION LEAVE";
+
+        }elseif($subType == self::TYPE_LEAVE_SPECIAL_WOMEN){
+
+            return "SPECIAL WOMEN LEAVE";
+
+        }elseif($subType == self::TYPE_LEAVE_NUPTIAL){
+
+            return "NUPTIAL LEAVE";
+
+        }else{
+
+            return "OFFICIAL BUSINESS LEAVE";
+
+        }
+
+    }
+
+    public function getStatusName($status)
+    {
+        if($status == self::STATUS_PENDING)
+        {
+            return "PENDING";
+
+        }elseif($status == self::STATUS_APPROVE_HEAD)
+        {
+            return 'APPROVED BY HEAD';
+
+        }elseif($status == self::STATUS_DISAPPROVE_HEAD)
+        {
+            return 'DISAPPROVED BY HEAD';
+        }elseif($status == self::STATUS_APPROVE_HRD)
+        {
+            return 'APPROVED BY HRD';
+        }else
+        {
+            return 'DISAPPROVED BY HRD';
+        }
+
+    }
+
     public function afterFind() {
         parent::afterFind ();
         $this->date_from=Yii::$app->formatter->asDateTime($this->date_from);
@@ -110,6 +194,7 @@ class LeaveApplication extends \yii\db\ActiveRecord
 
     public function beforeValidate()
     {
+
         if (null === $this->status) {
             $this->status = self::STATUS_PENDING;
         }

@@ -17,7 +17,7 @@ class LeaveApplicationSearch extends LeaveApplication
     public function rules()
     {
         return [
-            [['EmpID', 'type_leave', 'date_from', 'date_to', 'date_created', 'date_updated', 'date_approve_head', 'date_approve_hrd'], 'safe'],
+            [['EmpID', 'type_leave', 'date_from', 'date_to', 'date_created', 'date_updated', 'date_approve_head', 'date_approve_hrd','type'], 'safe'],
             [['status'], 'integer'],
         ];
     }
@@ -69,6 +69,7 @@ class LeaveApplicationSearch extends LeaveApplication
 
         $query->andFilterWhere(['like', 'EmpID', $this->EmpID])
              ->andFilterWhere(['like', 'type_leave', $this->type_leave]);
+
 
         return $dataProvider;
     }

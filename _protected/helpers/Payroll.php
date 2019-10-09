@@ -143,13 +143,13 @@ class Payroll
                 ->innerJoin(LeaveApplicationDetail::tableName() . ' dtl', 'hdr.EmpID = dtl.EmpID AND hdr.date_to = dtl.date_to');
         }
 
-        $query->where('hdr.status <> :status
+        $query->where('hdr.status = :status
         AND (
             (hdr.date_from >= :start_from AND hdr.date_from <= :start_to)
             OR (hdr.date_to >= :end_from AND hdr.date_to <= :end_to)
             OR (hdr.date_to < :between_from AND hdr.date_to > :between_to)
         )', [
-            ':status' => LeaveApplication::STATUS_PENDING,
+            ':status' => LeaveApplication::STATUS_APPROVE_HRD,
             ':start_from' => self::dateFormat($dateFrom),
             ':start_to' => self::dateFormat($dateTo),
             ':end_from' => self::dateFormat($dateFrom),
