@@ -14,6 +14,9 @@ class LeaveCreditsProcessForm extends Model
 
     public function rules()
     {
-        return [];
+        return [
+            [['currentPeriod', 'processPeriod'], 'required'],
+            [['currentPeriod', 'processPeriod'], 'string']
+        ];
     }
 }
