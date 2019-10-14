@@ -89,6 +89,9 @@ class PayPeriodController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $last = PayPeriod::find()
+            ->where(['PrdID' => PayPeriod::find()->max('PrdID')])
+            ->one();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->PrdID]);
@@ -96,6 +99,7 @@ class PayPeriodController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'last' => $last
         ]);
     }
 

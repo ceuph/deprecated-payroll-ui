@@ -13,7 +13,19 @@ use kartik\date\DatePicker;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'PrdID')->textInput(['maxlength' => true])->label('PrdID (last entry PrdID is) '.$last->PrdID) ?>
+    <?php 
+    if(!is_null($last)){
+
+		echo $form->field($model, 'PrdID')->textInput(['maxlength' => true])->label('PrdID (last entry PrdID is) '.$last->PrdID);
+    }else{
+
+    	echo $form->field($model, 'PrdID')->textInput(['maxlength' => true])->label('PrdID sample ID: S201901');
+
+    }
+    
+
+
+    ?>
 
     <?php
     echo $form->field($model, 'date_from')->widget(DatePicker::classname(), [
