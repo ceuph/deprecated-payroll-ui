@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\date\DatePicker;
+use yii\web\JsExpression;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\PayPeriod */
@@ -35,6 +36,15 @@ use kartik\date\DatePicker;
 	        'format' => 'yyyy-mm-dd' ,
 	        'daysOfWeekDisabled' => [0],
 	        'orientation' => 'bottom left',
+	        /*'beforeShowDay' => new JsExpression(
+            "function(date) {
+		        if (date.getDate() == 15 || date.getDate() == 1) {
+		            return [true, ''];
+		        }
+		        return [false, ''];
+		        
+		        }"
+        	),*/
 
 	    ]
 	]);
@@ -61,3 +71,4 @@ use kartik\date\DatePicker;
     <?php ActiveForm::end(); ?>
 
 </div>
+
