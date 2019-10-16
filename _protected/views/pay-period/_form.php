@@ -8,6 +8,7 @@ use yii\web\JsExpression;
 /* @var $this yii\web\View */
 /* @var $model app\models\PayPeriod */
 /* @var $form yii\widgets\ActiveForm */
+/* @var $last app\models\PayPeriod */
 ?>
 
 <div class="pay-period-form">

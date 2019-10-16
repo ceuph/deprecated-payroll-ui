@@ -1,9 +1,9 @@
 <?php
-
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\PayPeriod */
+/* @var $last app\models\PayPeriod */
 
 $this->title = 'Update Pay Period: ' . $model->PrdID;
 $this->params['breadcrumbs'][] = ['label' => 'Pay Periods', 'url' => ['index']];

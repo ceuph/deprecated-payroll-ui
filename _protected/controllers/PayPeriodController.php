@@ -89,9 +89,6 @@ class PayPeriodController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $last = PayPeriod::find()
-            ->where(['PrdID' => PayPeriod::find()->max('PrdID')])
-            ->one();
 
         $last = PayPeriod::find()
             ->where(['PrdID' => PayPeriod::find()->max('PrdID')])
