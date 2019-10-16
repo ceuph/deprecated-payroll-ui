@@ -23,6 +23,7 @@ _protected/runtime/*
 
 # assets
 assets/*
+web/*
 
 # composer itself is not needed
 composer.phar
