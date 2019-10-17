@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   webapp:
-    image: ceuph/yii2-php:sqlsrv
+    image: nibblesuite/php-sqlsrv:7.3-yii2-apache
     volumes:
       - .:/app
       - ./index.php:/app/web/index.php
