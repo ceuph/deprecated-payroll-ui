@@ -25,13 +25,16 @@ class AppController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'controllers' => ['user'],
+                        'controllers' => ['user','leave-application'],
                         'actions' => ['index', 'view', 'create', 'update', 'delete'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
                     [
-                        // other rules
+                        'controllers' => ['ug-leave-credits','gs-leave-credits','nt-leave-credits','tc-dtr','nt-dtr','tother-income','nt-other-income','loans','other-deductions'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete'],
+                        'allow' => true,
+                        'roles' => ['premium'],
                     ],
 
                 ], // rules

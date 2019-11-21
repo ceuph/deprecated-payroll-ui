@@ -15,7 +15,6 @@ use kartik\builder\Form;
 
     <?php $form = ActiveForm::begin(['type'=>ActiveForm::TYPE_VERTICAL]); ?>
 
-
     <?php
         echo Form::widget([
         'model'=>$model,

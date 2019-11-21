@@ -21,22 +21,12 @@ use app\models\PayPeriod;
 /**
  * LeaveApplicationController implements the CRUD actions for LeaveApplication model.
  */
-class LeaveApplicationController extends Controller
+class LeaveApplicationController extends AppController
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+
 
     /**
      * Lists all LeaveApplication models.

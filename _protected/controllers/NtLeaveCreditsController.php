@@ -12,22 +12,11 @@ use yii\filters\VerbFilter;
 /**
  * NtLeaveCreditsController implements the CRUD actions for NtLeaveCredits model.
  */
-class NtLeaveCreditsController extends Controller
+class NtLeaveCreditsController extends AppController
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
 
     /**
      * Lists all NtLeaveCredits models.

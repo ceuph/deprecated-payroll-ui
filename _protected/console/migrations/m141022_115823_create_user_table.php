@@ -18,8 +18,8 @@ class m141022_115823_create_user_table extends Migration
             'password_hash' => $this->string()->notNull(),
             'status' => $this->smallInteger()->notNull(),
             'auth_key' => $this->string(32)->notNull(),
-            'password_reset_token' => $this->string()->unique(),
-            'account_activation_token' => $this->string()->unique(),          
+            'password_reset_token' => $this->string(),
+            'account_activation_token' => $this->string(),          
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);

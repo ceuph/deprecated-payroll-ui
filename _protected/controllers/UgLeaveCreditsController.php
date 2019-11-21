@@ -12,22 +12,11 @@ use yii\filters\VerbFilter;
 /**
  * UgLeaveCreditsController implements the CRUD actions for UgLeaveCredits model.
  */
-class UgLeaveCreditsController extends Controller
+class UgLeaveCreditsController extends AppController
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
 
     /**
      * Lists all UgLeaveCredits models.

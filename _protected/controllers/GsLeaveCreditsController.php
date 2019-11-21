@@ -12,22 +12,11 @@ use yii\filters\VerbFilter;
 /**
  * GsLeaveCreditsController implements the CRUD actions for GsLeaveCredits model.
  */
-class GsLeaveCreditsController extends Controller
+class GsLeaveCreditsController extends AppController
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
 
     /**
      * Lists all GsLeaveCredits models.

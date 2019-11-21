@@ -12,22 +12,12 @@ use yii\filters\VerbFilter;
 /**
  * NtDtrController implements the CRUD actions for NtDtr model.
  */
-class NtDtrController extends Controller
+class NtDtrController extends AppController
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+
 
     /**
      * Lists all NtDtr models.
