@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Loans;
-use app\models\search\LoansSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -12,12 +12,22 @@ use yii\filters\VerbFilter;
 /**
  * LoansController implements the CRUD actions for Loans model.
  */
-class LoansController extends AppController
+class LoansController extends Controller
 {
     /**
      * {@inheritdoc}
      */
-
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
+        ];
+    }
 
     /**
      * Lists all Loans models.
@@ -25,11 +35,11 @@ class LoansController extends AppController
      */
     public function actionIndex()
     {
-        $searchModel = new LoansSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = new ActiveDataProvider([
+            'query' => Loans::find(),
+        ]);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
