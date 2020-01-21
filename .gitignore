@@ -24,6 +24,7 @@ _protected/runtime/*
 # assets
 assets/*
 web/*
+node_modules
 
 # composer itself is not needed
 composer.phar
