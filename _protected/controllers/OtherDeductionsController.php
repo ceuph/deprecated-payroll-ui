@@ -12,22 +12,12 @@ use yii\filters\VerbFilter;
 /**
  * OtherDeductionsController implements the CRUD actions for OtherDeductions model.
  */
-class OtherDeductionsController extends Controller
+class OtherDeductionsController extends AppController
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+
 
     /**
      * Lists all OtherDeductions models.

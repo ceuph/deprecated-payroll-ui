@@ -12,22 +12,12 @@ use yii\filters\VerbFilter;
 /**
  * TotherIncomeController implements the CRUD actions for TotherIncome model.
  */
-class TotherIncomeController extends Controller
+class TotherIncomeController extends AppController
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+
 
     /**
      * Lists all TotherIncome models.

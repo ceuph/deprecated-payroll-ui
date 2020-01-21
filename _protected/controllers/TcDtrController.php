@@ -12,22 +12,11 @@ use yii\filters\VerbFilter;
 /**
  * TcDtrController implements the CRUD actions for TcDtr model.
  */
-class TcDtrController extends Controller
+class TcDtrController extends AppController
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
 
     /**
      * Lists all TcDtr models.

@@ -12,22 +12,12 @@ use yii\filters\VerbFilter;
 /**
  * NtOtherIncomeController implements the CRUD actions for NtOtherIncome model.
  */
-class NtOtherIncomeController extends Controller
+class NtOtherIncomeController extends AppController
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+
 
     /**
      * Lists all NtOtherIncome models.

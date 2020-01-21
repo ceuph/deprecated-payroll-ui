@@ -33,7 +33,8 @@ AppAsset::register($this);
         ],
     ]);
 
-    // everyone can see Home page
+    if (Yii::$app->user->can('admin')) {
+
     $menuItems[] = ['label' => Yii::t('app', 'University-Leave'), 'items'=> [
         ['label' => 'Leave-Application', 'url' => ['/leave-application/index'],'linkOptions' => ['target'=>'_blank']],
         ['label' => 'Leave-Process', 'url' => ['/leave-application/process2'],'linkOptions' => ['target'=>'_blank']],
@@ -44,30 +45,52 @@ AppAsset::register($this);
 
     ]];
 
-    $menuItems[] = ['label' => Yii::t('app', 'Leave-Credits'), 'items'=> [
-        ['label' => 'Under-Grad', 'url' => ['/ug-leave-credits/index']],
-        ['label' => 'Grad-School', 'url' => ['/gs-leave-credits/index']],
-        ['label' => 'Non-Teaching', 'url' => ['/nt-leave-credits/index']],
+    }
+    if (Yii::$app->user->can('premium')) {
+        $menuItems[] = ['label' => Yii::t('app', 'Leave-Credits'), 'items'=> [
+            ['label' => 'Under-Grad', 'url' => ['/ug-leave-credits/index']],
+            ['label' => 'Grad-School', 'url' => ['/gs-leave-credits/index']],
+            ['label' => 'Non-Teaching', 'url' => ['/nt-leave-credits/index']],
 
-    ]];
+        ]];
 
-    $menuItems[] = ['label' => Yii::t('app', 'DTR'), 'items'=> [
-        ['label' => 'Teaching', 'url' => ['/tc-dtr/index']],
-        ['label' => 'Non-teaching', 'url' => ['/nt-dtr/index']],
-
-
-    ]];
-
-    $menuItems[] = ['label' => Yii::t('app', 'Other-Income'), 'items'=> [
-        ['label' => 'Teaching', 'url' => ['/tother-income/index']],
-        ['label' => 'Non-teaching', 'url' => ['/nt-other-income/index']],
+        $menuItems[] = ['label' => Yii::t('app', 'DTR'), 'items'=> [
+            ['label' => 'Teaching', 'url' => ['/tc-dtr/index']],
+            ['label' => 'Non-teaching', 'url' => ['/nt-dtr/index']],
 
 
-    ]];
+        ]];
 
-    $menuItems[] = ['label' => Yii::t('app', 'Loans'), 'url' => ['/loans/index']];
+        $menuItems[] = ['label' => Yii::t('app', 'Other-Income'), 'items'=> [
+            ['label' => 'Teaching', 'url' => ['/tother-income/index']],
+            ['label' => 'Non-teaching', 'url' => ['/nt-other-income/index']],
 
-    $menuItems[] = ['label' => Yii::t('app', 'Other Deductions'), 'url' => ['/other-deductions/index']];
+
+        ]];
+
+        $menuItems[] = ['label' => Yii::t('app', 'Loans'), 'url' => ['/loans/index']];
+
+        $menuItems[] = ['label' => Yii::t('app', 'Other Deductions'), 'url' => ['/other-deductions/index']];
+    }
+    
+
+    if (Yii::$app->user->can('admin')){
+        $menuItems[] = ['label' => Yii::t('app', 'Users'), 'url' => ['/user/index']];
+    }
+
+    if (!Yii::$app->user->isGuest) {
+    
+        $menuItems[] = [
+            'label' => Yii::t('app', 'Logout'). ' (' . Yii::$app->user->identity->username . ')',
+            'url' => ['/site/logout'],
+            'linkOptions' => ['data-method' => 'post']
+        ];
+    }
+
+    if (Yii::$app->user->isGuest) {
+        //$menuItems[] = ['label' => Yii::t('app', 'Signup'), 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => Yii::t('app', 'Login'), 'url' => ['/site/login']];
+    }
 
     // we do not need to display About and Contact pages to employee+ roles
     /*if (!Yii::$app->user->can('employee')) {
