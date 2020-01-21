@@ -54,8 +54,9 @@ AppAsset::register($this);
 
         ]];
 
-        $menuItems[] = ['label' => Yii::t('app', 'DTR'), 'items'=> [
+        $menuItems[] = ['label' => Yii::t('app', 'DTR-Load'), 'items'=> [
             ['label' => 'Teaching', 'url' => ['/tc-dtr/index']],
+            ['label' => 'Teaching Load', 'url' => ['/tc-teaching-load/index']],
             ['label' => 'Non-teaching', 'url' => ['/nt-dtr/index']],
 
 
