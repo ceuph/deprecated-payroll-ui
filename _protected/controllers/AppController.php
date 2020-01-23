@@ -26,7 +26,7 @@ class AppController extends Controller
                 'rules' => [
                     [
                         'controllers' => ['user','leave-application'],
-                        'actions' => ['index', 'view', 'create', 'update', 'delete'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete','process2'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
