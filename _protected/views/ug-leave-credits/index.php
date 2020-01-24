@@ -3,6 +3,10 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
+use yii\widgets\Pjax;
+use yii\bootstrap\Modal;
+use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\search\UgLeaveCreditsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -15,173 +19,95 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::button('Create', ['value'=>Url::to(['ug-leave-credits/create']),'class' => 'btn btn-success', 'id'=>'uglId']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+<?php Pjax::begin(['id' => 'uglTbl','enablePushState' => false]) ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'EmpID',
             'PrdID',
-            'LEC_UGVLAdj',
-            'LEC_UGVLHAWP',
-            'LEC_UGVLRem',
-            //'LEC_UGVL',
-            //'LEC_UGOLVLAdj',
-            //'LEC_UGOLVLHAWP',
-            //'LEC_UGOLVLRem',
-            //'LEC_UGOLVL',
-            //'LEC_UGSLAdj',
-            //'LEC_UGSLHAWP',
-            //'LEC_UGSLRem',
-            //'LEC_UGSL',
-            //'LEC_UGOLSLAdj',
-            //'LEC_UGOLSLHAWP',
-            //'LEC_UGOLSLRem',
-            //'LEC_UGOLSL',
-            //'LEC_UGBLAdj',
-            //'LEC_UGBLHAWP',
-            //'LEC_UGBLRem',
-            //'LEC_UGBL',
-            //'LEC_UGELAdj',
-            //'LEC_UGELHAWP',
-            //'LEC_UGELRem',
-            //'LEC_UGEL',
-            //'LEC_UGSPLAdj',
-            //'LEC_UGSPLHAWP',
-            //'LEC_UGSPLRem',
-            //'LEC_UGSPL',
-            //'LEC_UGPLAdj',
-            //'LEC_UGPLHAWP',
-            //'LEC_UGPLRem',
-            //'LEC_UGPL',
-            //'LEC_UGMLAdj',
-            //'LEC_UGMLHAWP',
-            //'LEC_UGMLRem',
-            //'LEC_UGML',
-            //'LEC_UGULAdj',
-            //'LEC_UGULHAWP',
-            //'LEC_UGULRem',
-            //'LEC_UGUL',
-            //'LEC_UGSLWAdj',
-            //'LEC_UGSLWHAWP',
-            //'LEC_UGSLWRem',
-            //'LEC_UGSLW',
-            //'LEC_UGNLAdj',
-            //'LEC_UGNLHAWP',
-            //'LEC_UGNLRem',
-            //'LEC_UGNL',
-            //'UGOBLec',
-            //'UGOBLecRem',
-            //'LAB_UGVLAdj',
-            //'LAB_UGVLHAWP',
-            //'LAB_UGVLRem',
-            //'LAB_UGVL',
-            //'LAB_UGOLVLAdj',
-            //'LAB_UGOLVLHAWP',
-            //'LAB_UGOLVLRem',
-            //'LAB_UGOLVL',
-            //'LAB_UGSLAdj',
-            //'LAB_UGSLHAWP',
-            //'LAB_UGSLRem',
-            //'LAB_UGSL',
-            //'LAB_UGOLSLAdj',
-            //'LAB_UGOLSLHAWP',
-            //'LAB_UGOLSLRem',
-            //'LAB_UGOLSL',
-            //'LAB_UGBLAdj',
-            //'LAB_UGBLHAWP',
-            //'LAB_UGBLRem',
-            //'LAB_UGBL',
-            //'LAB_UGELAdj',
-            //'LAB_UGELHAWP',
-            //'LAB_UGELRem',
-            //'LAB_UGEL',
-            //'LAB_UGSPLAdj',
-            //'LAB_UGSPLHAWP',
-            //'LAB_UGSPLRem',
-            //'LAB_UGSPL',
-            //'LAB_UGPLAdj',
-            //'LAB_UGPLHAWP',
-            //'LAB_UGPLRem',
-            //'LAB_UGPL',
-            //'LAB_UGMLAdj',
-            //'LAB_UGMLHAWP',
-            //'LAB_UGMLRem',
-            //'LAB_UGML',
-            //'LAB_UGULAdj',
-            //'LAB_UGULHAWP',
-            //'LAB_UGULRem',
-            //'LAB_UGUL',
-            //'LAB_UGSLWAdj',
-            //'LAB_UGSLWHAWP',
-            //'LAB_UGSLWRem',
-            //'LAB_UGSLW',
-            //'LAB_UGNLAdj',
-            //'LAB_UGNLHAWP',
-            //'LAB_UGNLRem',
-            //'LAB_UGNL',
-            //'UGOBLab',
-            //'UGOBLabRem',
-            //'CLC_UGVLAdj',
-            //'CLC_UGVLHAWP',
-            //'CLC_UGVLRem',
-            //'CLC_UGVL',
-            //'CLC_UGOLVLAdj',
-            //'CLC_UGOLVLHAWP',
-            //'CLC_UGOLVLRem',
-            //'CLC_UGOLVL',
-            //'CLC_UGSLAdj',
-            //'CLC_UGSLHAWP',
-            //'CLC_UGSLRem',
-            //'CLC_UGSL',
-            //'CLC_UGOLSLAdj',
-            //'CLC_UGOLSLHAWP',
-            //'CLC_UGOLSLRem',
-            //'CLC_UGOLSL',
-            //'CLC_UGBLAdj',
-            //'CLC_UGBLHAWP',
-            //'CLC_UGBLRem',
-            //'CLC_UGBL',
-            //'CLC_UGELAdj',
-            //'CLC_UGELHAWP',
-            //'CLC_UGELRem',
-            //'CLC_UGEL',
-            //'CLC_UGSPLAdj',
-            //'CLC_UGSPLHAWP',
-            //'CLC_UGSPLRem',
-            //'CLC_UGSPL',
-            //'CLC_UGPLAdj',
-            //'CLC_UGPLHAWP',
-            //'CLC_UGPLRem',
-            //'CLC_UGPL',
-            //'CLC_UGMLAdj',
-            //'CLC_UGMLHAWP',
-            //'CLC_UGMLRem',
-            //'CLC_UGML',
-            //'CLC_UGULAdj',
-            //'CLC_UGULHAWP',
-            //'CLC_UGULRem',
-            //'CLC_UGUL',
-            //'CLC_UGSLWAdj',
-            //'CLC_UGSLWHAWP',
-            //'CLC_UGSLWRem',
-            //'CLC_UGSLW',
-            //'CLC_UGNLAdj',
-            //'CLC_UGNLHAWP',
-            //'CLC_UGNLRem',
-            //'CLC_UGNL',
-            //'UGOBClc',
-            //'UGOBClcRem',
+            'EmpID',
+            [
+                'attribute'=> 'lname',
+                'value' => function ($data) {
+                    return $data->employeeList->LName;
+                },
+            ],
+            [
+                'attribute'=> 'fname',
+                'value' => function ($data) {
+                    return $data->employeeList->FName;
+                },
+            ],
+            [
+                'attribute'=> 'campus',
+                'value' => function ($data) {
+                    return $data->employeeList->Campus;
+                },
+            ],
+            [
+                'attribute'=> 'schoolCollege',
+                'value' => function ($data) {
+                    return $data->employeeList->SchoolCollege;
+                },
+            ],
+            [
+                'attribute'=> 'department',
+                'value' => function ($data) {
+                    return $data->employeeList->Department;
+                },
+            ],
+            
+           
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
+            ['class' => 'yii\grid\ActionColumn',
+
+            'buttons' => [
+                        'update' => function ($url, $model, $key) {
+
+                              return Html::a('<span class="glyphicon glyphicon-pencil"></span>',$url,
+                                      [
+                                          'title' => 'Update',
+                                          'id' => 'update-ugl-' . $model->EmpID . $model->PrdID,
+                                          'data-toggle' => 'modal',
+                                          'data-target' => '#ugl-modals',
+                                          'data-id' => $key,
+                                          'data-pjax' => '0',
+                                          'onclick' => "ajaxmodal('#ugl-modal', '" . Url::to(['ug-leave-credits/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
+                                      ]
+                              );
+
+                   
+
+                          },
+                        ],
+                  ],
+              ],
     ]); ?>
-
+<?php Pjax::end() ?>
 
 </div>
+<?php
+      Modal::begin([
+          'id'=>'ugId',
+          'size'=>'modal-lg',
+         'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+        ]);
+       echo "<div id='contentUg'></div>";
+      Modal::end();
+
+Modal::begin([
+    'id' => 'ugl-modal',
+    //'header' => '<h4 class="modal-title">Update</h4>',
+    'size'=>'modal-lg',
+    'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+]); 
+Modal::end();
+
+?>

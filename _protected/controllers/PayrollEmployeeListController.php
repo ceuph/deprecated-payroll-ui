@@ -3,16 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\TcTeachingLoad;
-use app\models\search\TcTeachingLoadSearch;
+use app\models\PayrollEmployeeList;
+use app\models\search\PayrollEmployeeListSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * TcTeachingLoadController implements the CRUD actions for TcTeachingLoad model.
+ * PayrollEmployeeListController implements the CRUD actions for PayrollEmployeeList model.
  */
-class TcTeachingLoadController extends Controller
+class PayrollEmployeeListController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class TcTeachingLoadController extends Controller
     }
 
     /**
-     * Lists all TcTeachingLoad models.
+     * Lists all PayrollEmployeeList models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new TcTeachingLoadSearch();
+        $searchModel = new PayrollEmployeeListSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,30 +45,29 @@ class TcTeachingLoadController extends Controller
     }
 
     /**
-     * Displays a single TcTeachingLoad model.
-     * @param string $EmpID
-     * @param string $PrdID
+     * Displays a single PayrollEmployeeList model.
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($EmpID, $PrdID)
+    public function actionView($id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($EmpID, $PrdID),
+            'model' => $this->findModel($id),
         ]);
     }
 
     /**
-     * Creates a new TcTeachingLoad model.
+     * Creates a new PayrollEmployeeList model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new TcTeachingLoad();
+        $model = new PayrollEmployeeList();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'EmpID' => $model->EmpID, 'PrdID' => $model->PrdID]);
+            return $this->redirect(['view', 'id' => $model->EmpID]);
         }
 
         return $this->render('create', [
@@ -77,19 +76,18 @@ class TcTeachingLoadController extends Controller
     }
 
     /**
-     * Updates an existing TcTeachingLoad model.
+     * Updates an existing PayrollEmployeeList model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $EmpID
-     * @param string $PrdID
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($EmpID, $PrdID)
+    public function actionUpdate($id)
     {
-        $model = $this->findModel($EmpID, $PrdID);
+        $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'EmpID' => $model->EmpID, 'PrdID' => $model->PrdID]);
+            return $this->redirect(['view', 'id' => $model->EmpID]);
         }
 
         return $this->render('update', [
@@ -98,31 +96,29 @@ class TcTeachingLoadController extends Controller
     }
 
     /**
-     * Deletes an existing TcTeachingLoad model.
+     * Deletes an existing PayrollEmployeeList model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $EmpID
-     * @param string $PrdID
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($EmpID, $PrdID)
+    public function actionDelete($id)
     {
-        $this->findModel($EmpID, $PrdID)->delete();
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the TcTeachingLoad model based on its primary key value.
+     * Finds the PayrollEmployeeList model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $EmpID
-     * @param string $PrdID
-     * @return TcTeachingLoad the loaded model
+     * @param string $id
+     * @return PayrollEmployeeList the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($EmpID, $PrdID)
+    protected function findModel($id)
     {
-        if (($model = TcTeachingLoad::findOne(['EmpID' => $EmpID, 'PrdID' => $PrdID])) !== null) {
+        if (($model = PayrollEmployeeList::findOne($id)) !== null) {
             return $model;
         }
 

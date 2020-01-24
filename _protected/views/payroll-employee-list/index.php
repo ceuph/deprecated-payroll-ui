@@ -4,18 +4,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel app\models\search\TcTeachingLoadSearch */
+/* @var $searchModel app\models\search\PayrollEmployeeListSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tc Teaching Loads';
+$this->title = 'Payroll Employee Lists';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="tc-teaching-load-index">
+<div class="payroll-employee-list-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Tc Teaching Load', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Payroll Employee List', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -26,15 +26,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'PrdID',
             'EmpID',
-            'UG_LoadLec',
-            'UG_LoadLab',
-            'UG_LoadClc',
-            //'GS_LoadLec',
-            //'GS_LoadLab',
-            //'GS_LoadClc',
-            //'TC_SemMonth',
+            'LName',
+            'FName',
+            'MName',
+            'MI',
+            //'SchoolCollege',
+            //'Gender',
+            //'Department',
+            //'Position',
+            //'Campus',
+            //'MainJob',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

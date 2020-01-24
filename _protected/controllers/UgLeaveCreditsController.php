@@ -8,6 +8,8 @@ use app\models\search\UgLeaveCreditsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
+use yii\widgets\ActiveForm;
 
 /**
  * UgLeaveCreditsController implements the CRUD actions for UgLeaveCredits model.
@@ -56,13 +58,30 @@ class UgLeaveCreditsController extends AppController
     {
         $model = new UgLeaveCredits();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'EmpID' => $model->EmpID, 'PrdID' => $model->PrdID]);
+        if ($model->load(Yii::$app->request->post())) {
+
+            if($model->save())
+            {
+                return 1;
+            }else{
+
+                return 2;
+            }
+           
         }
 
-        return $this->render('create', [
+        return $this->renderAjax('create', [
             'model' => $model,
         ]);
+    }
+
+    public function actionAjaxValidate() {
+
+        $model = new UgLeaveCredits();
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+           \Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
     }
 
     /*protected function dateDifference($date_1 , $date_2 , $differenceFormat = '%a' )
@@ -92,7 +111,7 @@ class UgLeaveCreditsController extends AppController
             return $this->redirect(['view', 'EmpID' => $model->EmpID, 'PrdID' => $model->PrdID]);
         }
 
-        return $this->render('update', [
+        return $this->renderAjax('update', [
             'model' => $model,
         ]);
     }

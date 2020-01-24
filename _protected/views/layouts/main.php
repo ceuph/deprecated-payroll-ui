@@ -145,7 +145,6 @@ AppAsset::register($this);
 </footer>
 
 <?php $this->endBody() ?>
-<script src="<?= Yii::getAlias('@web') ?>/assets/main.js"></script>
 </body>
 </html>
 <?php $this->endPage() ?>

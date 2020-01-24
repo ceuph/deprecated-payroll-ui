@@ -27,7 +27,8 @@ class AppAsset extends AssetBundle
     ];
 
     public $js = [
-        'js/ajax.js'
+        'js/ajax.js',
+        'js/popup.js'
     ];
 
     public $depends = [

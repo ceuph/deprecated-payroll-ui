@@ -14,10 +14,16 @@ class UgLeaveCreditsSearch extends UgLeaveCredits
     /**
      * {@inheritdoc}
      */
+    public $fname;
+    public $lname;
+    public $schoolCollege;
+    public $campus;
+    public $department;
+
     public function rules()
     {
         return [
-            [['EmpID', 'PrdID', 'LEC_UGVLRem', 'LEC_UGOLVLRem', 'LEC_UGSLRem', 'LEC_UGOLSLRem', 'LEC_UGBLRem', 'LEC_UGELRem', 'LEC_UGSPLRem', 'LEC_UGPLRem', 'LEC_UGMLRem', 'LEC_UGULRem', 'LEC_UGSLWRem', 'LEC_UGNLRem', 'UGOBLecRem', 'LAB_UGVLRem', 'LAB_UGOLVLRem', 'LAB_UGSLRem', 'LAB_UGOLSLRem', 'LAB_UGBLRem', 'LAB_UGELRem', 'LAB_UGSPLRem', 'LAB_UGPLRem', 'LAB_UGMLRem', 'LAB_UGULRem', 'LAB_UGSLWRem', 'LAB_UGNLRem', 'UGOBLabRem', 'CLC_UGVLRem', 'CLC_UGOLVLRem', 'CLC_UGSLRem', 'CLC_UGOLSLRem', 'CLC_UGBLRem', 'CLC_UGELRem', 'CLC_UGSPLRem', 'CLC_UGPLRem', 'CLC_UGMLRem', 'CLC_UGULRem', 'CLC_UGSLWRem', 'CLC_UGNLRem', 'UGOBClcRem'], 'safe'],
+            [['EmpID', 'PrdID', 'LEC_UGVLRem', 'LEC_UGOLVLRem', 'LEC_UGSLRem', 'LEC_UGOLSLRem', 'LEC_UGBLRem', 'LEC_UGELRem', 'LEC_UGSPLRem', 'LEC_UGPLRem', 'LEC_UGMLRem', 'LEC_UGULRem', 'LEC_UGSLWRem', 'LEC_UGNLRem', 'UGOBLecRem', 'LAB_UGVLRem', 'LAB_UGOLVLRem', 'LAB_UGSLRem', 'LAB_UGOLSLRem', 'LAB_UGBLRem', 'LAB_UGELRem', 'LAB_UGSPLRem', 'LAB_UGPLRem', 'LAB_UGMLRem', 'LAB_UGULRem', 'LAB_UGSLWRem', 'LAB_UGNLRem', 'UGOBLabRem', 'CLC_UGVLRem', 'CLC_UGOLVLRem', 'CLC_UGSLRem', 'CLC_UGOLSLRem', 'CLC_UGBLRem', 'CLC_UGELRem', 'CLC_UGSPLRem', 'CLC_UGPLRem', 'CLC_UGMLRem', 'CLC_UGULRem', 'CLC_UGSLWRem', 'CLC_UGNLRem', 'UGOBClcRem','fname','campus','lname','schoolCollege','department'], 'safe'],
             [['LEC_UGVLAdj', 'LEC_UGVLHAWP', 'LEC_UGVL', 'LEC_UGOLVLAdj', 'LEC_UGOLVLHAWP', 'LEC_UGOLVL', 'LEC_UGSLAdj', 'LEC_UGSLHAWP', 'LEC_UGSL', 'LEC_UGOLSLAdj', 'LEC_UGOLSLHAWP', 'LEC_UGOLSL', 'LEC_UGBLAdj', 'LEC_UGBLHAWP', 'LEC_UGBL', 'LEC_UGELAdj', 'LEC_UGELHAWP', 'LEC_UGEL', 'LEC_UGSPLAdj', 'LEC_UGSPLHAWP', 'LEC_UGSPL', 'LEC_UGPLAdj', 'LEC_UGPLHAWP', 'LEC_UGPL', 'LEC_UGMLAdj', 'LEC_UGMLHAWP', 'LEC_UGML', 'LEC_UGULAdj', 'LEC_UGULHAWP', 'LEC_UGUL', 'LEC_UGSLWAdj', 'LEC_UGSLWHAWP', 'LEC_UGSLW', 'LEC_UGNLAdj', 'LEC_UGNLHAWP', 'LEC_UGNL', 'UGOBLec', 'LAB_UGVLAdj', 'LAB_UGVLHAWP', 'LAB_UGVL', 'LAB_UGOLVLAdj', 'LAB_UGOLVLHAWP', 'LAB_UGOLVL', 'LAB_UGSLAdj', 'LAB_UGSLHAWP', 'LAB_UGSL', 'LAB_UGOLSLAdj', 'LAB_UGOLSLHAWP', 'LAB_UGOLSL', 'LAB_UGBLAdj', 'LAB_UGBLHAWP', 'LAB_UGBL', 'LAB_UGELAdj', 'LAB_UGELHAWP', 'LAB_UGEL', 'LAB_UGSPLAdj', 'LAB_UGSPLHAWP', 'LAB_UGSPL', 'LAB_UGPLAdj', 'LAB_UGPLHAWP', 'LAB_UGPL', 'LAB_UGMLAdj', 'LAB_UGMLHAWP', 'LAB_UGML', 'LAB_UGULAdj', 'LAB_UGULHAWP', 'LAB_UGUL', 'LAB_UGSLWAdj', 'LAB_UGSLWHAWP', 'LAB_UGSLW', 'LAB_UGNLAdj', 'LAB_UGNLHAWP', 'LAB_UGNL', 'UGOBLab', 'CLC_UGVLAdj', 'CLC_UGVLHAWP', 'CLC_UGVL', 'CLC_UGOLVLAdj', 'CLC_UGOLVLHAWP', 'CLC_UGOLVL', 'CLC_UGSLAdj', 'CLC_UGSLHAWP', 'CLC_UGSL', 'CLC_UGOLSLAdj', 'CLC_UGOLSLHAWP', 'CLC_UGOLSL', 'CLC_UGBLAdj', 'CLC_UGBLHAWP', 'CLC_UGBL', 'CLC_UGELAdj', 'CLC_UGELHAWP', 'CLC_UGEL', 'CLC_UGSPLAdj', 'CLC_UGSPLHAWP', 'CLC_UGSPL', 'CLC_UGPLAdj', 'CLC_UGPLHAWP', 'CLC_UGPL', 'CLC_UGMLAdj', 'CLC_UGMLHAWP', 'CLC_UGML', 'CLC_UGULAdj', 'CLC_UGULHAWP', 'CLC_UGUL', 'CLC_UGSLWAdj', 'CLC_UGSLWHAWP', 'CLC_UGSLW', 'CLC_UGNLAdj', 'CLC_UGNLHAWP', 'CLC_UGNL', 'UGOBClc'], 'number'],
         ];
     }
@@ -40,7 +46,7 @@ class UgLeaveCreditsSearch extends UgLeaveCredits
      */
     public function search($params)
     {
-        $query = UgLeaveCredits::find();
+        $query = UgLeaveCredits::find()->joinWith(['employeeList']);
 
         // add conditions that should always apply here
 
@@ -169,6 +175,7 @@ class UgLeaveCreditsSearch extends UgLeaveCredits
             'CLC_UGNLHAWP' => $this->CLC_UGNLHAWP,
             'CLC_UGNL' => $this->CLC_UGNL,
             'UGOBClc' => $this->UGOBClc,
+
         ]);
 
         $query->andFilterWhere(['like', 'EmpID', $this->EmpID])
@@ -211,7 +218,12 @@ class UgLeaveCreditsSearch extends UgLeaveCredits
             ->andFilterWhere(['like', 'CLC_UGULRem', $this->CLC_UGULRem])
             ->andFilterWhere(['like', 'CLC_UGSLWRem', $this->CLC_UGSLWRem])
             ->andFilterWhere(['like', 'CLC_UGNLRem', $this->CLC_UGNLRem])
-            ->andFilterWhere(['like', 'UGOBClcRem', $this->UGOBClcRem]);
+            ->andFilterWhere(['like', 'UGOBClcRem', $this->UGOBClcRem])
+            ->andFilterWhere(['like', 'campus', $this->campus])
+            ->andFilterWhere(['like', 'FName', $this->fname])
+            ->andFilterWhere(['like', 'LName', $this->lname])
+            ->andFilterWhere(['like', 'SchoolCollege', $this->schoolCollege])
+            ->andFilterWhere(['like', 'Department', $this->department]);;
 
         return $dataProvider;
     }
