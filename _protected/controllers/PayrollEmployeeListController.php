@@ -9,6 +9,10 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+use yii\db\Query;
+use yii\helpers\Json;
+
+
 /**
  * PayrollEmployeeListController implements the CRUD actions for PayrollEmployeeList model.
  */
@@ -27,6 +31,36 @@ class PayrollEmployeeListController extends Controller
                 ],
             ],
         ];
+    }
+
+    public function actionFind($q)
+    {
+        header('Content-type: application/json');
+        $clean['more'] = false;
+
+        $query = new Query;
+        if(!is_Null($q))
+        {
+            $mainQuery = $query->select('EmpID as id, LName AS text, 
+                FName as fname, EmpID')
+                ->from('payroll_employee_list')
+                ->where(['like','LName',$q])
+                ->orWhere(['like','FName',$q])
+                ->orWhere(['like','EmpID',$q]);
+
+            $command = $mainQuery->createCommand();
+            $rows = $command->queryAll();
+            $clean['results'] = array_values($rows);
+
+
+        }
+        else
+        {           
+            $clean['results'] = ['id'=> 0,'text' => 'None found'];
+        }
+
+        echo Json::encode($clean);
+        exit();
     }
 
     /**

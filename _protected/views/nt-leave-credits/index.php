@@ -3,6 +3,10 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
+use yii\widgets\Pjax;
+use yii\bootstrap\Modal;
+use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\search\NtLeaveCreditsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -15,10 +19,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::button('Create', ['value'=>Url::to(['nt-leave-credits/create']),'class' => 'btn btn-success', 'id'=>'ntId']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+<?php Pjax::begin(['id' => 'gslTbl','enablePushState' => false]) ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -26,54 +30,83 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'EmpID',
             'PrdID',
-            'LC_NT_VLAdj',
-            'LC_NT_VLDAWP',
-            'LC_NT_VLRem',
-            //'LC_NT_VL',
-            //'LC_NT_SLAdj',
-            //'LC_NT_SLDAWP',
-            //'LC_NT_SLRem',
-            //'LC_NT_SL',
-            //'LC_NT_BLAdj',
-            //'LC_NT_BLDAWP',
-            //'LC_NT_BLRem',
-            //'LC_NT_BL',
-            //'LC_NT_ELAdj',
-            //'LC_NT_ELDAWP',
-            //'LC_NT_ELRem',
-            //'LC_NT_EL',
-            //'LC_NT_SPLAdj',
-            //'LC_NT_SPLDAWP',
-            //'LC_NT_SPLRem',
-            //'LC_NT_SPL',
-            //'LC_NT_PLAdj',
-            //'LC_NT_PLDAWP',
-            //'LC_NT_PLRem',
-            //'LC_NT_PL',
-            //'LC_NT_MLAdj',
-            //'LC_NT_MLDAWP',
-            //'LC_NT_MLRem',
-            //'LC_NT_ML',
-            //'LC_NT_ULAdj',
-            //'LC_NT_ULDAWP',
-            //'LC_NT_ULRem',
-            //'LC_NT_UL',
-            //'LC_NT_SLWAdj',
-            //'LC_NT_SLWDAWP',
-            //'LC_NT_SLWRem',
-            //'LC_NT_SLW',
-            //'LC_NT_NLAdj',
-            //'LC_NT_NLDAWP',
-            //'LC_NT_NLRem',
-            //'LC_NT_NL',
-            //'NT_OB',
-            //'NT_OBRem',
+            'EmpID',
+            [
+                'attribute'=> 'lname',
+                'value' => function ($data) {
+                    return $data->employeeList->LName;
+                },
+            ],
+            [
+                'attribute'=> 'fname',
+                'value' => function ($data) {
+                    return $data->employeeList->FName;
+                },
+            ],
+            [
+                'attribute'=> 'campus',
+                'value' => function ($data) {
+                    return $data->employeeList->Campus;
+                },
+            ],
+            [
+                'attribute'=> 'schoolCollege',
+                'value' => function ($data) {
+                    return $data->employeeList->SchoolCollege;
+                },
+            ],
+            [
+                'attribute'=> 'department',
+                'value' => function ($data) {
+                    return $data->employeeList->Department;
+                },
+            ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+
+
+            ['class' => 'yii\grid\ActionColumn',
+                'buttons' => [
+                  'update' => function ($url, $model, $key) {
+
+                      return Html::a('<span class="glyphicon glyphicon-pencil"></span>',$url,
+                          [
+                              'title' => 'Update',
+                              'id' => 'update-nt-' . $model->EmpID . $model->PrdID,
+                              'data-toggle' => 'modal',
+                              'data-target' => '#nt-modals',
+                              'data-id' => $key,
+                              'data-pjax' => '0',
+                              'onclick' => "ajaxmodal('#nt-modal', '" . Url::to(['nt-leave-credits/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
+                          ]
+                      );
+
+           
+
+                  },
+                
+                  ],
+            ],
         ],
     ]); ?>
 
-
+<?php Pjax::end() ?>
 </div>
+<?php
+Modal::begin([
+      'id'=>'ntLId',
+      'size'=>'modal-lg',
+     'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+    ]);
+   echo "<div id='contentNt'></div>";
+Modal::end();
+
+Modal::begin([
+    'id' => 'nt-modal',
+    //'header' => '<h4 class="modal-title">Update</h4>',
+    'size'=>'modal-lg',
+    'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+]); 
+Modal::end();
+
+?>

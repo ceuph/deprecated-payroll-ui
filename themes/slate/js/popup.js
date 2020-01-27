@@ -1,9 +1,23 @@
 $(function(){
     
-    //up-leave credits
+    //ug-leave credits
     $('#uglId').click(function(){
         $('#ugId').modal('show')
         .find('#contentUg')
+        .load($(this).attr('value'));
+    });
+
+    //gs-leave credits
+     $('#gslId').click(function(){
+        $('#gsId').modal('show')
+        .find('#contentGs')
+        .load($(this).attr('value'));
+    });
+
+     //nt-leave credits
+     $('#ntId').click(function(){
+        $('#ntLId').modal('show')
+        .find('#contentNt')
         .load($(this).attr('value'));
     });
 

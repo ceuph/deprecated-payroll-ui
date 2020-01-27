@@ -4,9 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 
+use kartik\select2\Select2;
+use yii\web\JsExpression;
 /* @var $this yii\web\View */
 /* @var $model app\models\UgLeaveCredits */
 /* @var $form yii\widgets\ActiveForm */
+
+$url = Url::to(['payroll-employee-list/find']);
 ?>
 
 <div class="ug-leave-credits-form">
@@ -23,7 +27,7 @@ use yii\helpers\Url;
                 <li><a data-toggle="tab" href="#vl">Vacation Leave</a></li>
                 <li><a data-toggle="tab" href="#ovl">Overload-Vacation Leave</a></li>
                 <li><a data-toggle="tab" href="#sl">Sick Leave</a></li>
-                <li><a data-toggle="tab" href="#osl">Overload-Vacation Leave</a></li>
+                <li><a data-toggle="tab" href="#osl">Overload-Sick Leave</a></li>
                 <li><a data-toggle="tab" href="#bday">Birthday Leave</a></li>
                 <li><a data-toggle="tab" href="#emer">Emergency Leave</a></li>
                 <li><a data-toggle="tab" href="#solo">Solo Parent Leave</a></li>
@@ -41,7 +45,7 @@ use yii\helpers\Url;
                 <li><a data-toggle="tab" href="#lvl">Vacation Leave</a></li>
                 <li><a data-toggle="tab" href="#lovl">Overload-Vacation Leave</a></li>
                 <li><a data-toggle="tab" href="#lsl">Sick Leave</a></li>
-                <li><a data-toggle="tab" href="#losl">Overload-Vacation Leave</a></li>
+                <li><a data-toggle="tab" href="#losl">Overload-Sick Leave</a></li>
                 <li><a data-toggle="tab" href="#lbday">Birthday Leave</a></li>
                 <li><a data-toggle="tab" href="#lemer">Emergency Leave</a></li>
                 <li><a data-toggle="tab" href="#lsolo">Solo Parent Leave</a></li>
@@ -59,7 +63,7 @@ use yii\helpers\Url;
                 <li><a data-toggle="tab" href="#clvl">Vacation Leave</a></li>
                 <li><a data-toggle="tab" href="#clovl">Overload-Vacation Leave</a></li>
                 <li><a data-toggle="tab" href="#clsl">Sick Leave</a></li>
-                <li><a data-toggle="tab" href="#closl">Overload-Vacation Leave</a></li>
+                <li><a data-toggle="tab" href="#closl">Overload-Sick Leave</a></li>
                 <li><a data-toggle="tab" href="#clbday">Birthday Leave</a></li>
                 <li><a data-toggle="tab" href="#clemer">Emergency Leave</a></li>
                 <li><a data-toggle="tab" href="#clsolo">Solo Parent Leave</a></li>
@@ -77,7 +81,32 @@ use yii\helpers\Url;
     <div class="row">
         <div class="col-sm-5">
         <div id="home" class="tab-pane fade in active">
-            <?= $form->field($model, 'EmpID')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'EmpID')->widget(Select2::classname(), [
+            'options' => ['placeholder' => 'Search ...',
+                'multiple'=> true,
+                'class' => 'form-control'],
+            'pluginOptions' => [
+                'allowClear' => true,
+                'minimumInputLength' => 2,
+                'language' => [
+                    'errorLoading' => new JsExpression("function () { return 'Waiting for results...'; }"),
+                ],
+                'ajax' => [
+                    'url' => $url,
+                    'dataType' => 'json',
+                   'data' => new JsExpression('function(params) { return {q:params.term}; }')
+            
+                ],
+                'escapeMarkup' => new JsExpression('function (markup) { return markup; }'),
+                'templateResult' => new JsExpression('function(employee) { return (
+                    employee.EmpID || "") + " " + (employee.text || "")  + ", " + (
+                    employee.LName || ""); }'),
+                'templateSelection' => new JsExpression('function (employee) { return (
+                    employee.EmpID || "") + " " + (employee.text || "")  + ", " + (
+                    employee.FName || ""); }'),
+
+            ],
+        ])->label('Employee ID'); ?>
 
             <?= $form->field($model, 'PrdID')->textInput(['maxlength' => true]) ?>
         </div>
@@ -456,7 +485,7 @@ use yii\helpers\Url;
         </div>
     </div>
             
-          </div>
+    </div>
           
     </div>                           
 

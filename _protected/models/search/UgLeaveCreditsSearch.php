@@ -223,7 +223,7 @@ class UgLeaveCreditsSearch extends UgLeaveCredits
             ->andFilterWhere(['like', 'FName', $this->fname])
             ->andFilterWhere(['like', 'LName', $this->lname])
             ->andFilterWhere(['like', 'SchoolCollege', $this->schoolCollege])
-            ->andFilterWhere(['like', 'Department', $this->department]);;
+            ->andFilterWhere(['like', 'Department', $this->department]);
 
         return $dataProvider;
     }

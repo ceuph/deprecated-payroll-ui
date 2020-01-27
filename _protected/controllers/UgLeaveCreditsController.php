@@ -60,6 +60,10 @@ class UgLeaveCreditsController extends AppController
 
         if ($model->load(Yii::$app->request->post())) {
 
+            foreach(Yii::$app->request->post()['UgLeaveCredits']['EmpID'] as $empId){
+                 $model->EmpID = $empId;
+             }
+
             if($model->save())
             {
                 return 1;
@@ -79,6 +83,11 @@ class UgLeaveCreditsController extends AppController
 
         $model = new UgLeaveCredits();
         if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            
+            foreach(Yii::$app->request->post()['UgLeaveCredits']['EmpID'] as $empId){
+                 $model->EmpID = $empId;
+             }
+
            \Yii::$app->response->format = Response::FORMAT_JSON;
             return ActiveForm::validate($model);
         }
@@ -107,8 +116,9 @@ class UgLeaveCreditsController extends AppController
     {
         $model = $this->findModel($EmpID, $PrdID);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'EmpID' => $model->EmpID, 'PrdID' => $model->PrdID]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->save();
+            return $this->redirect(['index']);
         }
 
         return $this->renderAjax('update', [

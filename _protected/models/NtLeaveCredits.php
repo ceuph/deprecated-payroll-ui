@@ -72,7 +72,7 @@ class NtLeaveCredits extends \yii\db\ActiveRecord
         return [
             [['EmpID', 'PrdID'], 'required'],
             [['LC_NT_VLAdj', 'LC_NT_VLDAWP', 'LC_NT_VL', 'LC_NT_SLAdj', 'LC_NT_SLDAWP', 'LC_NT_SL', 'LC_NT_BLAdj', 'LC_NT_BLDAWP', 'LC_NT_BL', 'LC_NT_ELAdj', 'LC_NT_ELDAWP', 'LC_NT_EL', 'LC_NT_SPLAdj', 'LC_NT_SPLDAWP', 'LC_NT_SPL', 'LC_NT_PLAdj', 'LC_NT_PLDAWP', 'LC_NT_PL', 'LC_NT_MLAdj', 'LC_NT_MLDAWP', 'LC_NT_ML', 'LC_NT_ULAdj', 'LC_NT_ULDAWP', 'LC_NT_UL', 'LC_NT_SLWAdj', 'LC_NT_SLWDAWP', 'LC_NT_SLW', 'LC_NT_NLAdj', 'LC_NT_NLDAWP', 'LC_NT_NL', 'NT_OB'], 'number'],
-            [['EmpID', 'PrdID', 'LC_NT_VLRem', 'LC_NT_SLRem', 'LC_NT_BLRem', 'LC_NT_ELRem', 'LC_NT_SPLRem', 'LC_NT_PLRem', 'LC_NT_MLRem', 'LC_NT_ULRem', 'LC_NT_SLWRem', 'LC_NT_NLRem', 'NT_OBRem'], 'string', 'max' => 32],
+            [['PrdID', 'LC_NT_VLRem', 'LC_NT_SLRem', 'LC_NT_BLRem', 'LC_NT_ELRem', 'LC_NT_SPLRem', 'LC_NT_PLRem', 'LC_NT_MLRem', 'LC_NT_ULRem', 'LC_NT_SLWRem', 'LC_NT_NLRem', 'NT_OBRem'], 'string', 'max' => 32],
             [['EmpID', 'PrdID'], 'unique', 'targetAttribute' => ['EmpID', 'PrdID']],
         ];
     }
@@ -148,5 +148,10 @@ class NtLeaveCredits extends \yii\db\ActiveRecord
         }
         
         return parent::beforeSave($insert);
+    }
+
+    public function getEmployeeList()
+    {
+        return $this->hasOne(PayrollEmployeeList::className(), ['EmpID' => 'EmpID']);
     }
 }

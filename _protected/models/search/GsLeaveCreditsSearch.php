@@ -14,10 +14,16 @@ class GsLeaveCreditsSearch extends GsLeaveCredits
     /**
      * {@inheritdoc}
      */
+    public $fname;
+    public $lname;
+    public $schoolCollege;
+    public $campus;
+    public $department;
+
     public function rules()
     {
         return [
-            [['EmpID', 'PrdID', 'LEC_GSVLRem', 'LEC_GSOLVLRem', 'LEC_GSSLRem', 'LEC_GSOLSLRem', 'LEC_GSBLRem', 'LEC_GSELRem', 'LEC_GSSPLRem', 'LEC_GSPLRem', 'LEC_GSMLRem', 'LEC_GSULRem', 'LEC_GSSLWRem', 'LEC_GSNLRem', 'GSOBLecRem', 'LAB_GSVLRem', 'LAB_GSOLVLRem', 'LAB_GSSLRem', 'LAB_GSOLSLRem', 'LAB_GSBLRem', 'LAB_GSELRem', 'LAB_GSSPLRem', 'LAB_GSPLRem', 'LAB_GSMLRem', 'LAB_GSULRem', 'LAB_GSSLWRem', 'LAB_GSNLRem', 'GSOBLabRem', 'CLC_GSVLRem', 'CLC_GSOLVLRem', 'CLC_GSSLRem', 'CLC_GSOLSLRem', 'CLC_GSBLRem', 'CLC_GSELRem', 'CLC_GSSPLRem', 'CLC_GSPLRem', 'CLC_GSMLRem', 'CLC_GSULRem', 'CLC_GSSLWRem', 'CLC_GSNLRem', 'GSOBClcRem'], 'safe'],
+            [['EmpID', 'PrdID', 'LEC_GSVLRem', 'LEC_GSOLVLRem', 'LEC_GSSLRem', 'LEC_GSOLSLRem', 'LEC_GSBLRem', 'LEC_GSELRem', 'LEC_GSSPLRem', 'LEC_GSPLRem', 'LEC_GSMLRem', 'LEC_GSULRem', 'LEC_GSSLWRem', 'LEC_GSNLRem', 'GSOBLecRem', 'LAB_GSVLRem', 'LAB_GSOLVLRem', 'LAB_GSSLRem', 'LAB_GSOLSLRem', 'LAB_GSBLRem', 'LAB_GSELRem', 'LAB_GSSPLRem', 'LAB_GSPLRem', 'LAB_GSMLRem', 'LAB_GSULRem', 'LAB_GSSLWRem', 'LAB_GSNLRem', 'GSOBLabRem', 'CLC_GSVLRem', 'CLC_GSOLVLRem', 'CLC_GSSLRem', 'CLC_GSOLSLRem', 'CLC_GSBLRem', 'CLC_GSELRem', 'CLC_GSSPLRem', 'CLC_GSPLRem', 'CLC_GSMLRem', 'CLC_GSULRem', 'CLC_GSSLWRem', 'CLC_GSNLRem', 'GSOBClcRem','fname','campus','lname','schoolCollege','department'], 'safe'],
             [['LEC_GSVLAdj', 'LEC_GSVLHAWP', 'LEC_GSVL', 'LEC_GSOLVLAdj', 'LEC_GSOLVLHAWP', 'LEC_GSOLVL', 'LEC_GSSLAdj', 'LEC_GSSLHAWP', 'LEC_GSSL', 'LEC_GSOLSLAdj', 'LEC_GSOLSLHAWP', 'LEC_GSOLSL', 'LEC_GSBLAdj', 'LEC_GSBLHAWP', 'LEC_GSBL', 'LEC_GSELAdj', 'LEC_GSELHAWP', 'LEC_GSEL', 'LEC_GSSPLAdj', 'LEC_GSSPLHAWP', 'LEC_GSSPL', 'LEC_GSPLAdj', 'LEC_GSPLHAWP', 'LEC_GSPL', 'LEC_GSMLAdj', 'LEC_GSMLHAWP', 'LEC_GSML', 'LEC_GSULAdj', 'LEC_GSULHAWP', 'LEC_GSUL', 'LEC_GSSLWAdj', 'LEC_GSSLWHAWP', 'LEC_GSSLW', 'LEC_GSNLAdj', 'LEC_GSNLHAWP', 'LEC_GSNL', 'GSOBLec', 'LAB_GSVLAdj', 'LAB_GSVLHAWP', 'LAB_GSVL', 'LAB_GSOLVLAdj', 'LAB_GSOLVLHAWP', 'LAB_GSOLVL', 'LAB_GSSLAdj', 'LAB_GSSLHAWP', 'LAB_GSSL', 'LAB_GSOLSLAdj', 'LAB_GSOLSLHAWP', 'LAB_GSOLSL', 'LAB_GSBLAdj', 'LAB_GSBLHAWP', 'LAB_GSBL', 'LAB_GSELAdj', 'LAB_GSELHAWP', 'LAB_GSEL', 'LAB_GSSPLAdj', 'LAB_GSSPLHAWP', 'LAB_GSSPL', 'LAB_GSPLAdj', 'LAB_GSPLHAWP', 'LAB_GSPL', 'LAB_GSMLAdj', 'LAB_GSMLHAWP', 'LAB_GSML', 'LAB_GSULAdj', 'LAB_GSULHAWP', 'LAB_GSUL', 'LAB_GSSLWAdj', 'LAB_GSSLWHAWP', 'LAB_GSSLW', 'LAB_GSNLAdj', 'LAB_GSNLHAWP', 'LAB_GSNL', 'GSOBLab', 'CLC_GSVLAdj', 'CLC_GSVLHAWP', 'CLC_GSVL', 'CLC_GSOLVLAdj', 'CLC_GSOLVLHAWP', 'CLC_GSOLVL', 'CLC_GSSLAdj', 'CLC_GSSLHAWP', 'CLC_GSSL', 'CLC_GSOLSLAdj', 'CLC_GSOLSLHAWP', 'CLC_GSOLSL', 'CLC_GSBLAdj', 'CLC_GSBLHAWP', 'CLC_GSBL', 'CLC_GSELAdj', 'CLC_GSELHAWP', 'CLC_GSEL', 'CLC_GSSPLAdj', 'CLC_GSSPLHAWP', 'CLC_GSSPL', 'CLC_GSPLAdj', 'CLC_GSPLHAWP', 'CLC_GSPL', 'CLC_GSMLAdj', 'CLC_GSMLHAWP', 'CLC_GSML', 'CLC_GSULAdj', 'CLC_GSULHAWP', 'CLC_GSUL', 'CLC_GSSLWAdj', 'CLC_GSSLWHAWP', 'CLC_GSSLW', 'CLC_GSNLAdj', 'CLC_GSNLHAWP', 'CLC_GSNL', 'GSOBClc'], 'number'],
         ];
     }
@@ -40,7 +46,7 @@ class GsLeaveCreditsSearch extends GsLeaveCredits
      */
     public function search($params)
     {
-        $query = GsLeaveCredits::find();
+        $query = GsLeaveCredits::find()->joinWith(['employeeList']);
 
         // add conditions that should always apply here
 
@@ -211,7 +217,12 @@ class GsLeaveCreditsSearch extends GsLeaveCredits
             ->andFilterWhere(['like', 'CLC_GSULRem', $this->CLC_GSULRem])
             ->andFilterWhere(['like', 'CLC_GSSLWRem', $this->CLC_GSSLWRem])
             ->andFilterWhere(['like', 'CLC_GSNLRem', $this->CLC_GSNLRem])
-            ->andFilterWhere(['like', 'GSOBClcRem', $this->GSOBClcRem]);
+            ->andFilterWhere(['like', 'GSOBClcRem', $this->GSOBClcRem])
+            ->andFilterWhere(['like', 'campus', $this->campus])
+            ->andFilterWhere(['like', 'FName', $this->fname])
+            ->andFilterWhere(['like', 'LName', $this->lname])
+            ->andFilterWhere(['like', 'SchoolCollege', $this->schoolCollege])
+            ->andFilterWhere(['like', 'Department', $this->department]);
 
         return $dataProvider;
     }

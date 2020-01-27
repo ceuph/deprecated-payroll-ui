@@ -14,10 +14,15 @@ class NtLeaveCreditsSearch extends NtLeaveCredits
     /**
      * {@inheritdoc}
      */
+    public $fname;
+    public $lname;
+    public $schoolCollege;
+    public $campus;
+    public $department;
     public function rules()
     {
         return [
-            [['EmpID', 'PrdID', 'LC_NT_VLRem', 'LC_NT_SLRem', 'LC_NT_BLRem', 'LC_NT_ELRem', 'LC_NT_SPLRem', 'LC_NT_PLRem', 'LC_NT_MLRem', 'LC_NT_ULRem', 'LC_NT_SLWRem', 'LC_NT_NLRem', 'NT_OBRem'], 'safe'],
+            [['EmpID', 'PrdID', 'LC_NT_VLRem', 'LC_NT_SLRem', 'LC_NT_BLRem', 'LC_NT_ELRem', 'LC_NT_SPLRem', 'LC_NT_PLRem', 'LC_NT_MLRem', 'LC_NT_ULRem', 'LC_NT_SLWRem', 'LC_NT_NLRem', 'NT_OBRem','fname','campus','lname','schoolCollege','department'], 'safe'],
             [['LC_NT_VLAdj', 'LC_NT_VLDAWP', 'LC_NT_VL', 'LC_NT_SLAdj', 'LC_NT_SLDAWP', 'LC_NT_SL', 'LC_NT_BLAdj', 'LC_NT_BLDAWP', 'LC_NT_BL', 'LC_NT_ELAdj', 'LC_NT_ELDAWP', 'LC_NT_EL', 'LC_NT_SPLAdj', 'LC_NT_SPLDAWP', 'LC_NT_SPL', 'LC_NT_PLAdj', 'LC_NT_PLDAWP', 'LC_NT_PL', 'LC_NT_MLAdj', 'LC_NT_MLDAWP', 'LC_NT_ML', 'LC_NT_ULAdj', 'LC_NT_ULDAWP', 'LC_NT_UL', 'LC_NT_SLWAdj', 'LC_NT_SLWDAWP', 'LC_NT_SLW', 'LC_NT_NLAdj', 'LC_NT_NLDAWP', 'LC_NT_NL', 'NT_OB'], 'number'],
         ];
     }
@@ -40,7 +45,7 @@ class NtLeaveCreditsSearch extends NtLeaveCredits
      */
     public function search($params)
     {
-        $query = NtLeaveCredits::find();
+        $query = NtLeaveCredits::find()->joinWith(['employeeList']);
 
         // add conditions that should always apply here
 
@@ -103,7 +108,12 @@ class NtLeaveCreditsSearch extends NtLeaveCredits
             ->andFilterWhere(['like', 'LC_NT_ULRem', $this->LC_NT_ULRem])
             ->andFilterWhere(['like', 'LC_NT_SLWRem', $this->LC_NT_SLWRem])
             ->andFilterWhere(['like', 'LC_NT_NLRem', $this->LC_NT_NLRem])
-            ->andFilterWhere(['like', 'NT_OBRem', $this->NT_OBRem]);
+            ->andFilterWhere(['like', 'NT_OBRem', $this->NT_OBRem])
+            ->andFilterWhere(['like', 'campus', $this->campus])
+            ->andFilterWhere(['like', 'FName', $this->fname])
+            ->andFilterWhere(['like', 'LName', $this->lname])
+            ->andFilterWhere(['like', 'SchoolCollege', $this->schoolCollege])
+            ->andFilterWhere(['like', 'Department', $this->department]);
 
         return $dataProvider;
     }
