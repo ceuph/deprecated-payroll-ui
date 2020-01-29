@@ -178,8 +178,8 @@ class UgLeaveCreditsSearch extends UgLeaveCredits
 
         ]);
 
-        $query->andFilterWhere(['like', 'EmpID', $this->EmpID])
-            ->andFilterWhere(['like', 'PrdID', $this->PrdID])
+        $query->andFilterWhere(['like', 'SH03_UGLEAVECREDITS.EmpID', $this->EmpID])
+            ->andFilterWhere(['like', 'SH03_UGLEAVECREDITS.PrdID', $this->PrdID])
             ->andFilterWhere(['like', 'LEC_UGVLRem', $this->LEC_UGVLRem])
             ->andFilterWhere(['like', 'LEC_UGOLVLRem', $this->LEC_UGOLVLRem])
             ->andFilterWhere(['like', 'LEC_UGSLRem', $this->LEC_UGSLRem])

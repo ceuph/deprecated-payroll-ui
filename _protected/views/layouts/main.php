@@ -33,7 +33,7 @@ AppAsset::register($this);
         ],
     ]);
 
-    if (Yii::$app->user->can('admin')) {
+    /*if (Yii::$app->user->can('admin')) {
 
     $menuItems[] = ['label' => Yii::t('app', 'University-Leave'), 'items'=> [
         ['label' => 'Leave-Application', 'url' => ['/leave-application/index'],'linkOptions' => ['target'=>'_blank']],
@@ -44,8 +44,11 @@ AppAsset::register($this);
         ['label' => 'Pay-Period', 'url' => ['/pay-period/index'],'linkOptions' => ['target'=>'_blank']],
 
     ]];
+    }*/
 
-    }
+    $menuItems[] = ['label' => Yii::t('app', 'Employee-List'), 'url' => ['/payroll-employee-list/index']];
+
+   
     if (Yii::$app->user->can('premium')) {
         $menuItems[] = ['label' => Yii::t('app', 'Leave-Credits'), 'items'=> [
             ['label' => 'Under-Grad', 'url' => ['/ug-leave-credits/index']],

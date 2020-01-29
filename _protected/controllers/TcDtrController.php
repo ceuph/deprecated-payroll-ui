@@ -8,6 +8,8 @@ use app\models\search\TcDtrSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
+use yii\widgets\ActiveForm;
 
 /**
  * TcDtrController implements the CRUD actions for TcDtr model.
@@ -56,13 +58,39 @@ class TcDtrController extends AppController
     {
         $model = new TcDtr();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'EmpID' => $model->EmpID, 'PrdID' => $model->PrdID]);
+        if ($model->load(Yii::$app->request->post())) {
+
+            foreach(Yii::$app->request->post()['TcDtr']['EmpID'] as $empId){
+                 $model->EmpID = $empId;
+             }
+
+            if($model->save())
+            {
+                return 1;
+            }else{
+
+                return 2;
+            }
+           
         }
 
-        return $this->render('create', [
+        return $this->renderAjax('create', [
             'model' => $model,
         ]);
+    }
+
+    public function actionAjaxValidate() {
+
+        $model = new TcDtr();
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            
+            foreach(Yii::$app->request->post()['TcDtr']['EmpID'] as $empId){
+                 $model->EmpID = $empId;
+             }
+
+           \Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
     }
 
     /**
@@ -78,10 +106,10 @@ class TcDtrController extends AppController
         $model = $this->findModel($EmpID, $PrdID);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'EmpID' => $model->EmpID, 'PrdID' => $model->PrdID]);
+            return $this->redirect(['index']);
         }
 
-        return $this->render('update', [
+        return $this->renderAjax('update', [
             'model' => $model,
         ]);
     }

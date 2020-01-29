@@ -56,9 +56,14 @@ class OtherDeductions extends \yii\db\ActiveRecord
         return [
             [['EmpID', 'PrdID'], 'required'],
             [['FAWU_AF', 'FAWU_UD', 'FAWU_WF', 'HDMF_UPG', 'HDMF_MPL2', 'Coop', 'Tuition', 'Tour', 'AlumniTick', 'ParkingFee', 'GradExp', 'TogaRent', 'StuUniform', 'Vaccine', 'OtherDeduc', 'AdjWTAX', 'AdjHDMF', 'AdjPHIC', 'AdjSSS', 'OPBasic', 'OPEFA', 'OPCOLA', 'OPBonusXmas', 'OPBonusMidYr', 'OPTMP', 'OPAdvIP', 'OPAllowIP', 'OPVLSL'], 'number'],
-            [['EmpID', 'PrdID'], 'string', 'max' => 32],
+            [['PrdID'], 'string', 'max' => 32],
             [['EmpID', 'PrdID'], 'unique', 'targetAttribute' => ['EmpID', 'PrdID']],
         ];
+    }
+
+    public function getEmployeeList()
+    {
+        return $this->hasOne(PayrollEmployeeList::className(), ['EmpID' => 'EmpID']);
     }
 
     /**
@@ -91,7 +96,7 @@ class OtherDeductions extends \yii\db\ActiveRecord
             'OPBasic'   =>  'Overpayment Basic',
             'OPEFA' =>  'Overpayment EFA',
             'OPCOLA'    =>  'Overpayment COLA',
-            'OPBonusXmas'   =>  'Overpayment Bonux Christmas',
+            'OPBonusXmas'   =>  'Overpayment Bonus Christmas',
             'OPBonusMidYr'  =>  'Overpayment Bonus Mid Year',
             'OPTMP' =>  'Overpayment Thirteen Month Pay',
             'OPAdvIP'   =>  'Overpayment Advance IP',

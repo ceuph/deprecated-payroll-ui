@@ -14,10 +14,15 @@ class NtOtherIncomeSearch extends NtOtherIncome
     /**
      * {@inheritdoc}
      */
+    public $fname;
+    public $lname;
+    public $schoolCollege;
+    public $campus;
+    public $department;
     public function rules()
     {
         return [
-            [['EmpID', 'PrdID', 'NT_RFDOthersRem', 'NT_OINTaxRem', 'NT_OITaxRem'], 'safe'],
+            [['EmpID', 'PrdID', 'NT_RFDOthersRem', 'NT_OINTaxRem', 'NT_OITaxRem','fname','campus','lname','schoolCollege','department'], 'safe'],
             [['NT_AdvIP', 'NT_HazardPay', 'NT_Honorarium', 'NT_HRMAllowNTax', 'NT_HRMAllowTax', 'NT_IPAllow', 'NT_RLEAllowNTax', 'NT_RLEAllowTax', 'NT_RFDAlumniTick', 'NT_RFDCCLoan', 'NT_RFDCOOP', 'NT_RFDFAWU', 'NT_RFDHDMFMPL', 'NT_RFDHDMFP', 'NT_RFDHDMFU', 'NT_RFDHF', 'NT_RFDMedicare', 'NT_RFDPHIC', 'NT_RFDSSSCondo', 'NT_RFDSSSL', 'NT_RFDSSSP', 'NT_RFDTax', 'NT_RFDTaxAdv', 'NT_RFDTF', 'NT_RFDOthers', 'NT_BNMidYrNTax', 'NT_BNMidYrTax', 'NT_BNSLVLNTax', 'NT_BNSLVLTax', 'NT_BNTMPNTax', 'NT_BNTMPTax', 'NT_BNXmasNTax', 'NT_BNXmasTax', 'NT_SHSBNTMPNTax', 'NT_SHSBNTMPTax', 'NT_SSBNMidYrTax', 'NT_SSBNSLVLTax', 'NT_SSBNTMPTax', 'NT_SSBNXmasTax', 'NT_BonusNTax', 'NT_BonusTax', 'NT_AdjIPAllow', 'NT_AdviserFee', 'NT_BackPay', 'NT_BackPayEFA', 'NT_BackPayCOLA', 'NT_BigClassPay', 'NT_CLPPay', 'NT_ClassOrgAdvs', 'NT_CommOutrchPay', 'NT_CommImmersion', 'NT_Coordi', 'NT_CompreExam', 'NT_CriticWork', 'NT_DentPreBoard', 'NT_DentALE', 'NT_Differential', 'NT_EnhcmtSeminar', 'NT_EnrAdvising', 'NT_ExpertisePrm', 'NT_ExtProgPay', 'NT_Externship', 'NT_Goodwill', 'NT_GratuityNTax', 'NT_GratuityTax', 'NT_HardshipPay', 'NT_HonorariumNF', 'NT_HosptOrient', 'NT_IncluProg', 'NT_IncentiveLP', 'NT_IncrmtlProceeds', 'NT_InternshipPay', 'NT_MaternityBnft', 'NT_OneTimeIncentive', 'NT_Practicum', 'NT_Proctorship', 'NT_ReviewNTax', 'NT_ReviewTax', 'NT_RICE', 'NT_SalarySHS', 'NT_SpclExam', 'NT_Substitution', 'NT_Training', 'NT_TranspoAllow', 'NT_Tutorial', 'NT_OINTax', 'NT_OITax'], 'number'],
         ];
     }
@@ -40,7 +45,7 @@ class NtOtherIncomeSearch extends NtOtherIncome
      */
     public function search($params)
     {
-        $query = NtOtherIncome::find();
+        $query = NtOtherIncome::find()->joinWith(['employeeList']);
 
         // add conditions that should always apply here
 
@@ -147,11 +152,16 @@ class NtOtherIncomeSearch extends NtOtherIncome
             'NT_OITax' => $this->NT_OITax,
         ]);
 
-        $query->andFilterWhere(['like', 'EmpID', $this->EmpID])
-            ->andFilterWhere(['like', 'PrdID', $this->PrdID])
+        $query->andFilterWhere(['like', 'SH07_NTOTHERINCOME.EmpID', $this->EmpID])
+            ->andFilterWhere(['like', 'SH07_NTOTHERINCOME.PrdID', $this->PrdID])
             ->andFilterWhere(['like', 'NT_RFDOthersRem', $this->NT_RFDOthersRem])
             ->andFilterWhere(['like', 'NT_OINTaxRem', $this->NT_OINTaxRem])
-            ->andFilterWhere(['like', 'NT_OITaxRem', $this->NT_OITaxRem]);
+            ->andFilterWhere(['like', 'NT_OITaxRem', $this->NT_OITaxRem])
+            ->andFilterWhere(['like', 'campus', $this->campus])
+            ->andFilterWhere(['like', 'FName', $this->fname])
+            ->andFilterWhere(['like', 'LName', $this->lname])
+            ->andFilterWhere(['like', 'SchoolCollege', $this->schoolCollege])
+            ->andFilterWhere(['like', 'Department', $this->department]);
 
         return $dataProvider;
     }

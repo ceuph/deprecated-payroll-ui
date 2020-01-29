@@ -14,10 +14,16 @@ class TotherIncomeSearch extends TotherIncome
     /**
      * {@inheritdoc}
      */
+    public $fname;
+    public $lname;
+    public $schoolCollege;
+    public $campus;
+    public $department;
+
     public function rules()
     {
         return [
-            [['EmpID', 'PrdID', 'TC_RFDOthersRem', 'TC_OINTaxRem', 'TC_OITaxRem'], 'safe'],
+            [['EmpID', 'PrdID', 'TC_RFDOthersRem', 'TC_OINTaxRem', 'TC_OITaxRem','fname','campus','lname','schoolCollege','department'], 'safe'],
             [['TC_AdvIP', 'TC_HazardPay', 'TC_Honorarium', 'TC_HRMAllowNTax', 'TC_HRMAllowTax', 'TC_IPAllow', 'TC_RLEAllowNTax', 'TC_RLEAllowTax', 'TC_RFDAlumniTick', 'TC_RFDCCLoan', 'TC_RFDCOOP', 'TC_RFDFAWU', 'TC_RFDHDMFMPL', 'TC_RFDHDMFP', 'TC_RFDHDMFU', 'TC_RFDHF', 'TC_RFDMedicare', 'TC_RFDPHIC', 'TC_RFDSSSCondo', 'TC_RFDSSSL', 'TC_RFDSSSP', 'TC_RFDTax', 'TC_RFDTaxAdv', 'TC_RFDTF', 'TC_RFDOthers', 'TC_BNMidYrNTax', 'TC_BNMidYrTax', 'TC_BNSLVLNTax', 'TC_BNSLVLTax', 'TC_BNTMPNTax', 'TC_BNTMPTax', 'TC_BNXmasNTax', 'TC_BNXmasTax', 'TC_SHSBNTMPNTax', 'TC_SHSBNTMPTax', 'TC_SSBNMidYrTax', 'TC_SSBNSLVLTax', 'TC_SSBNTMPTax', 'TC_SSBNXmasTax', 'TC_BonusNTax', 'TC_BonusTax', 'TC_AdjIPAllow', 'TC_AdviserFee', 'TC_BackPay', 'TC_BackPayEFA', 'TC_BackPayCOLA', 'TC_BigClassPay', 'TC_CLPPay', 'TC_ClassOrgAdvs', 'TC_CommOutrchPay', 'TC_CommImmersion', 'TC_Coordi', 'TC_CompreExam', 'TC_CriticWork', 'TC_DentPreBoard', 'TC_DentALE', 'TC_Differential', 'TC_EnhcmtSeminar', 'TC_EnrAdvising', 'TC_ExpertisePrm', 'TC_ExtProgPay', 'TC_Externship', 'TC_Goodwill', 'TC_GratuityNTax', 'TC_GratuityTax', 'TC_HardshipPay', 'TC_HolidayPay', 'TC_HonorariumNF', 'TC_HosptOrient', 'TC_IncluProg', 'TC_IncentiveLP', 'TC_IncrmtlProceeds', 'TC_InternshipPay', 'TC_MaternityBnft', 'TC_OneTimeIncentive', 'TC_Practicum', 'TC_Proctorship', 'TC_ReviewNTax', 'TC_ReviewTax', 'TC_RICE', 'TC_SalarySHS', 'TC_SpclExam', 'TC_Substitution', 'TC_Training', 'TC_TranspoAllow', 'TC_Tutorial', 'TC_OINTax', 'TC_OITax'], 'number'],
         ];
     }
@@ -40,7 +46,7 @@ class TotherIncomeSearch extends TotherIncome
      */
     public function search($params)
     {
-        $query = TotherIncome::find();
+        $query = TotherIncome::find()->joinWith(['employeeList']);
 
         // add conditions that should always apply here
 
@@ -148,11 +154,16 @@ class TotherIncomeSearch extends TotherIncome
             'TC_OITax' => $this->TC_OITax,
         ]);
 
-        $query->andFilterWhere(['like', 'EmpID', $this->EmpID])
-            ->andFilterWhere(['like', 'PrdID', $this->PrdID])
+        $query->andFilterWhere(['like', 'SH07_TCOTHERINCOME.EmpID', $this->EmpID])
+            ->andFilterWhere(['like', 'SH07_TCOTHERINCOME.PrdID', $this->PrdID])
             ->andFilterWhere(['like', 'TC_RFDOthersRem', $this->TC_RFDOthersRem])
             ->andFilterWhere(['like', 'TC_OINTaxRem', $this->TC_OINTaxRem])
-            ->andFilterWhere(['like', 'TC_OITaxRem', $this->TC_OITaxRem]);
+            ->andFilterWhere(['like', 'TC_OITaxRem', $this->TC_OITaxRem])
+             ->andFilterWhere(['like', 'campus', $this->campus])
+            ->andFilterWhere(['like', 'FName', $this->fname])
+            ->andFilterWhere(['like', 'LName', $this->lname])
+            ->andFilterWhere(['like', 'SchoolCollege', $this->schoolCollege])
+            ->andFilterWhere(['like', 'Department', $this->department]);
 
         return $dataProvider;
     }

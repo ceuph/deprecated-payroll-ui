@@ -108,5 +108,4 @@ Modal::begin([
     'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
 ]); 
 Modal::end();
-
 ?>

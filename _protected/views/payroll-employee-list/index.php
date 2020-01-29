@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Payroll Employee List', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -29,13 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'EmpID',
             'LName',
             'FName',
-            'MName',
-            'MI',
-            //'SchoolCollege',
+            'SchoolCollege',
             //'Gender',
-            //'Department',
+            'Department',
             //'Position',
-            //'Campus',
+            'Campus',
             //'MainJob',
 
             ['class' => 'yii\grid\ActionColumn'],

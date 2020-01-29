@@ -50,7 +50,7 @@ class NtDtr extends \yii\db\ActiveRecord
         return [
             [['EmpID', 'PrdID'], 'required'],
             [['NT_DAbsnt', 'NT_HLate', 'NT_HUdt', 'NT_DLWOP', 'NT_OTHReg', 'NT_OTHNDReg', 'NT_OTHRegExc', 'NT_OTHNDRegExc', 'NT_OTHSpcl', 'NT_OTHNDSpcl', 'NT_OTHSpclExc', 'NT_OTHNDSpclExc', 'NT_OTHLgl', 'NT_OTHNDLgl', 'NT_OTHLglExc', 'NT_OTHNDLglExc', 'NT_OTHHolSun', 'NT_OTHNDHolSun', 'NT_OTHHolSunExc', 'NT_OTHNDHolExc'], 'number'],
-            [['EmpID', 'PrdID', 'NT_DAbsntRem', 'NT_DLWOPRem'], 'string', 'max' => 32],
+            [['PrdID', 'NT_DAbsntRem', 'NT_DLWOPRem'], 'string', 'max' => 32],
             [['EmpID', 'PrdID'], 'unique', 'targetAttribute' => ['EmpID', 'PrdID']],
         ];
     }
@@ -87,5 +87,10 @@ class NtDtr extends \yii\db\ActiveRecord
             'NT_OTHNDHolExc'    =>  'Overtime Hours - Night Differential Holiday Sunday Excess',
 
         ];
+    }
+
+    public function getEmployeeList()
+    {
+        return $this->hasOne(PayrollEmployeeList::className(), ['EmpID' => 'EmpID']);
     }
 }

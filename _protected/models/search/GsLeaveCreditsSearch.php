@@ -177,8 +177,8 @@ class GsLeaveCreditsSearch extends GsLeaveCredits
             'GSOBClc' => $this->GSOBClc,
         ]);
 
-        $query->andFilterWhere(['like', 'EmpID', $this->EmpID])
-            ->andFilterWhere(['like', 'PrdID', $this->PrdID])
+        $query->andFilterWhere(['like', 'SH03_GSLEAVECREDITS.EmpID', $this->EmpID])
+            ->andFilterWhere(['like', 'SH03_GSLEAVECREDITS.PrdID', $this->PrdID])
             ->andFilterWhere(['like', 'LEC_GSVLRem', $this->LEC_GSVLRem])
             ->andFilterWhere(['like', 'LEC_GSOLVLRem', $this->LEC_GSOLVLRem])
             ->andFilterWhere(['like', 'LEC_GSSLRem', $this->LEC_GSSLRem])

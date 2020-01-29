@@ -14,8 +14,6 @@ $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="ug-leave-credits-update">
 
- <?php $form = ActiveForm::begin(); ?>
-
     <div class="bs-example">
     <ul class="nav nav-tabs">
         <li class="active"><a data-toggle="tab" href="#home">Employee#</a></li>
@@ -23,60 +21,61 @@ $this->params['breadcrumbs'][] = 'Update';
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Lecture<b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a data-toggle="tab" href="#vl">Vacation Leave</a></li>
-                <li><a data-toggle="tab" href="#ovl">Overload-Vacation Leave</a></li>
-                <li><a data-toggle="tab" href="#sl">Sick Leave</a></li>
-                <li><a data-toggle="tab" href="#osl">Overload-Sick Leave</a></li>
-                <li><a data-toggle="tab" href="#bday">Birthday Leave</a></li>
-                <li><a data-toggle="tab" href="#emer">Emergency Leave</a></li>
-                <li><a data-toggle="tab" href="#solo">Solo Parent Leave</a></li>
-                <li><a data-toggle="tab" href="#pat">Paternity Leave</a></li>
-                <li><a data-toggle="tab" href="#mat">Maternity Leave</a></li>
-                <li><a data-toggle="tab" href="#union">Union Leave</a></li>
-                <li><a data-toggle="tab" href="#special">Special Leave</a></li>
-                <li><a data-toggle="tab" href="#nuptial">Nuptial Leave</a></li>
-                <li><a data-toggle="tab" href="#official">Official Business Leave</a></li>
+                <li><a data-toggle="tab" href="#vlu">Vacation Leave</a></li>
+                <li><a data-toggle="tab" href="#ovlu">Overload-Vacation Leave</a></li>
+                <li><a data-toggle="tab" href="#slu">Sick Leave</a></li>
+                <li><a data-toggle="tab" href="#oslu">Overload-Sick Leave</a></li>
+                <li><a data-toggle="tab" href="#bdayu">Birthday Leave</a></li>
+                <li><a data-toggle="tab" href="#emeru">Emergency Leave</a></li>
+                <li><a data-toggle="tab" href="#solou">Solo Parent Leave</a></li>
+                <li><a data-toggle="tab" href="#patu">Paternity Leave</a></li>
+                <li><a data-toggle="tab" href="#matu">Maternity Leave</a></li>
+                <li><a data-toggle="tab" href="#unionu">Union Leave</a></li>
+                <li><a data-toggle="tab" href="#specialu">Special Leave</a></li>
+                <li><a data-toggle="tab" href="#nuptialu">Nuptial Leave</a></li>
+                <li><a data-toggle="tab" href="#officialu">Official Business Leave</a></li>
             </ul>
         </li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Laboratory<b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a data-toggle="tab" href="#lvl">Vacation Leave</a></li>
-                <li><a data-toggle="tab" href="#lovl">Overload-Vacation Leave</a></li>
-                <li><a data-toggle="tab" href="#lsl">Sick Leave</a></li>
-                <li><a data-toggle="tab" href="#losl">Overload-Sick Leave</a></li>
-                <li><a data-toggle="tab" href="#lbday">Birthday Leave</a></li>
-                <li><a data-toggle="tab" href="#lemer">Emergency Leave</a></li>
-                <li><a data-toggle="tab" href="#lsolo">Solo Parent Leave</a></li>
-                <li><a data-toggle="tab" href="#lpat">Paternity Leave</a></li>
-                <li><a data-toggle="tab" href="#lmat">Maternity Leave</a></li>
-                <li><a data-toggle="tab" href="#lunion">Union Leave</a></li>
-                <li><a data-toggle="tab" href="#lspecial">Special Leave</a></li>
-                <li><a data-toggle="tab" href="#lnuptial">Nuptial Leave</a></li>
-                <li><a data-toggle="tab" href="#lofficial">Official Business Leave</a></li>
+                <li><a data-toggle="tab" href="#lvlu">Vacation Leave</a></li>
+                <li><a data-toggle="tab" href="#lovlu">Overload-Vacation Leave</a></li>
+                <li><a data-toggle="tab" href="#lslu">Sick Leave</a></li>
+                <li><a data-toggle="tab" href="#loslu">Overload-Sick Leave</a></li>
+                <li><a data-toggle="tab" href="#lbdayu">Birthday Leave</a></li>
+                <li><a data-toggle="tab" href="#lemeru">Emergency Leave</a></li>
+                <li><a data-toggle="tab" href="#lsolou">Solo Parent Leave</a></li>
+                <li><a data-toggle="tab" href="#lpatu">Paternity Leave</a></li>
+                <li><a data-toggle="tab" href="#lmatu">Maternity Leave</a></li>
+                <li><a data-toggle="tab" href="#lunionu">Union Leave</a></li>
+                <li><a data-toggle="tab" href="#lspecialu">Special Leave</a></li>
+                <li><a data-toggle="tab" href="#lnuptialu">Nuptial Leave</a></li>
+                <li><a data-toggle="tab" href="#lofficialu">Official Business Leave</a></li>
             </ul>
         </li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Clinic<b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a data-toggle="tab" href="#clvl">Vacation Leave</a></li>
-                <li><a data-toggle="tab" href="#clovl">Overload-Vacation Leave</a></li>
-                <li><a data-toggle="tab" href="#clsl">Sick Leave</a></li>
-                <li><a data-toggle="tab" href="#closl">Overload-Sick Leave</a></li>
-                <li><a data-toggle="tab" href="#clbday">Birthday Leave</a></li>
-                <li><a data-toggle="tab" href="#clemer">Emergency Leave</a></li>
-                <li><a data-toggle="tab" href="#clsolo">Solo Parent Leave</a></li>
-                <li><a data-toggle="tab" href="#clpat">Paternity Leave</a></li>
-                <li><a data-toggle="tab" href="#clmat">Maternity Leave</a></li>
-                <li><a data-toggle="tab" href="#clunion">Union Leave</a></li>
-                <li><a data-toggle="tab" href="#clspecial">Special Leave</a></li>
-                <li><a data-toggle="tab" href="#clnuptial">Nuptial Leave</a></li>
-                <li><a data-toggle="tab" href="#clofficial">Official Business Leave</a></li>
+                <li><a data-toggle="tab" href="#clvlu">Vacation Leave</a></li>
+                <li><a data-toggle="tab" href="#clovlu">Overload-Vacation Leave</a></li>
+                <li><a data-toggle="tab" href="#clslu">Sick Leave</a></li>
+                <li><a data-toggle="tab" href="#closlu">Overload-Sick Leave</a></li>
+                <li><a data-toggle="tab" href="#clbdayu">Birthday Leave</a></li>
+                <li><a data-toggle="tab" href="#clemeru">Emergency Leave</a></li>
+                <li><a data-toggle="tab" href="#clsolou">Solo Parent Leave</a></li>
+                <li><a data-toggle="tab" href="#clpatu">Paternity Leave</a></li>
+                <li><a data-toggle="tab" href="#clmatu">Maternity Leave</a></li>
+                <li><a data-toggle="tab" href="#clunionu">Union Leave</a></li>
+                <li><a data-toggle="tab" href="#clspecialu">Special Leave</a></li>
+                <li><a data-toggle="tab" href="#clnuptialu">Nuptial Leave</a></li>
+                <li><a data-toggle="tab" href="#clofficialu">Official Business Leave</a></li>
             </ul>
         </li>  
 
 
     </ul>
+ <?php $form = ActiveForm::begin(); ?>
     <div class="row">
         <div class="col-sm-5">
         <div id="home" class="tab-pane fade in active">
@@ -87,7 +86,7 @@ $this->params['breadcrumbs'][] = 'Update';
         </div>
         <div class="col-sm-7">
       <div class="tab-content">
-        <div id="vl" class="tab-pane fade">
+        <div id="vlu" class="tab-pane fade">
             <?= $form->field($model, 'LEC_UGVLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LEC_UGVLHAWP')->textInput() ?>
@@ -96,7 +95,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGVL')->textInput() ?>
         </div>
-        <div id="ovl" class="tab-pane fade">
+        <div id="ovlu" class="tab-pane fade">
             <?= $form->field($model, 'LEC_UGOLVLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LEC_UGOLVLHAWP')->textInput() ?>
@@ -105,7 +104,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGOLVL')->textInput() ?>
         </div>
-        <div id="sl" class="tab-pane fade">
+        <div id="slu" class="tab-pane fade">
             <?= $form->field($model, 'LEC_UGSLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LEC_UGSLHAWP')->textInput() ?>
@@ -115,7 +114,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'LEC_UGSL')->textInput() ?>
 
         </div>
-        <div id="osl" class="tab-pane fade">
+        <div id="oslu" class="tab-pane fade">
             <?= $form->field($model, 'LEC_UGOLSLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LEC_UGOLSLHAWP')->textInput() ?>
@@ -124,7 +123,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGOLSL')->textInput() ?>
         </div>
-        <div id="bday" class="tab-pane fade">
+        <div id="bdayu" class="tab-pane fade">
             <?= $form->field($model, 'LEC_UGBLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LEC_UGBLHAWP')->textInput() ?>
@@ -133,7 +132,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGBL')->textInput() ?>
         </div>
-        <div id="emer" class="tab-pane fade">
+        <div id="emeru" class="tab-pane fade">
             <?= $form->field($model, 'LEC_UGELAdj')->textInput() ?>
 
             <?= $form->field($model, 'LEC_UGELHAWP')->textInput() ?>
@@ -142,7 +141,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGEL')->textInput() ?>
         </div>
-        <div id="solo" class="tab-pane fade">
+        <div id="solou" class="tab-pane fade">
             <?= $form->field($model, 'LEC_UGSPLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LEC_UGSPLHAWP')->textInput() ?>
@@ -151,7 +150,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGSPL')->textInput() ?>
         </div>
-        <div id="pat" class="tab-pane fade">
+        <div id="patu" class="tab-pane fade">
             <?= $form->field($model, 'LEC_UGPLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LEC_UGPLHAWP')->textInput() ?>
@@ -160,7 +159,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGPL')->textInput() ?>
         </div>
-        <div id="mat" class="tab-pane fade">
+        <div id="matu" class="tab-pane fade">
              <?= $form->field($model, 'LEC_UGMLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LEC_UGMLHAWP')->textInput() ?>
@@ -169,7 +168,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGML')->textInput() ?>
         </div>
-        <div id="union" class="tab-pane fade">
+        <div id="unionu" class="tab-pane fade">
              <?= $form->field($model, 'LEC_UGULAdj')->textInput() ?>
 
             <?= $form->field($model, 'LEC_UGULHAWP')->textInput() ?>
@@ -178,7 +177,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGUL')->textInput() ?>
         </div>
-        <div id="special" class="tab-pane fade">
+        <div id="specialu" class="tab-pane fade">
              <?= $form->field($model, 'LEC_UGSLWAdj')->textInput() ?>
 
             <?= $form->field($model, 'LEC_UGSLWHAWP')->textInput() ?>
@@ -187,7 +186,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGSLW')->textInput() ?>
         </div>
-        <div id="nuptial" class="tab-pane fade">
+        <div id="nuptialu" class="tab-pane fade">
             <?= $form->field($model, 'LEC_UGNLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LEC_UGNLHAWP')->textInput() ?>
@@ -196,13 +195,13 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGNL')->textInput() ?>
         </div>
-        <div id="official" class="tab-pane fade">
+        <div id="officialu" class="tab-pane fade">
             <?= $form->field($model, 'UGOBLec')->textInput() ?>
 
             <?= $form->field($model, 'UGOBLecRem')->textInput(['maxlength' => true]) ?>
         </div>
 
-        <div id="lvl" class="tab-pane fade">
+        <div id="lvlu" class="tab-pane fade">
             <?= $form->field($model, 'LAB_UGVLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LAB_UGVLHAWP')->textInput() ?>
@@ -212,7 +211,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'LAB_UGVL')->textInput() ?>
 
         </div>
-        <div id="lovl" class="tab-pane fade">
+        <div id="lovlu" class="tab-pane fade">
             <?= $form->field($model, 'LAB_UGOLVLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LAB_UGOLVLHAWP')->textInput() ?>
@@ -222,7 +221,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'LAB_UGOLVL')->textInput() ?>
 
         </div>
-        <div id="lsl" class="tab-pane fade">
+        <div id="lslu" class="tab-pane fade">
             <?= $form->field($model, 'LAB_UGSLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LAB_UGSLHAWP')->textInput() ?>
@@ -232,7 +231,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'LAB_UGSL')->textInput() ?>
 
         </div>
-        <div id="losl" class="tab-pane fade">
+        <div id="loslu" class="tab-pane fade">
              <?= $form->field($model, 'LAB_UGOLSLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LAB_UGOLSLHAWP')->textInput() ?>
@@ -242,7 +241,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'LAB_UGOLSL')->textInput() ?>
 
         </div>
-        <div id="lbday" class="tab-pane fade">
+        <div id="lbdayu" class="tab-pane fade">
             <?= $form->field($model, 'LAB_UGBLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LAB_UGBLHAWP')->textInput() ?>
@@ -253,7 +252,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
 
         </div>
-        <div id="lemer" class="tab-pane fade">
+        <div id="lemeru" class="tab-pane fade">
             <?= $form->field($model, 'LAB_UGELAdj')->textInput() ?>
 
             <?= $form->field($model, 'LAB_UGELHAWP')->textInput() ?>
@@ -263,7 +262,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'LAB_UGEL')->textInput() ?>
 
         </div>
-        <div id="lsolo" class="tab-pane fade">
+        <div id="lsolou" class="tab-pane fade">
             <?= $form->field($model, 'LAB_UGSPLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LAB_UGSPLHAWP')->textInput() ?>
@@ -273,7 +272,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'LAB_UGSPL')->textInput() ?>
 
         </div>
-        <div id="lpat" class="tab-pane fade">
+        <div id="lpatu" class="tab-pane fade">
             <?= $form->field($model, 'LAB_UGPLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LAB_UGPLHAWP')->textInput() ?>
@@ -283,7 +282,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'LAB_UGPL')->textInput() ?>
 
         </div>
-        <div id="lmat" class="tab-pane fade">
+        <div id="lmatu" class="tab-pane fade">
             <?= $form->field($model, 'LAB_UGMLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LAB_UGMLHAWP')->textInput() ?>
@@ -293,7 +292,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'LAB_UGML')->textInput() ?>
 
         </div>
-        <div id="lunion" class="tab-pane fade">
+        <div id="lunionu" class="tab-pane fade">
             <?= $form->field($model, 'LAB_UGULAdj')->textInput() ?>
 
             <?= $form->field($model, 'LAB_UGULHAWP')->textInput() ?>
@@ -303,7 +302,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'LAB_UGUL')->textInput() ?>
 
         </div>
-        <div id="lspecial" class="tab-pane fade">
+        <div id="lspecialu" class="tab-pane fade">
              <?= $form->field($model, 'LAB_UGSLWAdj')->textInput() ?>
 
             <?= $form->field($model, 'LAB_UGSLWHAWP')->textInput() ?>
@@ -313,7 +312,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'LAB_UGSLW')->textInput() ?>
 
         </div>
-        <div id="lnuptial" class="tab-pane fade">
+        <div id="lnuptialu" class="tab-pane fade">
             <?= $form->field($model, 'LAB_UGNLAdj')->textInput() ?>
 
             <?= $form->field($model, 'LAB_UGNLHAWP')->textInput() ?>
@@ -323,13 +322,13 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'LAB_UGNL')->textInput() ?>
 
         </div>
-        <div id="lofficial" class="tab-pane fade">
+        <div id="lofficialu" class="tab-pane fade">
             <?= $form->field($model, 'UGOBLab')->textInput() ?>
 
             <?= $form->field($model, 'UGOBLabRem')->textInput(['maxlength' => true]) ?>
 
         </div>
-        <div id="clvl" class="tab-pane fade">
+        <div id="clvlu" class="tab-pane fade">
             <?= $form->field($model, 'CLC_UGVLAdj')->textInput() ?>
 
             <?= $form->field($model, 'CLC_UGVLHAWP')->textInput() ?>
@@ -339,7 +338,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'CLC_UGVL')->textInput() ?>
 
         </div>
-        <div id="clovl" class="tab-pane fade">
+        <div id="clovlu" class="tab-pane fade">
             <?= $form->field($model, 'CLC_UGOLVLAdj')->textInput() ?>
 
             <?= $form->field($model, 'CLC_UGOLVLHAWP')->textInput() ?>
@@ -349,7 +348,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'CLC_UGOLVL')->textInput() ?>
 
         </div>
-        <div id="clsl" class="tab-pane fade">
+        <div id="clslu" class="tab-pane fade">
             <?= $form->field($model, 'CLC_UGSLAdj')->textInput() ?>
 
             <?= $form->field($model, 'CLC_UGSLHAWP')->textInput() ?>
@@ -360,7 +359,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
 
         </div>
-        <div id="closl" class="tab-pane fade">
+        <div id="closlu" class="tab-pane fade">
             <?= $form->field($model, 'CLC_UGOLSLAdj')->textInput() ?>
 
             <?= $form->field($model, 'CLC_UGOLSLHAWP')->textInput() ?>
@@ -370,7 +369,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'CLC_UGOLSL')->textInput() ?>
 
         </div>
-        <div id="clbday" class="tab-pane fade">
+        <div id="clbdayu" class="tab-pane fade">
             <?= $form->field($model, 'CLC_UGBLAdj')->textInput() ?>
 
             <?= $form->field($model, 'CLC_UGBLHAWP')->textInput() ?>
@@ -380,7 +379,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'CLC_UGBL')->textInput() ?>
 
         </div>
-        <div id="clemer" class="tab-pane fade">
+        <div id="clemeru" class="tab-pane fade">
             <?= $form->field($model, 'CLC_UGELAdj')->textInput() ?>
 
             <?= $form->field($model, 'CLC_UGELHAWP')->textInput() ?>
@@ -390,7 +389,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'CLC_UGEL')->textInput() ?>
 
         </div>
-        <div id="clsolo" class="tab-pane fade">
+        <div id="clsolou" class="tab-pane fade">
             <?= $form->field($model, 'CLC_UGSPLAdj')->textInput() ?>
 
             <?= $form->field($model, 'CLC_UGSPLHAWP')->textInput() ?>
@@ -400,7 +399,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'CLC_UGSPL')->textInput() ?>
 
         </div>
-        <div id="clpat" class="tab-pane fade">
+        <div id="clpatu" class="tab-pane fade">
             <?= $form->field($model, 'CLC_UGPLAdj')->textInput() ?>
 
             <?= $form->field($model, 'CLC_UGPLHAWP')->textInput() ?>
@@ -410,7 +409,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'CLC_UGPL')->textInput() ?>
 
         </div>
-        <div id="clmat" class="tab-pane fade">
+        <div id="clmatu" class="tab-pane fade">
             <?= $form->field($model, 'CLC_UGMLAdj')->textInput() ?>
 
             <?= $form->field($model, 'CLC_UGMLHAWP')->textInput() ?>
@@ -420,7 +419,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'CLC_UGML')->textInput() ?>
 
         </div>
-        <div id="clunion" class="tab-pane fade">
+        <div id="clunionu" class="tab-pane fade">
             <?= $form->field($model, 'CLC_UGULAdj')->textInput() ?>
 
             <?= $form->field($model, 'CLC_UGULHAWP')->textInput() ?>
@@ -430,7 +429,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'CLC_UGUL')->textInput() ?>
 
         </div>
-        <div id="clspecial" class="tab-pane fade">
+        <div id="clspecialu" class="tab-pane fade">
 
             <?= $form->field($model, 'CLC_UGSLWAdj')->textInput() ?>
 
@@ -441,7 +440,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'CLC_UGSLW')->textInput() ?>
 
         </div>
-        <div id="clnuptial" class="tab-pane fade">
+        <div id="clnuptialu" class="tab-pane fade">
             <?= $form->field($model, 'CLC_UGNLAdj')->textInput() ?>
 
             <?= $form->field($model, 'CLC_UGNLHAWP')->textInput() ?>
@@ -451,7 +450,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'CLC_UGNL')->textInput() ?>
 
         </div>
-        <div id="clofficial" class="tab-pane fade">
+        <div id="clofficialu" class="tab-pane fade">
             <?= $form->field($model, 'UGOBClc')->textInput() ?>
 
             <?= $form->field($model, 'UGOBClcRem')->textInput(['maxlength' => true]) ?>

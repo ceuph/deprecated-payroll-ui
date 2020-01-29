@@ -4,30 +4,23 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Loans;
+use app\models\search\LoansSearch;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
+use yii\widgets\ActiveForm;
 
 /**
  * LoansController implements the CRUD actions for Loans model.
  */
-class LoansController extends Controller
+class LoansController extends Appcontroller
 {
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+
 
     /**
      * Lists all Loans models.
@@ -35,11 +28,11 @@ class LoansController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Loans::find(),
-        ]);
+        $searchModel = new LoansSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -67,13 +60,39 @@ class LoansController extends Controller
     {
         $model = new Loans();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'EmpID' => $model->EmpID, 'PrdID' => $model->PrdID]);
+        if ($model->load(Yii::$app->request->post())) {
+
+            foreach(Yii::$app->request->post()['Loans']['EmpID'] as $empId){
+                 $model->EmpID = $empId;
+             }
+
+            if($model->save())
+            {
+                return 1;
+            }else{
+
+                return 2;
+            }
+           
         }
 
-        return $this->render('create', [
+        return $this->renderAjax('create', [
             'model' => $model,
         ]);
+    }
+
+    public function actionAjaxValidate() {
+
+        $model = new Loans();
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            
+            foreach(Yii::$app->request->post()['Loans']['EmpID'] as $empId){
+                 $model->EmpID = $empId;
+             }
+
+           \Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
     }
 
     /**
@@ -89,10 +108,10 @@ class LoansController extends Controller
         $model = $this->findModel($EmpID, $PrdID);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'EmpID' => $model->EmpID, 'PrdID' => $model->PrdID]);
+            return $this->redirect(['index']);
         }
 
-        return $this->render('update', [
+        return $this->renderAjax('update', [
             'model' => $model,
         ]);
     }

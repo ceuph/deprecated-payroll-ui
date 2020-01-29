@@ -14,10 +14,15 @@ class NtDtrSearch extends NtDtr
     /**
      * {@inheritdoc}
      */
+    public $fname;
+    public $lname;
+    public $schoolCollege;
+    public $campus;
+    public $department;
     public function rules()
     {
         return [
-            [['EmpID', 'PrdID', 'NT_DAbsntRem', 'NT_DLWOPRem'], 'safe'],
+            [['EmpID', 'PrdID', 'NT_DAbsntRem', 'NT_DLWOPRem','fname','campus','lname','schoolCollege','department'], 'safe'],
             [['NT_DAbsnt', 'NT_HLate', 'NT_HUdt', 'NT_DLWOP', 'NT_OTHReg', 'NT_OTHNDReg', 'NT_OTHRegExc', 'NT_OTHNDRegExc', 'NT_OTHSpcl', 'NT_OTHNDSpcl', 'NT_OTHSpclExc', 'NT_OTHNDSpclExc', 'NT_OTHLgl', 'NT_OTHNDLgl', 'NT_OTHLglExc', 'NT_OTHNDLglExc', 'NT_OTHHolSun', 'NT_OTHNDHolSun', 'NT_OTHHolSunExc', 'NT_OTHNDHolExc'], 'number'],
         ];
     }
@@ -40,7 +45,7 @@ class NtDtrSearch extends NtDtr
      */
     public function search($params)
     {
-        $query = NtDtr::find();
+        $query = NtDtr::find()->joinWith(['employeeList']);
 
         // add conditions that should always apply here
 
@@ -80,10 +85,15 @@ class NtDtrSearch extends NtDtr
             'NT_OTHNDHolExc' => $this->NT_OTHNDHolExc,
         ]);
 
-        $query->andFilterWhere(['like', 'EmpID', $this->EmpID])
-            ->andFilterWhere(['like', 'PrdID', $this->PrdID])
+        $query->andFilterWhere(['like', 'SH04_NTDTR.EmpID', $this->EmpID])
+            ->andFilterWhere(['like', 'SH04_NTDTR.PrdID', $this->PrdID])
             ->andFilterWhere(['like', 'NT_DAbsntRem', $this->NT_DAbsntRem])
-            ->andFilterWhere(['like', 'NT_DLWOPRem', $this->NT_DLWOPRem]);
+            ->andFilterWhere(['like', 'NT_DLWOPRem', $this->NT_DLWOPRem])
+            ->andFilterWhere(['like', 'campus', $this->campus])
+            ->andFilterWhere(['like', 'FName', $this->fname])
+            ->andFilterWhere(['like', 'LName', $this->lname])
+            ->andFilterWhere(['like', 'SchoolCollege', $this->schoolCollege])
+            ->andFilterWhere(['like', 'Department', $this->department]);
 
         return $dataProvider;
     }

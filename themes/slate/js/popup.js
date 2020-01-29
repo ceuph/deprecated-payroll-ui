@@ -21,6 +21,52 @@ $(function(){
         .load($(this).attr('value'));
     });
 
+     //tc dtr
+     $('#tcdtrId').click(function(){
+        $('#tcId').modal('show')
+        .find('#contentTc')
+        .load($(this).attr('value'));
+    });
+
+     //tc teaching load dtr
+     $('#tctId').click(function(){
+        $('#tclId').modal('show')
+        .find('#contentTcl')
+        .load($(this).attr('value'));
+    });
+
+     //nt dtr
+     $('#ntdtrId').click(function(){
+        $('#dtrId').modal('show')
+        .find('#contentDtr')
+        .load($(this).attr('value'));
+    });
+     //to faculty tother income
+     $('#totherId').click(function(){
+        $('#toId').modal('show')
+        .find('#contentTo')
+        .load($(this).attr('value'));
+    });
+
+     //to nt other income
+     $('#ntotherId').click(function(){
+        $('#otherId').modal('show')
+        .find('#contentOther')
+        .load($(this).attr('value'));
+    });
+     //loans
+     $('#loansId').click(function(){
+        $('#loanId').modal('show')
+        .find('#contentLoan')
+        .load($(this).attr('value'));
+    });
+
+     //other deductions
+     $('#odeducId').click(function(){
+        $('#deducId').modal('show')
+        .find('#contentDeduc')
+        .load($(this).attr('value'));
+    });
 
     $('#activity-view-link').click(function() {
     $.get(

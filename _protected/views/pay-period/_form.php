@@ -65,6 +65,8 @@ use yii\web\JsExpression;
 
      ?>
 
+     <?= $form->field($model, 'status')->textInput(['maxlength' => true]); ?>
+
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

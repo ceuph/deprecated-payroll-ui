@@ -14,10 +14,16 @@ class TcDtrSearch extends TcDtr
     /**
      * {@inheritdoc}
      */
+
+    public $fname;
+    public $lname;
+    public $schoolCollege;
+    public $campus;
+    public $department;
     public function rules()
     {
         return [
-            [['EmpID', 'PrdID', 'UG_HAbsntLecRem', 'UG_HCMTLecRem', 'UG_HLWOPLecRem', 'UG_HAbsntLabRem', 'UG_HCMTLabRem', 'UG_HLWOPLabRem', 'UG_HAbsntClcRem', 'UG_HCMTClcRem', 'UG_HLWOPClcRem', 'GS_HAbsntLecRem', 'GS_HCMTLecRem', 'GS_HLWOPLecRem', 'GS_HAbsntLabRem', 'GS_HCMTLabRem', 'GS_HLWOPLabRem', 'GS_HAbsntClcRem', 'GS_HCMTClcRem', 'GS_HLWOPClcRem'], 'safe'],
+            [['EmpID', 'PrdID', 'UG_HAbsntLecRem', 'UG_HCMTLecRem', 'UG_HLWOPLecRem', 'UG_HAbsntLabRem', 'UG_HCMTLabRem', 'UG_HLWOPLabRem', 'UG_HAbsntClcRem', 'UG_HCMTClcRem', 'UG_HLWOPClcRem', 'GS_HAbsntLecRem', 'GS_HCMTLecRem', 'GS_HLWOPLecRem', 'GS_HAbsntLabRem', 'GS_HCMTLabRem', 'GS_HLWOPLabRem', 'GS_HAbsntClcRem', 'GS_HCMTClcRem', 'GS_HLWOPClcRem','fname','campus','lname','schoolCollege','department'], 'safe'],
             [['UG_HAbsntLec', 'UG_HCMTLec', 'UG_HLWOPLec', 'UG_HAbsntLab', 'UG_HCMTLab', 'UG_HLWOPLab', 'UG_HAbsntClc', 'UG_HCMTClc', 'UG_HLWOPClc', 'GS_HAbsntLec', 'GS_HCMTLec', 'GS_HLWOPLec', 'GS_HAbsntLab', 'GS_HCMTLab', 'GS_HLWOPLab', 'GS_HAbsntClc', 'GS_HCMTClc', 'GS_HLWOPClc'], 'number'],
         ];
     }
@@ -40,7 +46,7 @@ class TcDtrSearch extends TcDtr
      */
     public function search($params)
     {
-        $query = TcDtr::find();
+        $query = TcDtr::find()->joinWith(['employeeList']);
 
         // add conditions that should always apply here
 
@@ -78,8 +84,8 @@ class TcDtrSearch extends TcDtr
             'GS_HLWOPClc' => $this->GS_HLWOPClc,
         ]);
 
-        $query->andFilterWhere(['like', 'EmpID', $this->EmpID])
-            ->andFilterWhere(['like', 'PrdID', $this->PrdID])
+        $query->andFilterWhere(['like', 'SH04_TCDTR.EmpID', $this->EmpID])
+            ->andFilterWhere(['like', 'SH04_TCDTR.PrdID', $this->PrdID])
             ->andFilterWhere(['like', 'UG_HAbsntLecRem', $this->UG_HAbsntLecRem])
             ->andFilterWhere(['like', 'UG_HCMTLecRem', $this->UG_HCMTLecRem])
             ->andFilterWhere(['like', 'UG_HLWOPLecRem', $this->UG_HLWOPLecRem])
@@ -97,7 +103,12 @@ class TcDtrSearch extends TcDtr
             ->andFilterWhere(['like', 'GS_HLWOPLabRem', $this->GS_HLWOPLabRem])
             ->andFilterWhere(['like', 'GS_HAbsntClcRem', $this->GS_HAbsntClcRem])
             ->andFilterWhere(['like', 'GS_HCMTClcRem', $this->GS_HCMTClcRem])
-            ->andFilterWhere(['like', 'GS_HLWOPClcRem', $this->GS_HLWOPClcRem]);
+            ->andFilterWhere(['like', 'GS_HLWOPClcRem', $this->GS_HLWOPClcRem])
+            ->andFilterWhere(['like', 'campus', $this->campus])
+            ->andFilterWhere(['like', 'FName', $this->fname])
+            ->andFilterWhere(['like', 'LName', $this->lname])
+            ->andFilterWhere(['like', 'SchoolCollege', $this->schoolCollege])
+            ->andFilterWhere(['like', 'Department', $this->department]);
 
         return $dataProvider;
     }

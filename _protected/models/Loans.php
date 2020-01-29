@@ -253,9 +253,14 @@ class Loans extends \yii\db\ActiveRecord
         return [
             [['PrdID', 'EmpID'], 'required'],
             [['L_SSSAdj', 'L_SSSPF', 'L_SSSHF', 'L_SSSAdtnlD', 'L_SSS', 'L_SSSCAdj', 'L_SSSCPF', 'L_SSSCHF', 'L_SSSCAdtnlD', 'L_SSSC', 'L_HDMFAdj', 'L_HDMFPF', 'L_HDMFHF', 'L_HDMFAdtnlD', 'L_HDMF', 'L_HDMFMPAdj', 'L_HDMFMPPF', 'L_HDMFMPHF', 'L_HDMFMPAdtnlD', 'L_HDMFMP', 'L_HDMFCAdj', 'L_HDMFCPF', 'L_HDMFCHF', 'L_HDMFCAdtnlD', 'L_HDMFC', 'L_LOVEMPAdj', 'L_LOVEMPPF', 'L_LOVEMPHF', 'L_LOVEMPAdtnlD', 'L_LOVEMP', 'L_FAWUAdj', 'L_FAWUPF', 'L_FAWUHF', 'L_FAWUAdtnlD', 'L_FAWU', 'L_HFFAWUAdj', 'L_HFFAWUPF', 'L_HFFAWUHF', 'L_HFFAWUAdtnlD', 'L_HFFAWU', 'L_CEUHousingIntAdj', 'L_CEUHousingIntPF', 'L_CEUHousingIntHF', 'L_CEUHousingIntAdtnlD', 'L_CEUHousingInt', 'L_CEUHousingPcplAdj', 'L_CEUHousingPcplPF', 'L_CEUHousingPcplHF', 'L_CEUHousingPcplAdtnlD', 'L_CEUHousingPcpl', 'L_MedicalAdj', 'L_MedicalPF', 'L_MedicalHF', 'L_MedicalAdtnlD', 'L_Medical', 'L_TechnologyAdj', 'L_TechnologyPF', 'L_TechnologyHF', 'L_TechnologyAdtnlD', 'L_Technology', 'L_HospitalAdj', 'L_HospitalPF', 'L_HospitalHF', 'L_HospitalAdtnlD', 'L_Hospital', 'L_EmergencyAdj', 'L_EmergencyPF', 'L_EmergencyHF', 'L_EmergencyAdtnlD', 'L_Emergency', 'L_UnifiedAdj', 'L_UnifiedPF', 'L_UnifiedHF', 'L_UnifiedAdtnlD', 'L_Unified', 'L_BDayAdj', 'L_BDayPF', 'L_BDayHF', 'L_BDayAdtnlD', 'L_BDay', 'L_TravelAdj', 'L_TravelPF', 'L_TravelHF', 'L_TravelAdtnlD', 'L_Travel', 'L_PettyCashAdj', 'L_PettyCashPF', 'L_PettyCashHF', 'L_PettyCashAdtnlD', 'L_PettyCash', 'L_SpecialAdj', 'L_SpecialPF', 'L_SpecialHF', 'L_SpecialAdtnlD', 'L_Special', 'L_PhilamcareAdj', 'L_PhilamcarePF', 'L_PhilamcareHF', 'L_PhilamcareAdtnlD', 'L_Philamcare', 'L_SavingsDepAdj', 'L_SavingsDepPF', 'L_SavingsDepHF', 'L_SavingsDepAdtnlD', 'L_SavingsDep', 'L_FixedDepAdj', 'L_FixedDepPF', 'L_FixedDepHF', 'L_FixedDepAdtnlD', 'L_FixedDep', 'L_PensionDepAdj', 'L_PensionDepPF', 'L_PensionDepHF', 'L_PensionDepAdtnlD', 'L_PensionDep', 'L_SeminarAdj', 'L_SeminarPF', 'L_SeminarHF', 'L_SeminarAdtnlD', 'L_Seminar', 'L_CoopAdj', 'L_CoopPF', 'L_CoopHF', 'L_CoopAdtnlD', 'L_Coop', 'L_TuitionAdj', 'L_TuitionPF', 'L_TuitionHF', 'L_TuitionAdtnlD', 'L_Tuition', 'L_FieldTripAdj', 'L_FieldTripPF', 'L_FieldTripHF', 'L_FieldTripAdtnlD', 'L_FieldTrip', 'L_CCLoveAdj', 'L_CCLovePF', 'L_CCLoveHF', 'L_CCLoveAdtnlD', 'L_CCLove', 'L_HFCCLoveAdj', 'L_HFCCLovePF', 'L_HFCCLoveHF', 'L_HFCCLoveAdtnlD', 'L_HFCCLove', 'L_EuroUSAIntAdj', 'L_EuroUSAIntPF', 'L_EuroUSAIntHF', 'L_EuroUSAIntAdtnlD', 'L_EuroUSAInt', 'L_EuroUSAPcplAdj', 'L_EuroUSAPcplPF', 'L_EuroUSAPcplHF', 'L_EuroUSAPcplAdtnlD', 'L_EuroUSAPcpl', 'L_HolyLandTourAdj', 'L_HolyLandTourPF', 'L_HolyLandTourHF', 'L_HolyLandTourAdtnlD', 'L_HolyLandTour', 'L_HKTravelAdj', 'L_HKTravelPF', 'L_HKTravelHF', 'L_HKTravelAdtnlD', 'L_HKTravel', 'L_PAFTETourAdj', 'L_PAFTETourPF', 'L_PAFTETourHF', 'L_PAFTETourAdtnlD', 'L_PAFTETour', 'L_AsiaPacConfeAdj', 'L_AsiaPacConfePF', 'L_AsiaPacConfeHF', 'L_AsiaPacConfeAdtnlD', 'L_AsiaPacConfe', 'L_ParkingAdj', 'L_ParkingPF', 'L_ParkingHF', 'L_ParkingAdtnlD', 'L_Parking', 'L_ComputerAdj', 'L_ComputerPF', 'L_ComputerHF', 'L_ComputerAdtnlD', 'L_Computer', 'L_OPBasicAdj', 'L_OPBasicPF', 'L_OPBasicHF', 'L_OPBasicAdtnlD', 'L_OPBasic', 'L_OPEFAAdj', 'L_OPEFAPF', 'L_OPEFAHF', 'L_OPEFAAdtnlD', 'L_OPEFA', 'L_OPCOLAAdj', 'L_OPCOLAPF', 'L_OPCOLAHF', 'L_OPCOLAAdtnlD', 'L_OPCOLA', 'L_AdjTaxAdj', 'L_AdjTaxPF', 'L_AdjTaxHF', 'L_AdjTaxAdtnlD', 'L_AdjTax', 'L_AdjTaxSBAdj', 'L_AdjTaxSBPF', 'L_AdjTaxSBHF', 'L_AdjTaxSBAdtnlD', 'L_AdjTaxSB', 'L_ALWOPCOLAAdj', 'L_ALWOPCOLAPF', 'L_ALWOPCOLAHF', 'L_ALWOPCOLAAdtnlD', 'L_ALWOPCOLA', 'L_ALWOPEFAAdj', 'L_ALWOPEFAPF', 'L_ALWOPEFAHF', 'L_ALWOPEFAAdtnlD', 'L_ALWOPEFA', 'L_VaccineAdj', 'L_VaccinePF', 'L_VaccineHF', 'L_VaccineAdtnlD', 'L_Vaccine'], 'number'],
-            [['PrdID', 'EmpID'], 'string', 'max' => 32],
+            [['PrdID'], 'string', 'max' => 32],
             [['EmpID', 'PrdID'], 'unique', 'targetAttribute' => ['EmpID', 'PrdID']],
         ];
+    }
+
+    public function getEmployeeList()
+    {
+        return $this->hasOne(PayrollEmployeeList::className(), ['EmpID' => 'EmpID']);
     }
 
     /**
@@ -326,11 +331,11 @@ class Loans extends \yii\db\ActiveRecord
             'L_TechnologyHF' => 'Technology Handling Fee',
             'L_TechnologyAdtnlD' => 'Technology Additional Deduction',
             'L_Technology' => 'Technology Deduction',
-            'L_HospitalAdj' => 'Hospiital Adjustment or New Balance',
-            'L_HospitalPF' => 'Hospiital Period Factor',
-            'L_HospitalHF' => 'Hospiital Handling Fee',
-            'L_HospitalAdtnlD' => 'Hospiital Additional Deduction',
-            'L_Hospital' => 'Hospiital Deduction',
+            'L_HospitalAdj' => 'Hospital Adjustment or New Balance',
+            'L_HospitalPF' => 'Hospital Period Factor',
+            'L_HospitalHF' => 'Hospital Handling Fee',
+            'L_HospitalAdtnlD' => 'Hospital Additional Deduction',
+            'L_Hospital' => 'Hospital Deduction',
             'L_EmergencyAdj' => 'Emergency Loan Adjustment or New Balance',
             'L_EmergencyPF' => 'Emergency Loan Period Factor',
             'L_EmergencyHF' => 'Emergency Loan Handling Fee',

@@ -96,8 +96,8 @@ class NtLeaveCreditsSearch extends NtLeaveCredits
             'NT_OB' => $this->NT_OB,
         ]);
 
-        $query->andFilterWhere(['like', 'EmpID', $this->EmpID])
-            ->andFilterWhere(['like', 'PrdID', $this->PrdID])
+        $query->andFilterWhere(['like', 'SH03_NTLEAVECREDITS.EmpID', $this->EmpID])
+            ->andFilterWhere(['like', 'SH03_NTLEAVECREDITS.PrdID', $this->PrdID])
             ->andFilterWhere(['like', 'LC_NT_VLRem', $this->LC_NT_VLRem])
             ->andFilterWhere(['like', 'LC_NT_SLRem', $this->LC_NT_SLRem])
             ->andFilterWhere(['like', 'LC_NT_BLRem', $this->LC_NT_BLRem])

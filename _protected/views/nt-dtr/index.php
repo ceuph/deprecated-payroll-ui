@@ -3,6 +3,10 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
+use yii\widgets\Pjax;
+use yii\bootstrap\Modal;
+use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\search\NtDtrSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -15,10 +19,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::button('Create', ['value'=>Url::to(['nt-dtr/create']),'class' => 'btn btn-success', 'id'=>'ntdtrId']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+<?php Pjax::begin(['id' => 'ntdtrTbl','enablePushState' => false]) ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -26,34 +30,81 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'EmpID',
             'PrdID',
-            'NT_DAbsnt',
-            'NT_DAbsntRem',
-            'NT_HLate',
-            //'NT_HUdt',
-            //'NT_DLWOP',
-            //'NT_DLWOPRem',
-            //'NT_OTHReg',
-            //'NT_OTHNDReg',
-            //'NT_OTHRegExc',
-            //'NT_OTHNDRegExc',
-            //'NT_OTHSpcl',
-            //'NT_OTHNDSpcl',
-            //'NT_OTHSpclExc',
-            //'NT_OTHNDSpclExc',
-            //'NT_OTHLgl',
-            //'NT_OTHNDLgl',
-            //'NT_OTHLglExc',
-            //'NT_OTHNDLglExc',
-            //'NT_OTHHolSun',
-            //'NT_OTHNDHolSun',
-            //'NT_OTHHolSunExc',
-            //'NT_OTHNDHolExc',
+            'EmpID',
+            [
+                'attribute'=> 'lname',
+                'value' => function ($data) {
+                    return $data->employeeList->LName;
+                },
+            ],
+            [
+                'attribute'=> 'fname',
+                'value' => function ($data) {
+                    return $data->employeeList->FName;
+                },
+            ],
+            [
+                'attribute'=> 'campus',
+                'value' => function ($data) {
+                    return $data->employeeList->Campus;
+                },
+            ],
+            [
+                'attribute'=> 'schoolCollege',
+                'value' => function ($data) {
+                    return $data->employeeList->SchoolCollege;
+                },
+            ],
+            [
+                'attribute'=> 'department',
+                'value' => function ($data) {
+                    return $data->employeeList->Department;
+                },
+            ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+
+
+            ['class' => 'yii\grid\ActionColumn',
+                'buttons' => [
+                  'update' => function ($url, $model, $key) {
+
+                      return Html::a('<span class="glyphicon glyphicon-pencil"></span>',$url,
+                          [
+                              'title' => 'Update',
+                              'id' => 'update-ntdtr-' . $model->EmpID . $model->PrdID,
+                              'data-toggle' => 'modal',
+                              'data-target' => '#ntdtr-modals',
+                              'data-id' => $key,
+                              'data-pjax' => '0',
+                              'onclick' => "ajaxmodal('#ntdtr-modal', '" . Url::to(['nt-dtr/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
+                          ]
+                      );
+
+           
+
+                  },
+                
+                  ],
+            ],
         ],
     ]); ?>
-
-
+<?php Pjax::end() ?>
 </div>
+<?php
+Modal::begin([
+      'id'=>'dtrId',
+      'size'=>'modal-lg',
+     'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+    ]);
+   echo "<div id='contentDtr'></div>";
+Modal::end();
+
+Modal::begin([
+    'id' => 'ntdtr-modal',
+    //'header' => '<h4 class="modal-title">Update</h4>',
+    'size'=>'modal-lg',
+    'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+]); 
+Modal::end();
+?>

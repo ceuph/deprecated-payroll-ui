@@ -3,6 +3,10 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
+use yii\widgets\Pjax;
+use yii\bootstrap\Modal;
+use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\search\TcDtrSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -15,59 +19,94 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::button('Create', ['value'=>Url::to(['tc-dtr/create']),'class' => 'btn btn-success', 'id'=>'tcdtrId']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
+<?php Pjax::begin(['id' => 'tcdtrTbl','enablePushState' => false]) ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'EmpID',
             'PrdID',
-            'UG_HAbsntLec',
-            'UG_HAbsntLecRem',
-            'UG_HCMTLec',
-            //'UG_HCMTLecRem',
-            //'UG_HLWOPLec',
-            //'UG_HLWOPLecRem',
-            //'UG_HAbsntLab',
-            //'UG_HAbsntLabRem',
-            //'UG_HCMTLab',
-            //'UG_HCMTLabRem',
-            //'UG_HLWOPLab',
-            //'UG_HLWOPLabRem',
-            //'UG_HAbsntClc',
-            //'UG_HAbsntClcRem',
-            //'UG_HCMTClc',
-            //'UG_HCMTClcRem',
-            //'UG_HLWOPClc',
-            //'UG_HLWOPClcRem',
-            //'GS_HAbsntLec',
-            //'GS_HAbsntLecRem',
-            //'GS_HCMTLec',
-            //'GS_HCMTLecRem',
-            //'GS_HLWOPLec',
-            //'GS_HLWOPLecRem',
-            //'GS_HAbsntLab',
-            //'GS_HAbsntLabRem',
-            //'GS_HCMTLab',
-            //'GS_HCMTLabRem',
-            //'GS_HLWOPLab',
-            //'GS_HLWOPLabRem',
-            //'GS_HAbsntClc',
-            //'GS_HAbsntClcRem',
-            //'GS_HCMTClc',
-            //'GS_HCMTClcRem',
-            //'GS_HLWOPClc',
-            //'GS_HLWOPClcRem',
+            'EmpID',
+            [
+                'attribute'=> 'lname',
+                'value' => function ($data) {
+                    return $data->employeeList->LName;
+                },
+            ],
+            [
+                'attribute'=> 'fname',
+                'value' => function ($data) {
+                    return $data->employeeList->FName;
+                },
+            ],
+            [
+                'attribute'=> 'campus',
+                'value' => function ($data) {
+                    return $data->employeeList->Campus;
+                },
+            ],
+            [
+                'attribute'=> 'schoolCollege',
+                'value' => function ($data) {
+                    return $data->employeeList->SchoolCollege;
+                },
+            ],
+            [
+                'attribute'=> 'department',
+                'value' => function ($data) {
+                    return $data->employeeList->Department;
+                },
+            ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+
+            ['class' => 'yii\grid\ActionColumn',
+                'buttons' => [
+                'update' => function ($url, $model, $key) {
+
+                      return Html::a('<span class="glyphicon glyphicon-pencil"></span>',$url,
+                          [
+                              'title' => 'Update',
+                              'id' => 'update-tcdtr-' . $model->EmpID . $model->PrdID,
+                              'data-toggle' => 'modal',
+                              'data-target' => '#tcdtr-modals',
+                              'data-id' => $key,
+                              'data-pjax' => '0',
+                              'onclick' => "ajaxmodal('#tcdtr-modal', '" . Url::to(['tc-dtr/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
+                          ]
+                      );
+
+           
+
+                  },
+                ],
+            ],
+            
         ],
     ]); ?>
-
+<?php Pjax::end() ?>
 
 </div>
+<?php
+Modal::begin([
+    'id'=>'tcId',
+    'size'=>'modal-lg',
+   'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+  ]);
+ echo "<div id='contentTc'></div>";
+Modal::end();
+
+Modal::begin([
+    'id' => 'tcdtr-modal',
+    //'header' => '<h4 class="modal-title">Update</h4>',
+    'size'=>'modal-lg',
+    'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+]); 
+Modal::end();
+
+?>

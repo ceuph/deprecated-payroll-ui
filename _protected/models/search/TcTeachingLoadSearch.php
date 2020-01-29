@@ -14,10 +14,15 @@ class TcTeachingLoadSearch extends TcTeachingLoad
     /**
      * {@inheritdoc}
      */
+    public $fname;
+    public $lname;
+    public $schoolCollege;
+    public $campus;
+    public $department;
     public function rules()
     {
         return [
-            [['PrdID', 'EmpID'], 'safe'],
+            [['PrdID', 'EmpID','fname','campus','lname','schoolCollege','department'], 'safe'],
             [['UG_LoadLec', 'UG_LoadLab', 'UG_LoadClc', 'GS_LoadLec', 'GS_LoadLab', 'GS_LoadClc', 'TC_SemMonth'], 'number'],
         ];
     }
@@ -40,7 +45,7 @@ class TcTeachingLoadSearch extends TcTeachingLoad
      */
     public function search($params)
     {
-        $query = TcTeachingLoad::find();
+        $query = TcTeachingLoad::find()->joinWith(['employeeList']);
 
         // add conditions that should always apply here
 
@@ -67,8 +72,13 @@ class TcTeachingLoadSearch extends TcTeachingLoad
             'TC_SemMonth' => $this->TC_SemMonth,
         ]);
 
-        $query->andFilterWhere(['like', 'PrdID', $this->PrdID])
-            ->andFilterWhere(['like', 'EmpID', $this->EmpID]);
+        $query->andFilterWhere(['like', 'SH02_TCTEACHINGLOAD.PrdID', $this->PrdID])
+            ->andFilterWhere(['like', 'SH02_TCTEACHINGLOAD.EmpID', $this->EmpID])
+            ->andFilterWhere(['like', 'campus', $this->campus])
+            ->andFilterWhere(['like', 'FName', $this->fname])
+            ->andFilterWhere(['like', 'LName', $this->lname])
+            ->andFilterWhere(['like', 'SchoolCollege', $this->schoolCollege])
+            ->andFilterWhere(['like', 'Department', $this->department]);
 
         return $dataProvider;
     }

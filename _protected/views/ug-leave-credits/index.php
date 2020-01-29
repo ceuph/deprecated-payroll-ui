@@ -94,13 +94,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
 </div>
 <?php
-      Modal::begin([
-          'id'=>'ugId',
-          'size'=>'modal-lg',
-         'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
-        ]);
-       echo "<div id='contentUg'></div>";
-      Modal::end();
+Modal::begin([
+    'id'=>'ugId',
+    'size'=>'modal-lg',
+   'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+  ]);
+ echo "<div id='contentUg'></div>";
+Modal::end();
 
 Modal::begin([
     'id' => 'ugl-modal',

@@ -35,7 +35,7 @@ class TcTeachingLoad extends \yii\db\ActiveRecord
         return [
             [['PrdID', 'EmpID'], 'required'],
             [['UG_LoadLec', 'UG_LoadLab', 'UG_LoadClc', 'GS_LoadLec', 'GS_LoadLab', 'GS_LoadClc', 'TC_SemMonth'], 'number'],
-            [['PrdID', 'EmpID'], 'string', 'max' => 32],
+            [['PrdID'], 'string', 'max' => 32],
             [['EmpID', 'PrdID'], 'unique', 'targetAttribute' => ['EmpID', 'PrdID']],
         ];
     }
@@ -55,5 +55,10 @@ class TcTeachingLoad extends \yii\db\ActiveRecord
             'GS_LoadLab' => 'Gradschool - Laboratory Load',
             'GS_LoadClc' => 'Gradschool - Clinic Load',
         ];
+    }
+
+    public function getEmployeeList()
+    {
+        return $this->hasOne(PayrollEmployeeList::className(), ['EmpID' => 'EmpID']);
     }
 }

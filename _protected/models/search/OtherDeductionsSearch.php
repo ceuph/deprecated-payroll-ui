@@ -14,10 +14,15 @@ class OtherDeductionsSearch extends OtherDeductions
     /**
      * {@inheritdoc}
      */
+    public $fname;
+    public $lname;
+    public $schoolCollege;
+    public $campus;
+    public $department;
     public function rules()
     {
         return [
-            [['EmpID', 'PrdID'], 'safe'],
+            [['EmpID', 'PrdID','fname','campus','lname','schoolCollege','department'], 'safe'],
             [['FAWU_AF', 'FAWU_UD', 'FAWU_WF', 'HDMF_UPG', 'HDMF_MPL2', 'Coop', 'Tuition', 'Tour', 'AlumniTick', 'ParkingFee', 'GradExp', 'TogaRent', 'StuUniform', 'Vaccine', 'OtherDeduc', 'AdjWTAX', 'AdjHDMF', 'AdjPHIC', 'AdjSSS', 'OPBasic', 'OPEFA', 'OPCOLA', 'OPBonusXmas', 'OPBonusMidYr', 'OPTMP', 'OPAdvIP', 'OPAllowIP', 'OPVLSL'], 'number'],
         ];
     }
@@ -40,7 +45,7 @@ class OtherDeductionsSearch extends OtherDeductions
      */
     public function search($params)
     {
-        $query = OtherDeductions::find();
+        $query = OtherDeductions::find()->joinWith(['employeeList']);
 
         // add conditions that should always apply here
 
@@ -88,8 +93,13 @@ class OtherDeductionsSearch extends OtherDeductions
             'OPVLSL' => $this->OPVLSL,
         ]);
 
-        $query->andFilterWhere(['like', 'EmpID', $this->EmpID])
-            ->andFilterWhere(['like', 'PrdID', $this->PrdID]);
+        $query->andFilterWhere(['like', 'SH09_OTHERDEDUCTIONS.EmpID', $this->EmpID])
+            ->andFilterWhere(['like', 'SH09_OTHERDEDUCTIONS.PrdID', $this->PrdID])
+            ->andFilterWhere(['like', 'campus', $this->campus])
+            ->andFilterWhere(['like', 'FName', $this->fname])
+            ->andFilterWhere(['like', 'LName', $this->lname])
+            ->andFilterWhere(['like', 'SchoolCollege', $this->schoolCollege])
+            ->andFilterWhere(['like', 'Department', $this->department]);
 
         return $dataProvider;
     }

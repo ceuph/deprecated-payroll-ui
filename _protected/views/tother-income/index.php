@@ -3,6 +3,10 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
+use yii\widgets\Pjax;
+use yii\bootstrap\Modal;
+use yii\helpers\Url;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\search\TotherIncomeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -15,114 +19,90 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create', ['create'], ['class' => 'btn btn-success']) ?>
+        <p>
+        <?= Html::button('Create', ['value'=>Url::to(['tother-income/create']),'class' => 'btn btn-success', 'id'=>'totherId']) ?>
     </p>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
+    </p>
+<?php Pjax::begin(['id' => 'totherTbl','enablePushState' => false]) ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'EmpID',
             'PrdID',
-            'TC_AdvIP',
-            'TC_HazardPay',
-            'TC_Honorarium',
-            //'TC_HRMAllowNTax',
-            //'TC_HRMAllowTax',
-            //'TC_IPAllow',
-            //'TC_RLEAllowNTax',
-            //'TC_RLEAllowTax',
-            //'TC_RFDAlumniTick',
-            //'TC_RFDCCLoan',
-            //'TC_RFDCOOP',
-            //'TC_RFDFAWU',
-            //'TC_RFDHDMFMPL',
-            //'TC_RFDHDMFP',
-            //'TC_RFDHDMFU',
-            //'TC_RFDHF',
-            //'TC_RFDMedicare',
-            //'TC_RFDPHIC',
-            //'TC_RFDSSSCondo',
-            //'TC_RFDSSSL',
-            //'TC_RFDSSSP',
-            //'TC_RFDTax',
-            //'TC_RFDTaxAdv',
-            //'TC_RFDTF',
-            //'TC_RFDOthers',
-            //'TC_RFDOthersRem',
-            //'TC_BNMidYrNTax',
-            //'TC_BNMidYrTax',
-            //'TC_BNSLVLNTax',
-            //'TC_BNSLVLTax',
-            //'TC_BNTMPNTax',
-            //'TC_BNTMPTax',
-            //'TC_BNXmasNTax',
-            //'TC_BNXmasTax',
-            //'TC_SHSBNTMPNTax',
-            //'TC_SHSBNTMPTax',
-            //'TC_SSBNMidYrTax',
-            //'TC_SSBNSLVLTax',
-            //'TC_SSBNTMPTax',
-            //'TC_SSBNXmasTax',
-            //'TC_BonusNTax',
-            //'TC_BonusTax',
-            //'TC_AdjIPAllow',
-            //'TC_AdviserFee',
-            //'TC_BackPay',
-            //'TC_BackPayEFA',
-            //'TC_BackPayCOLA',
-            //'TC_BigClassPay',
-            //'TC_CLPPay',
-            //'TC_ClassOrgAdvs',
-            //'TC_CommOutrchPay',
-            //'TC_CommImmersion',
-            //'TC_Coordi',
-            //'TC_CompreExam',
-            //'TC_CriticWork',
-            //'TC_DentPreBoard',
-            //'TC_DentALE',
-            //'TC_Differential',
-            //'TC_EnhcmtSeminar',
-            //'TC_EnrAdvising',
-            //'TC_ExpertisePrm',
-            //'TC_ExtProgPay',
-            //'TC_Externship',
-            //'TC_Goodwill',
-            //'TC_GratuityNTax',
-            //'TC_GratuityTax',
-            //'TC_HardshipPay',
-            //'TC_HolidayPay',
-            //'TC_HonorariumNF',
-            //'TC_HosptOrient',
-            //'TC_IncluProg',
-            //'TC_IncentiveLP',
-            //'TC_IncrmtlProceeds',
-            //'TC_InternshipPay',
-            //'TC_MaternityBnft',
-            //'TC_OneTimeIncentive',
-            //'TC_Practicum',
-            //'TC_Proctorship',
-            //'TC_ReviewNTax',
-            //'TC_ReviewTax',
-            //'TC_RICE',
-            //'TC_SalarySHS',
-            //'TC_SpclExam',
-            //'TC_Substitution',
-            //'TC_Training',
-            //'TC_TranspoAllow',
-            //'TC_Tutorial',
-            //'TC_OINTax',
-            //'TC_OINTaxRem',
-            //'TC_OITax',
-            //'TC_OITaxRem',
+            'EmpID',
+            [
+                'attribute'=> 'lname',
+                'value' => function ($data) {
+                    return $data->employeeList->LName;
+                },
+            ],
+            [
+                'attribute'=> 'fname',
+                'value' => function ($data) {
+                    return $data->employeeList->FName;
+                },
+            ],
+            [
+                'attribute'=> 'campus',
+                'value' => function ($data) {
+                    return $data->employeeList->Campus;
+                },
+            ],
+            [
+                'attribute'=> 'schoolCollege',
+                'value' => function ($data) {
+                    return $data->employeeList->SchoolCollege;
+                },
+            ],
+            [
+                'attribute'=> 'department',
+                'value' => function ($data) {
+                    return $data->employeeList->Department;
+                },
+            ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+
+            ['class' => 'yii\grid\ActionColumn',
+                'buttons' => [
+                'update' => function ($url, $model, $key) {
+
+                      return Html::a('<span class="glyphicon glyphicon-pencil"></span>',$url,
+                          [
+                              'title' => 'Update',
+                              'id' => 'update-tother-' . $model->EmpID . $model->PrdID,
+                              'data-toggle' => 'modal',
+                              'data-target' => '#tother-modals',
+                              'data-id' => $key,
+                              'data-pjax' => '0',
+                              'onclick' => "ajaxmodal('#tother-modal', '" . Url::to(['tother-income/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
+                          ]
+                      );
+
+           
+
+                  },
+                ],
+            ],
+            
         ],
     ]); ?>
-
-
+<?php Pjax::end() ?>
 </div>
+<?php
+Modal::begin([
+    'id'=>'toId',
+    'size'=>'modal-lg',
+   'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+  ]);
+ echo "<div id='contentTo'></div>";
+Modal::end();
+
+Modal::begin([
+    'id' => 'tother-modal',
+    //'header' => '<h4 class="modal-title">Update</h4>',
+    'size'=>'modal-lg',
+    'clientOptions' => ['backdrop' => 'static', 'keyboard' => FALSE],
+]); 
+Modal::end();

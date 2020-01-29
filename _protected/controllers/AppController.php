@@ -25,13 +25,13 @@ class AppController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'controllers' => ['user','leave-application','ug-leave-credits','gs-leave-credits','payroll-employee-list'],
+                        'controllers' => ['user','leave-application','ug-leave-credits','gs-leave-credits','payroll-employee-list','nt-leave-credits','tc-dtr','tc-teaching-load'],
                         'actions' => ['index', 'view', 'create', 'update', 'delete','process2','ajax-validate','find'],
                         'allow' => true,
                         'roles' => ['admin'],
                     ],
                     [
-                        'controllers' => ['ug-leave-credits','gs-leave-credits','nt-leave-credits','tc-dtr','nt-dtr','tother-income','nt-other-income','loans','other-deductions','payroll-employee-list'],
+                        'controllers' => ['ug-leave-credits','gs-leave-credits','nt-leave-credits','tc-dtr','nt-dtr','tother-income','nt-other-income','loans','other-deductions','payroll-employee-list','tc-teaching-load'],
                         'actions' => ['index', 'view', 'create', 'update', 'delete','ajax-validate','find'],
                         'allow' => true,
                         'roles' => ['premium'],

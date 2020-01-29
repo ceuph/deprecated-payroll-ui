@@ -64,7 +64,7 @@ class TcDtr extends \yii\db\ActiveRecord
         return [
             [['EmpID', 'PrdID'], 'required'],
             [['UG_HAbsntLec', 'UG_HCMTLec', 'UG_HLWOPLec', 'UG_HAbsntLab', 'UG_HCMTLab', 'UG_HLWOPLab', 'UG_HAbsntClc', 'UG_HCMTClc', 'UG_HLWOPClc', 'GS_HAbsntLec', 'GS_HCMTLec', 'GS_HLWOPLec', 'GS_HAbsntLab', 'GS_HCMTLab', 'GS_HLWOPLab', 'GS_HAbsntClc', 'GS_HCMTClc', 'GS_HLWOPClc'], 'number'],
-            [['EmpID', 'PrdID', 'UG_HAbsntLecRem', 'UG_HCMTLecRem', 'UG_HLWOPLecRem', 'UG_HAbsntLabRem', 'UG_HCMTLabRem', 'UG_HLWOPLabRem', 'UG_HAbsntClcRem', 'UG_HCMTClcRem', 'UG_HLWOPClcRem', 'GS_HAbsntLecRem', 'GS_HCMTLecRem', 'GS_HLWOPLecRem', 'GS_HAbsntLabRem', 'GS_HCMTLabRem', 'GS_HLWOPLabRem', 'GS_HAbsntClcRem', 'GS_HCMTClcRem', 'GS_HLWOPClcRem'], 'string', 'max' => 32],
+            [['PrdID', 'UG_HAbsntLecRem', 'UG_HCMTLecRem', 'UG_HLWOPLecRem', 'UG_HAbsntLabRem', 'UG_HCMTLabRem', 'UG_HLWOPLabRem', 'UG_HAbsntClcRem', 'UG_HCMTClcRem', 'UG_HLWOPClcRem', 'GS_HAbsntLecRem', 'GS_HCMTLecRem', 'GS_HLWOPLecRem', 'GS_HAbsntLabRem', 'GS_HCMTLabRem', 'GS_HLWOPLabRem', 'GS_HAbsntClcRem', 'GS_HCMTClcRem', 'GS_HLWOPClcRem'], 'string', 'max' => 32],
             [['EmpID', 'PrdID'], 'unique', 'targetAttribute' => ['EmpID', 'PrdID']],
         ];
     }
@@ -115,5 +115,10 @@ class TcDtr extends \yii\db\ActiveRecord
             'GS_HLWOPClcRem'    =>  'Gradschool - Clinic Hours Leave Wihout Pay Remarks',
 
         ];
+    }
+
+    public function getEmployeeList()
+    {
+        return $this->hasOne(PayrollEmployeeList::className(), ['EmpID' => 'EmpID']);
     }
 }
