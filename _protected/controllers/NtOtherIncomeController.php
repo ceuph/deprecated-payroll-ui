@@ -59,11 +59,12 @@ class NtOtherIncomeController extends AppController
     {
         $model = new NtOtherIncome();
 
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $empIds = Yii::$app->request->post()['NtOtherIncome']['EmpID']) {
 
-            foreach(Yii::$app->request->post()['NtOtherIncome']['EmpID'] as $empId){
-                 $model->EmpID = $empId;
-             }
+            foreach($empIds as $empId)
+            {
+                $model->EmpID = $empId;
+            }
 
             if($model->save())
             {

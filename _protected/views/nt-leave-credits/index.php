@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::button('Create', ['value'=>Url::to(['nt-leave-credits/create']),'class' => 'btn btn-success', 'id'=>'ntId']) ?>
     </p>
 
-<?php Pjax::begin(['id' => 'gslTbl','enablePushState' => false]) ?>
+<?php Pjax::begin(['id' => 'ntTbl','enablePushState' => false]) ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

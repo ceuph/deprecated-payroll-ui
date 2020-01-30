@@ -58,18 +58,20 @@ class TcTeachingLoadController extends AppController
     {
         $model = new TcTeachingLoad();
 
-        if ($model->load(Yii::$app->request->post())) {
-            foreach(Yii::$app->request->post()['TcTeachingLoad']['EmpID'] as $empId){
-                 $model->EmpID = $empId;
-                 }
+        if ($model->load(Yii::$app->request->post()) && $empIds = Yii::$app->request->post()['TcTeachingLoad']['EmpID']) {
 
-                if($model->save())
-                {
-                    return 1;
-                }else{
+            foreach($empIds as $empId)
+            {
+                $model->EmpID = $empId;
+            }
 
-                    return 2;
-                }
+            if($model->save())
+            {
+                return 1;
+            }else{
+
+                return 2;
+            }
         }
 
         return $this->renderAjax('create', [

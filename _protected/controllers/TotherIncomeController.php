@@ -59,11 +59,12 @@ class TotherIncomeController extends AppController
     {
         $model = new TotherIncome();
 
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $empIds = Yii::$app->request->post()['TotherIncome']['EmpID']) {
 
-            foreach(Yii::$app->request->post()['TotherIncome']['EmpID'] as $empId){
-                 $model->EmpID = $empId;
-             }
+            foreach($empIds as $empId)
+            {
+                $model->EmpID = $empId;
+            }
 
             if($model->save())
             {

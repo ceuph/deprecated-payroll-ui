@@ -58,11 +58,12 @@ class NtLeaveCreditsController extends AppController
     {
         $model = new NtLeaveCredits();
 
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $empIds = Yii::$app->request->post()['NtLeaveCredits']['EmpID']) {
 
-            foreach(Yii::$app->request->post()['NtLeaveCredits']['EmpID'] as $empId){
-                 $model->EmpID = $empId;
-             }
+            foreach($empIds as $empId)
+            {
+                $model->EmpID = $empId;
+            }
 
             if($model->save())
             {

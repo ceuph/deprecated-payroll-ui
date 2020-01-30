@@ -58,11 +58,12 @@ class TcDtrController extends AppController
     {
         $model = new TcDtr();
 
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $empIds = Yii::$app->request->post()['TcDtr']['EmpID']) {
 
-            foreach(Yii::$app->request->post()['TcDtr']['EmpID'] as $empId){
-                 $model->EmpID = $empId;
-             }
+            foreach($empIds as $empId)
+            {
+                $model->EmpID = $empId;
+            }
 
             if($model->save())
             {

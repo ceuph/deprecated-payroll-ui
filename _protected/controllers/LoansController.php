@@ -60,11 +60,12 @@ class LoansController extends Appcontroller
     {
         $model = new Loans();
 
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $empIds = Yii::$app->request->post()['Loans']['EmpID']) {
 
-            foreach(Yii::$app->request->post()['Loans']['EmpID'] as $empId){
-                 $model->EmpID = $empId;
-             }
+            foreach($empIds as $empId)
+            {
+                $model->EmpID = $empId;
+            }
 
             if($model->save())
             {

@@ -51,11 +51,12 @@ class NtDtrController extends AppController
     {
         $model = new NtDtr();
 
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $empIds = Yii::$app->request->post()['NtDtr']['EmpID']) {
 
-            foreach(Yii::$app->request->post()['NtDtr']['EmpID'] as $empId){
-                 $model->EmpID = $empId;
-             }
+            foreach($empIds as $empId)
+            {
+                $model->EmpID = $empId;
+            }
 
             if($model->save())
             {
