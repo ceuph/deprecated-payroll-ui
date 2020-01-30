@@ -52,6 +52,7 @@ class TcDtrSearch extends TcDtr
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+
         ]);
 
         $this->load($params);
@@ -61,6 +62,48 @@ class TcDtrSearch extends TcDtr
             // $query->where('0=1');
             return $dataProvider;
         }
+
+        $dataProvider->setSort([
+        'attributes' => [
+            'PrdID' => [
+                'asc' => ['PrdID' => SORT_ASC],
+                'desc' => ['PrdID' => SORT_DESC],
+                'default' => SORT_DESC,
+            ],
+            'EmpID' => [
+                'asc' => ['EmpID' => SORT_ASC],
+                'desc' => ['EmpID' => SORT_DESC],
+                'default' => SORT_ASC
+            ],
+            'lname' => [
+                'asc' => ['lname' => SORT_ASC],
+                'desc' => ['lname' => SORT_DESC],
+                'default' => SORT_ASC
+            ],
+            'fname' => [
+                'asc' => ['fname' => SORT_ASC],
+                'desc' => ['fname' => SORT_DESC],
+                'default' => SORT_ASC,
+            ],
+            'campus' => [
+                'asc' => ['campus' => SORT_ASC],
+                'desc' => ['campus' => SORT_DESC],
+                'default' => SORT_ASC,
+            ],
+            'schoolCollege' => [
+                'asc' => ['schoolCollege' => SORT_ASC],
+                'desc' => ['schoolCollege' => SORT_DESC],
+                'default' => SORT_ASC,
+            ],
+            'department' => [
+                'asc' => ['department' => SORT_ASC],
+                'desc' => ['department' => SORT_DESC],
+                'default' => SORT_ASC,
+            ],
+    
+        ],
+
+    ]);
 
         // grid filtering conditions
         $query->andFilterWhere([

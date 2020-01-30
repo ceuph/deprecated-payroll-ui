@@ -3,6 +3,8 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
+use yii\helpers\ArrayHelper;
+use app\models\PayrollPayPeriodList;
 
 use kartik\select2\Select2;
 use yii\web\JsExpression;
@@ -72,7 +74,7 @@ $url = Url::to(['payroll-employee-list/find']);
             ],
         ])->label('Employee ID'); ?>
 
-            <?= $form->field($model, 'PrdID')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'PrdID')->dropDownList(ArrayHelper::map(PayrollPayPeriodList::find()->where(['status'=>PayrollPayPeriodList::STATUS_YES])->all(), 'PrdID', 'decription'),['prompt'=>'Select Pay Period', 'class'=>'form-control']) ?>
         </div>
         </div>
         <div class="col-sm-7">

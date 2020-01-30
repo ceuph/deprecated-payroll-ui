@@ -28,6 +28,9 @@ class UgLeaveCreditsController extends AppController
     {
         $searchModel = new UgLeaveCreditsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        
+        $dataProvider->sort->defaultOrder = ['PrdID' => SORT_DESC];
+
 
         return $this->render('index', [
             'searchModel' => $searchModel,

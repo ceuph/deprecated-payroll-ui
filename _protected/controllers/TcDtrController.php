@@ -29,6 +29,8 @@ class TcDtrController extends AppController
         $searchModel = new TcDtrSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        $dataProvider->sort->defaultOrder = ['PrdID' => SORT_DESC];
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,

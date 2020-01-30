@@ -48,6 +48,8 @@ AppAsset::register($this);
 
     $menuItems[] = ['label' => Yii::t('app', 'Employee-List'), 'url' => ['/payroll-employee-list/index']];
 
+    $menuItems[] = ['label' => Yii::t('app', 'Pay-Period'), 'url' => ['/payroll-pay-period-list/index']];
+
    
     if (Yii::$app->user->can('premium')) {
         $menuItems[] = ['label' => Yii::t('app', 'Leave-Credits'), 'items'=> [
