@@ -93,7 +93,15 @@ $config = [
         ],
         'db' => require(__DIR__ . '/db.php'),
     ],
+
     'params' => $params,
+        'modules' => [
+
+            'gridview' => ['class' => 'kartik\grid\Module'],
+            'noty' => ['class' => 'lo\modules\noty\Module'],
+        ],
+
+
 ];
 
 if (YII_ENV_DEV) {

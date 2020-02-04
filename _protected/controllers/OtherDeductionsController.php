@@ -11,6 +11,9 @@ use yii\filters\VerbFilter;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
 
+use app\models\PayrollEmployeeList;
+use app\models\search\PayrollEmployeeListSearch;
+
 /**
  * OtherDeductionsController implements the CRUD actions for OtherDeductions model.
  */
@@ -70,9 +73,11 @@ class OtherDeductionsController extends AppController
 
             if($model->save())
             {
+                Yii::$app->session->setFlash('success', 'record saved!');
                 return 1;
             }else{
 
+                Yii::$app->session->setFlash('error', 'EmpID and PrdID already exist');
                 return 2;
             }
            
@@ -97,6 +102,59 @@ class OtherDeductionsController extends AppController
         }
     }
 
+    public function actionEmployeeList()
+    {
+
+        $searchModel = new PayrollEmployeeListSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('employee-list', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionCreateList($EmpID)
+    {
+        $model = new OtherDeductions();
+        $employee = PayrollEmployeeList::findOne($EmpID);
+
+        if ($model->load(Yii::$app->request->post())) {
+
+                $model->EmpID = $EmpID;
+
+            if($model->save())
+            {
+                Yii::$app->session->setFlash('success', 'record saved!');
+                return 1;
+            }else{
+
+                Yii::$app->session->setFlash('error', 'EmpID and PrdID already exist');
+                return 2;
+            }
+           
+        }
+
+        return $this->renderAjax('create-list', [
+            'model' => $model,
+            'employee' => $employee,
+
+        ]);
+    }
+
+    public function actionAjaxValidateList($EmpID) {
+
+        $model = new OtherDeductions();
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+ 
+                $model->EmpID = $EmpID;
+
+           \Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
+    }
+
+
     /**
      * Updates an existing OtherDeductions model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -110,6 +168,8 @@ class OtherDeductionsController extends AppController
         $model = $this->findModel($EmpID, $PrdID);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            Yii::$app->session->setFlash('success', 'record saved!');
             return $this->redirect(['index']);
         }
 

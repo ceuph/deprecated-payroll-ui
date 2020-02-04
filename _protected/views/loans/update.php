@@ -23,20 +23,14 @@ $this->params['breadcrumbs'][] = 'Update';
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">SSS<b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a data-toggle="tab" href="#Adjustmentsl">Adjustment/New Bal.</a></li>
-                <li><a data-toggle="tab" href="#Periodsl">Period Factor</a></li>
-                <li><a data-toggle="tab" href="#Handlingsl">Handling Fee</a></li>
-                <li><a data-toggle="tab" href="#Deductionsl">Deduction</a></li>
+                <li><a data-toggle="tab" href="#Adjustmentsl">Loan</a></li>
                 <li><a data-toggle="tab" href="#Calamitysl">Calamity</a></li>
             </ul>
         </li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">HDMF<b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a data-toggle="tab" href="#Adjustmenthl">Adjustment/New Bal.</a></li>
-                <li><a data-toggle="tab" href="#Periodhl">Period Factor</a></li>
-                <li><a data-toggle="tab" href="#Handlinghl">Handling Fee</a></li>
-                <li><a data-toggle="tab" href="#Deductionhl">Deduction</a></li>
+                <li><a data-toggle="tab" href="#Adjustmenthl">HMDF</a></li>
                 <li><a data-toggle="tab" href="#Multihl">Multi Purpose</a></li>
                 <li><a data-toggle="tab" href="#Calamityhl">Calamity</a></li>
             </ul>
@@ -141,14 +135,11 @@ $this->params['breadcrumbs'][] = 'Update';
       <div class="tab-content">
         <div id="Adjustmentsl" class="tab-pane fade">
             <?= $form->field($model, 'L_SSSAdj')->textInput() ?>
-        </div>
-        <div id="Periodsl" class="tab-pane fade">
-            <?= $form->field($model, 'L_SSSPF')->textInput() ?>
-        </div>
-        <div id="Handlingsl" class="tab-pane fade">
+
+            <?= $form->field($model, 'L_SSSPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
+
             <?= $form->field($model, 'L_SSSHF')->textInput() ?>
-        </div>
-        <div id="Deductionsl" class="tab-pane fade">
+   
             <?= $form->field($model, 'L_SSSAdtnlD')->textInput() ?>
 
             <?= $form->field($model, 'L_SSS')->textInput() ?>
@@ -156,7 +147,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Calamitysl" class="tab-pane fade">
             <?= $form->field($model, 'L_SSSCAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_SSSCPF')->textInput() ?>
+            <?= $form->field($model, 'L_SSSCPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_SSSCHF')->textInput() ?>
 
@@ -167,15 +158,11 @@ $this->params['breadcrumbs'][] = 'Update';
         </div>
          <div id="Adjustmenthl" class="tab-pane fade">
             <?= $form->field($model, 'L_HDMFAdj')->textInput() ?>
-        </div>
-        <div id="Periodhl" class="tab-pane fade">
-            <?= $form->field($model, 'L_HDMFPF')->textInput() ?>
-        </div>
-        <div id="Handlinghl" class="tab-pane fade">
+
+            <?= $form->field($model, 'L_HDMFPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
+ 
             <?= $form->field($model, 'L_HDMFHF')->textInput() ?>
             
-        </div>
-        <div id="Deductionhl" class="tab-pane fade">
             <?= $form->field($model, 'L_HDMFAdtnlD')->textInput() ?>
 
             <?= $form->field($model, 'L_HDMF')->textInput() ?>
@@ -184,7 +171,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Multihl" class="tab-pane fade">
             <?= $form->field($model, 'L_HDMFMPAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_HDMFMPPF')->textInput() ?>
+            <?= $form->field($model, 'L_HDMFMPPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HDMFMPHF')->textInput() ?>
 
@@ -197,7 +184,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Calamityhl" class="tab-pane fade">
             <?= $form->field($model, 'L_HDMFCAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_HDMFCPF')->textInput() ?>
+            <?= $form->field($model, 'L_HDMFCPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HDMFCHF')->textInput() ?>
 
@@ -210,7 +197,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentpl" class="tab-pane fade">
             <?= $form->field($model, 'L_LOVEMPAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_LOVEMPPF')->textInput() ?>
+            <?= $form->field($model, 'L_LOVEMPPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_LOVEMPHF')->textInput() ?>
             
@@ -222,7 +209,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentfl" class="tab-pane fade">
             <?= $form->field($model, 'L_FAWUAdj')->textInput() ?>
          
-            <?= $form->field($model, 'L_FAWUPF')->textInput() ?>
+            <?= $form->field($model, 'L_FAWUPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
         
             <?= $form->field($model, 'L_FAWUHF')->textInput() ?>
 
@@ -235,7 +222,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="HAdjustmentfl" class="tab-pane fade">
             <?= $form->field($model, 'L_HFFAWUAdj')->textInput() ?>
            
-            <?= $form->field($model, 'L_HFFAWUPF')->textInput() ?>
+            <?= $form->field($model, 'L_HFFAWUPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HFFAWUHF')->textInput() ?>
 
@@ -247,7 +234,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmenthol" class="tab-pane fade">
             <?= $form->field($model, 'L_CEUHousingIntAdj')->textInput() ?>
          
-            <?= $form->field($model, 'L_CEUHousingIntPF')->textInput() ?>
+            <?= $form->field($model, 'L_CEUHousingIntPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_CEUHousingIntHF')->textInput() ?>
             <?= $form->field($model, 'L_CEUHousingIntAdtnlD')->textInput() ?>
@@ -258,7 +245,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="PAdjustmenthol" class="tab-pane fade">
             <?= $form->field($model, 'L_CEUHousingPcplAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_CEUHousingPcplPF')->textInput() ?>
+            <?= $form->field($model, 'L_CEUHousingPcplPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_CEUHousingPcplHF')->textInput() ?>
             
@@ -271,7 +258,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentmedl" class="tab-pane fade">
             <?= $form->field($model, 'L_MedicalAdj')->textInput() ?>
  
-            <?= $form->field($model, 'L_MedicalPF')->textInput() ?>
+            <?= $form->field($model, 'L_MedicalPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_MedicalHF')->textInput() ?>
 
@@ -283,7 +270,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmenttechl" class="tab-pane fade">
             <?= $form->field($model, 'L_TechnologyAdj')->textInput() ?>
  
-            <?= $form->field($model, 'L_TechnologyPF')->textInput() ?>
+            <?= $form->field($model, 'L_TechnologyPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_TechnologyHF')->textInput() ?>
      
@@ -295,7 +282,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmenthosl" class="tab-pane fade">
             <?= $form->field($model, 'L_HospitalAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_HospitalPF')->textInput() ?>
+            <?= $form->field($model, 'L_HospitalPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HospitalHF')->textInput() ?>
 
@@ -309,7 +296,7 @@ $this->params['breadcrumbs'][] = 'Update';
             <?= $form->field($model, 'L_EmergencyAdj')->textInput() ?>
 
 
-            <?= $form->field($model, 'L_EmergencyPF')->textInput() ?>
+            <?= $form->field($model, 'L_EmergencyPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_EmergencyHF')->textInput() ?>
 
@@ -321,7 +308,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentunil" class="tab-pane fade">
             <?= $form->field($model, 'L_UnifiedAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_UnifiedPF')->textInput() ?>
+            <?= $form->field($model, 'L_UnifiedPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_UnifiedHF')->textInput() ?>
 
@@ -333,7 +320,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'L_BDayAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_BDayPF')->textInput() ?>
+            <?= $form->field($model, 'L_BDayPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_BDayHF')->textInput() ?>
 
@@ -344,7 +331,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmenttral" class="tab-pane fade">
             <?= $form->field($model, 'L_TravelAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_TravelPF')->textInput() ?>
+            <?= $form->field($model, 'L_TravelPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_TravelHF')->textInput() ?>
 
@@ -355,7 +342,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentpettl" class="tab-pane fade">
             <?= $form->field($model, 'L_PettyCashAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_PettyCashPF')->textInput() ?>
+            <?= $form->field($model, 'L_PettyCashPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_PettyCashHF')->textInput() ?>
 
@@ -367,7 +354,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentspel" class="tab-pane fade">
              <?= $form->field($model, 'L_SpecialAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_SpecialPF')->textInput() ?>
+            <?= $form->field($model, 'L_SpecialPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_SpecialHF')->textInput() ?>
 
@@ -379,7 +366,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentphil" class="tab-pane fade">
             <?= $form->field($model, 'L_PhilamcareAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_PhilamcarePF')->textInput() ?>
+            <?= $form->field($model, 'L_PhilamcarePF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_PhilamcareHF')->textInput() ?>
 
@@ -390,7 +377,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentsavl" class="tab-pane fade">
             <?= $form->field($model, 'L_SavingsDepAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_SavingsDepPF')->textInput() ?>
+            <?= $form->field($model, 'L_SavingsDepPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_SavingsDepHF')->textInput() ?>
 
@@ -401,7 +388,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentfixl" class="tab-pane fade">
             <?= $form->field($model, 'L_FixedDepAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_FixedDepPF')->textInput() ?>
+            <?= $form->field($model, 'L_FixedDepPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_FixedDepHF')->textInput() ?>
 
@@ -412,7 +399,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentpenl" class="tab-pane fade">
             <?= $form->field($model, 'L_PensionDepAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_PensionDepPF')->textInput() ?>
+            <?= $form->field($model, 'L_PensionDepPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_PensionDepHF')->textInput() ?>
 
@@ -424,7 +411,7 @@ $this->params['breadcrumbs'][] = 'Update';
         
             <?= $form->field($model, 'L_SeminarAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_SeminarPF')->textInput() ?>
+            <?= $form->field($model, 'L_SeminarPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_SeminarHF')->textInput() ?>
 
@@ -436,7 +423,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentcool" class="tab-pane fade">
             <?= $form->field($model, 'L_CoopAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_CoopPF')->textInput() ?>
+            <?= $form->field($model, 'L_CoopPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_CoopHF')->textInput() ?>
 
@@ -448,7 +435,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmenttuil" class="tab-pane fade">
             <?= $form->field($model, 'L_TuitionAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_TuitionPF')->textInput() ?>
+            <?= $form->field($model, 'L_TuitionPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_TuitionHF')->textInput() ?>
 
@@ -460,7 +447,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmenttripl" class="tab-pane fade">
             <?= $form->field($model, 'L_FieldTripAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_FieldTripPF')->textInput() ?>
+            <?= $form->field($model, 'L_FieldTripPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_FieldTripHF')->textInput() ?>
 
@@ -473,7 +460,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'L_CCLoveAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_CCLovePF')->textInput() ?>
+            <?= $form->field($model, 'L_CCLovePF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_CCLoveHF')->textInput() ?>
 
@@ -486,7 +473,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'L_HFCCLoveAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_HFCCLovePF')->textInput() ?>
+            <?= $form->field($model, 'L_HFCCLovePF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HFCCLoveHF')->textInput() ?>
 
@@ -498,7 +485,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'L_EuroUSAIntAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_EuroUSAIntPF')->textInput() ?>
+            <?= $form->field($model, 'L_EuroUSAIntPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_EuroUSAIntHF')->textInput() ?>
 
@@ -510,7 +497,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmenteuusprinl" class="tab-pane fade">
             <?= $form->field($model, 'L_EuroUSAPcplAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_EuroUSAPcplPF')->textInput() ?>
+            <?= $form->field($model, 'L_EuroUSAPcplPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_EuroUSAPcplHF')->textInput() ?>
 
@@ -522,7 +509,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'L_HolyLandTourAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_HolyLandTourPF')->textInput() ?>
+            <?= $form->field($model, 'L_HolyLandTourPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HolyLandTourHF')->textInput() ?>
 
@@ -534,7 +521,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
              <?= $form->field($model, 'L_HKTravelAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_HKTravelPF')->textInput() ?>
+            <?= $form->field($model, 'L_HKTravelPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HKTravelHF')->textInput() ?>
 
@@ -547,7 +534,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'L_PAFTETourAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_PAFTETourPF')->textInput() ?>
+            <?= $form->field($model, 'L_PAFTETourPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_PAFTETourHF')->textInput() ?>
 
@@ -560,7 +547,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'L_AsiaPacConfeAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_AsiaPacConfePF')->textInput() ?>
+            <?= $form->field($model, 'L_AsiaPacConfePF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_AsiaPacConfeHF')->textInput() ?>
 
@@ -572,7 +559,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'L_ParkingAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_ParkingPF')->textInput() ?>
+            <?= $form->field($model, 'L_ParkingPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_ParkingHF')->textInput() ?>
 
@@ -584,7 +571,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
              <?= $form->field($model, 'L_ComputerAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_ComputerPF')->textInput() ?>
+            <?= $form->field($model, 'L_ComputerPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_ComputerHF')->textInput() ?>
 
@@ -595,7 +582,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentbasicl" class="tab-pane fade">
             <?= $form->field($model, 'L_OPBasicAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_OPBasicPF')->textInput() ?>
+            <?= $form->field($model, 'L_OPBasicPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_OPBasicHF')->textInput() ?>
 
@@ -607,7 +594,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentefal" class="tab-pane fade">
             <?= $form->field($model, 'L_OPEFAAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_OPEFAPF')->textInput() ?>
+            <?= $form->field($model, 'L_OPEFAPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_OPEFAHF')->textInput() ?>
 
@@ -618,7 +605,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="Adjustmentcolal" class="tab-pane fade">
              <?= $form->field($model, 'L_OPCOLAAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_OPCOLAPF')->textInput() ?>
+            <?= $form->field($model, 'L_OPCOLAPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_OPCOLAHF')->textInput() ?>
 
@@ -631,7 +618,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'L_AdjTaxAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_AdjTaxPF')->textInput() ?>
+            <?= $form->field($model, 'L_AdjTaxPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_AdjTaxHF')->textInput() ?>
 
@@ -643,7 +630,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'L_AdjTaxSBAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_AdjTaxSBPF')->textInput() ?>
+            <?= $form->field($model, 'L_AdjTaxSBPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_AdjTaxSBHF')->textInput() ?>
 
@@ -656,7 +643,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
              <?= $form->field($model, 'L_ALWOPCOLAAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_ALWOPCOLAPF')->textInput() ?>
+            <?= $form->field($model, 'L_ALWOPCOLAPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_ALWOPCOLAHF')->textInput() ?>
 
@@ -669,7 +656,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'L_ALWOPEFAAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_ALWOPEFAPF')->textInput() ?>
+            <?= $form->field($model, 'L_ALWOPEFAPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_ALWOPEFAHF')->textInput() ?>
 
@@ -681,7 +668,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
              <?= $form->field($model, 'L_VaccineAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_VaccinePF')->textInput() ?>
+            <?= $form->field($model, 'L_VaccinePF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_VaccineHF')->textInput() ?>
 

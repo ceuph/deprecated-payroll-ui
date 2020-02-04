@@ -161,16 +161,16 @@ $url = Url::to(['payroll-employee-list/find']);
                 ],
                 'escapeMarkup' => new JsExpression('function (markup) { return markup; }'),
                 'templateResult' => new JsExpression('function(employee) { return (
-                    employee.EmpID || "") + " " + (employee.text || "")  + ", " + (
-                    employee.LName || ""); }'),
+                    employee.EmpID || "") + " " + (employee.LName || "")  + ", " + (
+                    employee.FName || ""); }'),
                 'templateSelection' => new JsExpression('function (employee) { return (
-                    employee.EmpID || "") + " " + (employee.text || "")  + ", " + (
+                    employee.EmpID || "") + " " + (employee.LName || "")  + ", " + (
                     employee.FName || ""); }'),
 
             ],
         ])->label('Employee ID'); ?>
 
-         <?= $form->field($model, 'PrdID')->dropDownList(ArrayHelper::map(PayrollPayPeriodList::find()->where(['status'=>PayrollPayPeriodList::STATUS_YES])->all(), 'PrdID', 'decription'),['prompt'=>'Select Pay Period', 'class'=>'form-control']) ?>
+         <?= $form->field($model, 'PrdID')->dropDownList(ArrayHelper::map(PayrollPayPeriodList::find()->where(['status'=>PayrollPayPeriodList::STATUS_YES])->orderBy("PrdID DESC")->all(), 'PrdID', 'decription')) ?>
         </div>
         </div>
         <div class="col-sm-7">

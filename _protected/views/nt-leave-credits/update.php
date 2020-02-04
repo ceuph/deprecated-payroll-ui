@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LC_NT_VLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_VLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_VLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_VL')->textInput() ?>
 
@@ -63,7 +63,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LC_NT_SLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_SLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_SLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_SL')->textInput() ?>
 
@@ -73,7 +73,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LC_NT_BLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_BLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_BLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_BL')->textInput() ?>
         </div>
@@ -83,7 +83,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LC_NT_ELDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_ELRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_ELRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_EL')->textInput() ?>
 
@@ -93,7 +93,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LC_NT_SPLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_SPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_SPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_SPL')->textInput() ?>
         </div>
@@ -102,7 +102,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LC_NT_PLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_PLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_PLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_PL')->textInput() ?>
    
@@ -112,7 +112,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LC_NT_MLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_MLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_MLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_ML')->textInput() ?>
 
@@ -123,7 +123,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LC_NT_ULDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_ULRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_ULRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_UL')->textInput() ?>
    
@@ -134,7 +134,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LC_NT_SLWDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_SLWRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_SLWRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_SLW')->textInput() ?>
    
@@ -144,7 +144,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LC_NT_NLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_NLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_NLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_NL')->textInput() ?>
 
@@ -152,7 +152,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="officialu" class="tab-pane fade">
             <?= $form->field($model, 'NT_OB')->textInput() ?>
 
-            <?= $form->field($model, 'NT_OBRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'NT_OBRem')->textarea(['rows' => 4]) ?>
 
         </div>
 

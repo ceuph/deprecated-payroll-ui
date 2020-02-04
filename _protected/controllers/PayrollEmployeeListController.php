@@ -13,6 +13,8 @@ use yii\db\Query;
 use yii\helpers\Json;
 
 
+use app\models\UgLeaveCredits;
+
 /**
  * PayrollEmployeeListController implements the CRUD actions for PayrollEmployeeList model.
  */
@@ -41,8 +43,8 @@ class PayrollEmployeeListController extends Controller
         $query = new Query;
         if(!is_Null($q))
         {
-            $mainQuery = $query->select('EmpID as id, LName AS text, 
-                FName as fname, EmpID')
+            $mainQuery = $query->select('EmpID as id, LName, 
+                FName, EmpID')
                 ->from('payroll_employee_list')
                 ->where(['like','LName',$q])
                 ->orWhere(['like','FName',$q])
@@ -75,6 +77,20 @@ class PayrollEmployeeListController extends Controller
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionEmployeeList($ctrl)
+    {
+
+        $searchModel = new PayrollEmployeeListSearch();
+
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('employee-list', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'ctrl' => $ctrl,
         ]);
     }
 

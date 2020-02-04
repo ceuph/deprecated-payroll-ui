@@ -11,6 +11,9 @@ use yii\filters\VerbFilter;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
 
+use app\models\PayrollEmployeeList;
+use app\models\search\PayrollEmployeeListSearch;
+
 /**
  * UgLeaveCreditsController implements the CRUD actions for UgLeaveCredits model.
  */
@@ -33,6 +36,18 @@ class UgLeaveCreditsController extends AppController
 
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionEmployeeList()
+    {
+
+        $searchModel = new PayrollEmployeeListSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('employee-list', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -71,9 +86,11 @@ class UgLeaveCreditsController extends AppController
 
             if($model->save())
             {
+                Yii::$app->session->setFlash('success', 'record saved!');
                 return 1;
             }else{
 
+                Yii::$app->session->setFlash('error', 'EmpID and PrdID already exist');
                 return 2;
             }
            
@@ -84,6 +101,7 @@ class UgLeaveCreditsController extends AppController
         ]);
     }
 
+   
     public function actionAjaxValidate() {
 
         $model = new UgLeaveCredits();
@@ -92,6 +110,46 @@ class UgLeaveCreditsController extends AppController
             foreach(Yii::$app->request->post()['UgLeaveCredits']['EmpID'] as $empId){
                  $model->EmpID = $empId;
              }
+
+           \Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }
+    }
+
+    public function actionCreateList($EmpID)
+    {
+        $model = new UgLeaveCredits();
+        $employee = PayrollEmployeeList::findOne($EmpID);
+
+        if ($model->load(Yii::$app->request->post())) {
+
+                $model->EmpID = $EmpID;
+
+            if($model->save())
+            {
+                Yii::$app->session->setFlash('success', 'record saved!');
+                return 1;
+            }else{
+
+                Yii::$app->session->setFlash('error', 'EmpID and PrdID already exist');
+                return 2;
+            }
+           
+        }
+
+        return $this->renderAjax('create-list', [
+            'model' => $model,
+            'employee' => $employee,
+
+        ]);
+    }
+
+    public function actionAjaxValidateList($EmpID) {
+
+        $model = new UgLeaveCredits();
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+ 
+                $model->EmpID = $EmpID;
 
            \Yii::$app->response->format = Response::FORMAT_JSON;
             return ActiveForm::validate($model);
@@ -122,8 +180,11 @@ class UgLeaveCreditsController extends AppController
         $model = $this->findModel($EmpID, $PrdID);
 
         if ($model->load(Yii::$app->request->post())) {
-            $model->save();
-            return $this->redirect(['index']);
+            if($model->save())
+            {
+                Yii::$app->session->setFlash('success', 'record saved!');
+                return $this->redirect(['index']);
+            }
         }
 
         return $this->renderAjax('update', [

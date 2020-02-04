@@ -25,14 +25,14 @@ class AppController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'controllers' => ['user','leave-application','ug-leave-credits','gs-leave-credits','payroll-employee-list','nt-leave-credits','tc-dtr','tc-teaching-load'],
-                        'actions' => ['index', 'view', 'create', 'update', 'delete','process2','ajax-validate','find'],
+                        'controllers' => ['user','leave-application','ug-leave-credits','gs-leave-credits','payroll-employee-list','nt-leave-credits','tc-dtr','tc-teaching-load','loans','nt-dtr','tother-income','nt-other-income','other-deductions'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete','process2','ajax-validate','find','employee-list'],
                         'allow' => true,
-                        'roles' => ['admin'],
+                        'roles' => ['theCreator'],
                     ],
                     [
                         'controllers' => ['ug-leave-credits','gs-leave-credits','nt-leave-credits','tc-dtr','nt-dtr','tother-income','nt-other-income','loans','other-deductions','payroll-employee-list','tc-teaching-load'],
-                        'actions' => ['index', 'view', 'create', 'update', 'delete','ajax-validate','find'],
+                        'actions' => ['index', 'view', 'create', 'update','ajax-validate','find','employee-list','create-list','ajax-validate-list'],
                         'allow' => true,
                         'roles' => ['premium'],
                     ],

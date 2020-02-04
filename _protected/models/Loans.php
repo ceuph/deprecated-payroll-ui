@@ -240,6 +240,10 @@ class Loans extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+    const PEIOD_FACTOR_1ST_CUTOFF = '1.00';
+    const PEIOD_FACTOR_2ND_CUTOFF = '2.00';
+    const PEIOD_FACTOR_BOTH_CUTOFF = '3.00';
+
     public static function tableName()
     {
         return 'SH08_LOANS';
@@ -252,10 +256,41 @@ class Loans extends \yii\db\ActiveRecord
     {
         return [
             [['PrdID', 'EmpID'], 'required'],
-            [['L_SSSAdj', 'L_SSSPF', 'L_SSSHF', 'L_SSSAdtnlD', 'L_SSS', 'L_SSSCAdj', 'L_SSSCPF', 'L_SSSCHF', 'L_SSSCAdtnlD', 'L_SSSC', 'L_HDMFAdj', 'L_HDMFPF', 'L_HDMFHF', 'L_HDMFAdtnlD', 'L_HDMF', 'L_HDMFMPAdj', 'L_HDMFMPPF', 'L_HDMFMPHF', 'L_HDMFMPAdtnlD', 'L_HDMFMP', 'L_HDMFCAdj', 'L_HDMFCPF', 'L_HDMFCHF', 'L_HDMFCAdtnlD', 'L_HDMFC', 'L_LOVEMPAdj', 'L_LOVEMPPF', 'L_LOVEMPHF', 'L_LOVEMPAdtnlD', 'L_LOVEMP', 'L_FAWUAdj', 'L_FAWUPF', 'L_FAWUHF', 'L_FAWUAdtnlD', 'L_FAWU', 'L_HFFAWUAdj', 'L_HFFAWUPF', 'L_HFFAWUHF', 'L_HFFAWUAdtnlD', 'L_HFFAWU', 'L_CEUHousingIntAdj', 'L_CEUHousingIntPF', 'L_CEUHousingIntHF', 'L_CEUHousingIntAdtnlD', 'L_CEUHousingInt', 'L_CEUHousingPcplAdj', 'L_CEUHousingPcplPF', 'L_CEUHousingPcplHF', 'L_CEUHousingPcplAdtnlD', 'L_CEUHousingPcpl', 'L_MedicalAdj', 'L_MedicalPF', 'L_MedicalHF', 'L_MedicalAdtnlD', 'L_Medical', 'L_TechnologyAdj', 'L_TechnologyPF', 'L_TechnologyHF', 'L_TechnologyAdtnlD', 'L_Technology', 'L_HospitalAdj', 'L_HospitalPF', 'L_HospitalHF', 'L_HospitalAdtnlD', 'L_Hospital', 'L_EmergencyAdj', 'L_EmergencyPF', 'L_EmergencyHF', 'L_EmergencyAdtnlD', 'L_Emergency', 'L_UnifiedAdj', 'L_UnifiedPF', 'L_UnifiedHF', 'L_UnifiedAdtnlD', 'L_Unified', 'L_BDayAdj', 'L_BDayPF', 'L_BDayHF', 'L_BDayAdtnlD', 'L_BDay', 'L_TravelAdj', 'L_TravelPF', 'L_TravelHF', 'L_TravelAdtnlD', 'L_Travel', 'L_PettyCashAdj', 'L_PettyCashPF', 'L_PettyCashHF', 'L_PettyCashAdtnlD', 'L_PettyCash', 'L_SpecialAdj', 'L_SpecialPF', 'L_SpecialHF', 'L_SpecialAdtnlD', 'L_Special', 'L_PhilamcareAdj', 'L_PhilamcarePF', 'L_PhilamcareHF', 'L_PhilamcareAdtnlD', 'L_Philamcare', 'L_SavingsDepAdj', 'L_SavingsDepPF', 'L_SavingsDepHF', 'L_SavingsDepAdtnlD', 'L_SavingsDep', 'L_FixedDepAdj', 'L_FixedDepPF', 'L_FixedDepHF', 'L_FixedDepAdtnlD', 'L_FixedDep', 'L_PensionDepAdj', 'L_PensionDepPF', 'L_PensionDepHF', 'L_PensionDepAdtnlD', 'L_PensionDep', 'L_SeminarAdj', 'L_SeminarPF', 'L_SeminarHF', 'L_SeminarAdtnlD', 'L_Seminar', 'L_CoopAdj', 'L_CoopPF', 'L_CoopHF', 'L_CoopAdtnlD', 'L_Coop', 'L_TuitionAdj', 'L_TuitionPF', 'L_TuitionHF', 'L_TuitionAdtnlD', 'L_Tuition', 'L_FieldTripAdj', 'L_FieldTripPF', 'L_FieldTripHF', 'L_FieldTripAdtnlD', 'L_FieldTrip', 'L_CCLoveAdj', 'L_CCLovePF', 'L_CCLoveHF', 'L_CCLoveAdtnlD', 'L_CCLove', 'L_HFCCLoveAdj', 'L_HFCCLovePF', 'L_HFCCLoveHF', 'L_HFCCLoveAdtnlD', 'L_HFCCLove', 'L_EuroUSAIntAdj', 'L_EuroUSAIntPF', 'L_EuroUSAIntHF', 'L_EuroUSAIntAdtnlD', 'L_EuroUSAInt', 'L_EuroUSAPcplAdj', 'L_EuroUSAPcplPF', 'L_EuroUSAPcplHF', 'L_EuroUSAPcplAdtnlD', 'L_EuroUSAPcpl', 'L_HolyLandTourAdj', 'L_HolyLandTourPF', 'L_HolyLandTourHF', 'L_HolyLandTourAdtnlD', 'L_HolyLandTour', 'L_HKTravelAdj', 'L_HKTravelPF', 'L_HKTravelHF', 'L_HKTravelAdtnlD', 'L_HKTravel', 'L_PAFTETourAdj', 'L_PAFTETourPF', 'L_PAFTETourHF', 'L_PAFTETourAdtnlD', 'L_PAFTETour', 'L_AsiaPacConfeAdj', 'L_AsiaPacConfePF', 'L_AsiaPacConfeHF', 'L_AsiaPacConfeAdtnlD', 'L_AsiaPacConfe', 'L_ParkingAdj', 'L_ParkingPF', 'L_ParkingHF', 'L_ParkingAdtnlD', 'L_Parking', 'L_ComputerAdj', 'L_ComputerPF', 'L_ComputerHF', 'L_ComputerAdtnlD', 'L_Computer', 'L_OPBasicAdj', 'L_OPBasicPF', 'L_OPBasicHF', 'L_OPBasicAdtnlD', 'L_OPBasic', 'L_OPEFAAdj', 'L_OPEFAPF', 'L_OPEFAHF', 'L_OPEFAAdtnlD', 'L_OPEFA', 'L_OPCOLAAdj', 'L_OPCOLAPF', 'L_OPCOLAHF', 'L_OPCOLAAdtnlD', 'L_OPCOLA', 'L_AdjTaxAdj', 'L_AdjTaxPF', 'L_AdjTaxHF', 'L_AdjTaxAdtnlD', 'L_AdjTax', 'L_AdjTaxSBAdj', 'L_AdjTaxSBPF', 'L_AdjTaxSBHF', 'L_AdjTaxSBAdtnlD', 'L_AdjTaxSB', 'L_ALWOPCOLAAdj', 'L_ALWOPCOLAPF', 'L_ALWOPCOLAHF', 'L_ALWOPCOLAAdtnlD', 'L_ALWOPCOLA', 'L_ALWOPEFAAdj', 'L_ALWOPEFAPF', 'L_ALWOPEFAHF', 'L_ALWOPEFAAdtnlD', 'L_ALWOPEFA', 'L_VaccineAdj', 'L_VaccinePF', 'L_VaccineHF', 'L_VaccineAdtnlD', 'L_Vaccine'], 'number'],
+            [['L_SSSAdj', 'L_SSSHF', 'L_SSSAdtnlD', 'L_SSS', 'L_SSSCAdj', 'L_SSSCHF', 'L_SSSCAdtnlD', 'L_SSSC', 'L_HDMFAdj', 'L_HDMFHF', 'L_HDMFAdtnlD', 'L_HDMF', 'L_HDMFMPAdj', 'L_HDMFMPHF', 'L_HDMFMPAdtnlD', 'L_HDMFMP', 'L_HDMFCAdj', 'L_HDMFCHF', 'L_HDMFCAdtnlD', 'L_HDMFC', 'L_LOVEMPAdj', 'L_LOVEMPHF', 'L_LOVEMPAdtnlD', 'L_LOVEMP', 'L_FAWUAdj', 'L_FAWUHF', 'L_FAWUAdtnlD', 'L_FAWU', 'L_HFFAWUAdj', 'L_HFFAWUHF', 'L_HFFAWUAdtnlD', 'L_HFFAWU', 'L_CEUHousingIntAdj', 'L_CEUHousingIntHF', 'L_CEUHousingIntAdtnlD', 'L_CEUHousingInt', 'L_CEUHousingPcplAdj', 'L_CEUHousingPcplHF', 'L_CEUHousingPcplAdtnlD', 'L_CEUHousingPcpl', 'L_MedicalAdj', 'L_MedicalHF', 'L_MedicalAdtnlD', 'L_Medical', 'L_TechnologyAdj', 'L_TechnologyHF', 'L_TechnologyAdtnlD', 'L_Technology', 'L_HospitalAdj', 'L_HospitalHF', 'L_HospitalAdtnlD', 'L_Hospital', 'L_EmergencyAdj', 'L_EmergencyHF', 'L_EmergencyAdtnlD', 'L_Emergency', 'L_UnifiedAdj', 'L_UnifiedHF', 'L_UnifiedAdtnlD', 'L_Unified', 'L_BDayAdj', 'L_BDayHF', 'L_BDayAdtnlD', 'L_BDay', 'L_TravelAdj', 'L_TravelHF', 'L_TravelAdtnlD', 'L_Travel', 'L_PettyCashAdj', 'L_PettyCashHF', 'L_PettyCashAdtnlD', 'L_PettyCash', 'L_SpecialAdj', 'L_SpecialHF', 'L_SpecialAdtnlD', 'L_Special', 'L_PhilamcareAdj', 'L_PhilamcareHF', 'L_PhilamcareAdtnlD', 'L_Philamcare', 'L_SavingsDepAdj', 'L_SavingsDepHF', 'L_SavingsDepAdtnlD', 'L_SavingsDep', 'L_FixedDepAdj', 'L_FixedDepHF', 'L_FixedDepAdtnlD', 'L_FixedDep', 'L_PensionDepAdj', 'L_PensionDepHF', 'L_PensionDepAdtnlD', 'L_PensionDep', 'L_SeminarAdj', 'L_SeminarHF', 'L_SeminarAdtnlD', 'L_Seminar', 'L_CoopAdj', 'L_CoopHF', 'L_CoopAdtnlD', 'L_Coop', 'L_TuitionAdj', 'L_TuitionHF', 'L_TuitionAdtnlD', 'L_Tuition', 'L_FieldTripAdj', 'L_FieldTripHF', 'L_FieldTripAdtnlD', 'L_FieldTrip', 'L_CCLoveAdj', 'L_CCLoveHF', 'L_CCLoveAdtnlD', 'L_CCLove', 'L_HFCCLoveAdj', 'L_HFCCLoveHF', 'L_HFCCLoveAdtnlD', 'L_HFCCLove', 'L_EuroUSAIntAdj', 'L_EuroUSAIntHF', 'L_EuroUSAIntAdtnlD', 'L_EuroUSAInt', 'L_EuroUSAPcplAdj', 'L_EuroUSAPcplHF', 'L_EuroUSAPcplAdtnlD', 'L_EuroUSAPcpl', 'L_HolyLandTourAdj', 'L_HolyLandTourHF', 'L_HolyLandTourAdtnlD', 'L_HolyLandTour', 'L_HKTravelAdj', 'L_HKTravelHF', 'L_HKTravelAdtnlD', 'L_HKTravel', 'L_PAFTETourAdj', 'L_PAFTETourHF', 'L_PAFTETourAdtnlD', 'L_PAFTETour', 'L_AsiaPacConfeAdj', 'L_AsiaPacConfeHF', 'L_AsiaPacConfeAdtnlD', 'L_AsiaPacConfe', 'L_ParkingAdj', 'L_ParkingHF', 'L_ParkingAdtnlD', 'L_Parking', 'L_ComputerAdj', 'L_ComputerHF', 'L_ComputerAdtnlD', 'L_Computer', 'L_OPBasicAdj', 'L_OPBasicHF', 'L_OPBasicAdtnlD', 'L_OPBasic', 'L_OPEFAAdj', 'L_OPEFAHF', 'L_OPEFAAdtnlD', 'L_OPEFA', 'L_OPCOLAAdj', 'L_OPCOLAHF', 'L_OPCOLAAdtnlD', 'L_OPCOLA', 'L_AdjTaxAdj', 'L_AdjTaxHF', 'L_AdjTaxAdtnlD', 'L_AdjTax', 'L_AdjTaxSBAdj', 'L_AdjTaxSBHF', 'L_AdjTaxSBAdtnlD', 'L_AdjTaxSB', 'L_ALWOPCOLAAdj', 'L_ALWOPCOLAHF', 'L_ALWOPCOLAAdtnlD', 'L_ALWOPCOLA', 'L_ALWOPEFAAdj', 'L_ALWOPEFAHF', 'L_ALWOPEFAAdtnlD', 'L_ALWOPEFA', 'L_VaccineAdj', 'L_VaccineHF', 'L_VaccineAdtnlD', 'L_Vaccine'], 'number'],
             [['PrdID'], 'string', 'max' => 32],
             [['EmpID', 'PrdID'], 'unique', 'targetAttribute' => ['EmpID', 'PrdID']],
+            [['L_SSSPF', 'L_HDMFPF', 'L_HDMFMPPF', 'L_HDMFCPF', 'L_LOVEMPPF', 'L_FAWUPF', 'L_HFFAWUPF', 'L_CEUHousingIntPF', 'L_CEUHousingPcplPF', 'L_MedicalPF', 'L_TechnologyPF', 'L_HospitalPF', 'L_EmergencyPF', 'L_UnifiedPF', 'L_BDayPF', 'L_TravelPF', 'L_PettyCashPF', 'L_SpecialPF', 'L_PhilamcarePF', 'L_SavingsDepPF', 'L_FixedDepPF', 'L_PensionDepPF', 'L_SeminarPF', 'L_CoopPF', 'L_TuitionPF', 'L_FieldTripPF', 'L_CCLovePF', 'L_HFCCLovePF', 'L_EuroUSAIntPF', 'L_EuroUSAPcplPF', 'L_HolyLandTourPF', 'L_HKTravelPF', 'L_PAFTETourPF', 'L_AsiaPacConfePF', 'L_ParkingPF', 'L_ComputerPF', 'L_OPBasicPF', 'L_OPEFAPF', 'L_OPCOLAPF', 'L_AdjTaxPF', 'L_AdjTaxSBPF', 'L_ALWOPCOLAPF', 'L_ALWOPEFAPF', 'L_VaccinePF','L_SSSCPF'], 'safe'],
         ];
+    }
+
+    public function getFactorList()
+    {
+        $typeArray = [
+            self::PEIOD_FACTOR_1ST_CUTOFF => 'Every 15th',
+            self::PEIOD_FACTOR_2ND_CUTOFF => 'Every 30th',
+            self::PEIOD_FACTOR_BOTH_CUTOFF => 'Both 15th and 30th',
+        ];
+
+        return $typeArray;
+
+    }
+
+    public function getFactorName($name = null)
+    {
+        //$name = (empty($status)) ? $this->status : $status;
+
+        if($name === self::PEIOD_FACTOR_1ST_CUTOFF)
+        {
+            return 'Every 15th';
+
+        }elseif($name === self::PEIOD_FACTOR_2ND_CUTOFF)
+        {
+            return 'Every 30th';
+        }
+        else{
+
+            return 'Both 15th and 30th';
+        }
     }
 
     public function getEmployeeList()

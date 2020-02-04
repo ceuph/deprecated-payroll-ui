@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\NtOtherIncome */
 
-$this->title = $model->EmpID;
+$this->title = 'NT Other Income';
 $this->params['breadcrumbs'][] = ['label' => 'Nt Other Incomes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -15,21 +15,16 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Update', ['update', 'EmpID' => $model->EmpID, 'PrdID' => $model->PrdID], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'EmpID' => $model->EmpID, 'PrdID' => $model->PrdID], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
     <?= DetailView::widget([
         'model' => $model,
+        'template' => function($attribute, $index, $widget){
+              if($attribute['value'])
+              {
+                  return "<tr><th>{$attribute['label']}</th><td>{$attribute['value']}</td></tr>";
+              }
+          },
         'attributes' => [
-            'EmpID',
+            //'EmpID',
             'PrdID',
             'NT_AdvIP',
             'NT_HazardPay',

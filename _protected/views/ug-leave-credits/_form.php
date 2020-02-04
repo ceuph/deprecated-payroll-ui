@@ -102,16 +102,16 @@ $url = Url::to(['payroll-employee-list/find']);
                 ],
                 'escapeMarkup' => new JsExpression('function (markup) { return markup; }'),
                 'templateResult' => new JsExpression('function(employee) { return (
-                    employee.EmpID || "") + " " + (employee.text || "")  + ", " + (
-                    employee.LName || ""); }'),
+                    employee.EmpID || "") + " " + (employee.LName || "")  + ", " + (
+                    employee.FName || ""); }'),
                 'templateSelection' => new JsExpression('function (employee) { return (
-                    employee.EmpID || "") + " " + (employee.text || "")  + ", " + (
+                    employee.EmpID || "") + " " + (employee.LName || "")  + ", " + (
                     employee.FName || ""); }'),
 
             ],
         ])->label('Employee ID'); ?>
 
-            <?= $form->field($model, 'PrdID')->dropDownList(ArrayHelper::map(PayrollPayPeriodList::find()->where(['status'=>PayrollPayPeriodList::STATUS_YES])->all(), 'PrdID', 'decription'),['prompt'=>'Select Pay Period', 'class'=>'form-control']) ?>
+            <?= $form->field($model, 'PrdID')->dropDownList(ArrayHelper::map(PayrollPayPeriodList::find()->where(['status'=>PayrollPayPeriodList::STATUS_YES])->orderBy("PrdID DESC")->all(), 'PrdID', 'decription')) ?>
         </div>
         </div>
         <div class="col-sm-7">
@@ -121,7 +121,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LEC_UGVLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGVLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGVLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGVL')->textInput() ?>
         </div>
@@ -130,7 +130,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LEC_UGOLVLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGOLVLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGOLVLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGOLVL')->textInput() ?>
         </div>
@@ -139,7 +139,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LEC_UGSLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGSLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGSLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGSL')->textInput() ?>
 
@@ -149,7 +149,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LEC_UGOLSLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGOLSLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGOLSLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGOLSL')->textInput() ?>
         </div>
@@ -158,7 +158,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LEC_UGBLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGBLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGBLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGBL')->textInput() ?>
         </div>
@@ -167,7 +167,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LEC_UGELHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGELRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGELRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGEL')->textInput() ?>
         </div>
@@ -176,7 +176,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LEC_UGSPLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGSPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGSPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGSPL')->textInput() ?>
         </div>
@@ -185,7 +185,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LEC_UGPLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGPL')->textInput() ?>
         </div>
@@ -194,7 +194,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LEC_UGMLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGMLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGMLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGML')->textInput() ?>
         </div>
@@ -203,7 +203,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LEC_UGULHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGULRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGULRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGUL')->textInput() ?>
         </div>
@@ -212,7 +212,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LEC_UGSLWHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGSLWRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGSLWRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGSLW')->textInput() ?>
         </div>
@@ -221,14 +221,14 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LEC_UGNLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGNLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGNLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGNL')->textInput() ?>
         </div>
         <div id="official" class="tab-pane fade">
             <?= $form->field($model, 'UGOBLec')->textInput() ?>
 
-            <?= $form->field($model, 'UGOBLecRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'UGOBLecRem')->textarea(['rows' => 4]) ?>
         </div>
 
         <div id="lvl" class="tab-pane fade">
@@ -236,7 +236,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LAB_UGVLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGVLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGVLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGVL')->textInput() ?>
 
@@ -246,7 +246,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LAB_UGOLVLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGOLVLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGOLVLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGOLVL')->textInput() ?>
 
@@ -256,7 +256,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LAB_UGSLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGSLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGSLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGSL')->textInput() ?>
 
@@ -266,7 +266,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LAB_UGOLSLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGOLSLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGOLSLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGOLSL')->textInput() ?>
 
@@ -276,7 +276,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LAB_UGBLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGBLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGBLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGBL')->textInput() ?>
 
@@ -287,7 +287,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LAB_UGELHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGELRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGELRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGEL')->textInput() ?>
 
@@ -297,7 +297,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LAB_UGSPLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGSPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGSPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGSPL')->textInput() ?>
 
@@ -307,7 +307,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LAB_UGPLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGPL')->textInput() ?>
 
@@ -317,7 +317,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LAB_UGMLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGMLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGMLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGML')->textInput() ?>
 
@@ -327,7 +327,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LAB_UGULHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGULRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGULRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGUL')->textInput() ?>
 
@@ -337,7 +337,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LAB_UGSLWHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGSLWRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGSLWRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGSLW')->textInput() ?>
 
@@ -347,7 +347,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LAB_UGNLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGNLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGNLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGNL')->textInput() ?>
 
@@ -355,7 +355,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="lofficial" class="tab-pane fade">
             <?= $form->field($model, 'UGOBLab')->textInput() ?>
 
-            <?= $form->field($model, 'UGOBLabRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'UGOBLabRem')->textarea(['rows' => 4]) ?>
 
         </div>
         <div id="clvl" class="tab-pane fade">
@@ -363,7 +363,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'CLC_UGVLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGVLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGVLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGVL')->textInput() ?>
 
@@ -373,7 +373,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'CLC_UGOLVLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGOLVLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGOLVLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGOLVL')->textInput() ?>
 
@@ -383,7 +383,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'CLC_UGSLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGSLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGSLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGSL')->textInput() ?>
 
@@ -394,7 +394,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'CLC_UGOLSLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGOLSLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGOLSLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGOLSL')->textInput() ?>
 
@@ -404,7 +404,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'CLC_UGBLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGBLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGBLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGBL')->textInput() ?>
 
@@ -414,7 +414,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'CLC_UGELHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGELRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGELRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGEL')->textInput() ?>
 
@@ -424,7 +424,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'CLC_UGSPLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGSPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGSPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGSPL')->textInput() ?>
 
@@ -434,7 +434,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'CLC_UGPLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGPL')->textInput() ?>
 
@@ -444,7 +444,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'CLC_UGMLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGMLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGMLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGML')->textInput() ?>
 
@@ -454,7 +454,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'CLC_UGULHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGULRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGULRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGUL')->textInput() ?>
 
@@ -465,7 +465,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'CLC_UGSLWHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGSLWRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGSLWRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGSLW')->textInput() ?>
 
@@ -475,7 +475,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'CLC_UGNLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGNLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGNLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGNL')->textInput() ?>
 
@@ -483,7 +483,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="clofficial" class="tab-pane fade">
             <?= $form->field($model, 'UGOBClc')->textInput() ?>
 
-            <?= $form->field($model, 'UGOBClcRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'UGOBClcRem')->textarea(['rows' => 4]) ?>
 
         </div>
     </div>

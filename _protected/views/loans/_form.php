@@ -26,20 +26,14 @@ $url = Url::to(['payroll-employee-list/find']);
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">SSS<b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a data-toggle="tab" href="#Adjustments">Adjustment/New Bal.</a></li>
-                <li><a data-toggle="tab" href="#Periods">Period Factor</a></li>
-                <li><a data-toggle="tab" href="#Handlings">Handling Fee</a></li>
-                <li><a data-toggle="tab" href="#Deductions">Deduction</a></li>
+                <li><a data-toggle="tab" href="#Adjustments">Loan</a></li>
                 <li><a data-toggle="tab" href="#Calamitys">Calamity</a></li>
             </ul>
         </li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">HDMF<b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a data-toggle="tab" href="#Adjustmenth">Adjustment/New Bal.</a></li>
-                <li><a data-toggle="tab" href="#Periodh">Period Factor</a></li>
-                <li><a data-toggle="tab" href="#Handlingh">Handling Fee</a></li>
-                <li><a data-toggle="tab" href="#Deductionh">Deduction</a></li>
+                <li><a data-toggle="tab" href="#Adjustmenth">HDMF</a></li>
                 <li><a data-toggle="tab" href="#Multih">Multi Purpose</a></li>
                 <li><a data-toggle="tab" href="#Calamityh">Calamity</a></li>
             </ul>
@@ -154,30 +148,27 @@ $url = Url::to(['payroll-employee-list/find']);
                 ],
                 'escapeMarkup' => new JsExpression('function (markup) { return markup; }'),
                 'templateResult' => new JsExpression('function(employee) { return (
-                    employee.EmpID || "") + " " + (employee.text || "")  + ", " + (
-                    employee.LName || ""); }'),
+                    employee.EmpID || "") + " " + (employee.LName || "")  + ", " + (
+                    employee.FName || ""); }'),
                 'templateSelection' => new JsExpression('function (employee) { return (
-                    employee.EmpID || "") + " " + (employee.text || "")  + ", " + (
+                    employee.EmpID || "") + " " + (employee.LName || "")  + ", " + (
                     employee.FName || ""); }'),
 
             ],
         ])->label('Employee ID'); ?>
 
-        <?= $form->field($model, 'PrdID')->dropDownList(ArrayHelper::map(PayrollPayPeriodList::find()->where(['status'=>PayrollPayPeriodList::STATUS_YES])->all(), 'PrdID', 'decription'),['prompt'=>'Select Pay Period', 'class'=>'form-control']) ?>
+        <?= $form->field($model, 'PrdID')->dropDownList(ArrayHelper::map(PayrollPayPeriodList::find()->where(['status'=>PayrollPayPeriodList::STATUS_YES])->orderBy("PrdID DESC")->all(), 'PrdID', 'decription')) ?>
         </div>
         </div>
         <div class="col-sm-7">
       <div class="tab-content">
         <div id="Adjustments" class="tab-pane fade">
             <?= $form->field($model, 'L_SSSAdj')->textInput() ?>
-        </div>
-        <div id="Periods" class="tab-pane fade">
-            <?= $form->field($model, 'L_SSSPF')->textInput() ?>
-        </div>
-        <div id="Handlings" class="tab-pane fade">
+
+            <?= $form->field($model, 'L_SSSPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...'])  ?>
+  
             <?= $form->field($model, 'L_SSSHF')->textInput() ?>
-        </div>
-        <div id="Deductions" class="tab-pane fade">
+      
             <?= $form->field($model, 'L_SSSAdtnlD')->textInput() ?>
 
             <?= $form->field($model, 'L_SSS')->textInput() ?>
@@ -185,7 +176,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Calamitys" class="tab-pane fade">
             <?= $form->field($model, 'L_SSSCAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_SSSCPF')->textInput() ?>
+            <?= $form->field($model, 'L_SSSCPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_SSSCHF')->textInput() ?>
 
@@ -196,15 +187,11 @@ $url = Url::to(['payroll-employee-list/find']);
         </div>
          <div id="Adjustmenth" class="tab-pane fade">
             <?= $form->field($model, 'L_HDMFAdj')->textInput() ?>
-        </div>
-        <div id="Periodh" class="tab-pane fade">
-            <?= $form->field($model, 'L_HDMFPF')->textInput() ?>
-        </div>
-        <div id="Handlingh" class="tab-pane fade">
+
+            <?= $form->field($model, 'L_HDMFPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
+
             <?= $form->field($model, 'L_HDMFHF')->textInput() ?>
             
-        </div>
-        <div id="Deductionh" class="tab-pane fade">
             <?= $form->field($model, 'L_HDMFAdtnlD')->textInput() ?>
 
             <?= $form->field($model, 'L_HDMF')->textInput() ?>
@@ -213,7 +200,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Multih" class="tab-pane fade">
             <?= $form->field($model, 'L_HDMFMPAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_HDMFMPPF')->textInput() ?>
+            <?= $form->field($model, 'L_HDMFMPPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HDMFMPHF')->textInput() ?>
 
@@ -226,7 +213,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Calamityh" class="tab-pane fade">
             <?= $form->field($model, 'L_HDMFCAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_HDMFCPF')->textInput() ?>
+            <?= $form->field($model, 'L_HDMFCPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HDMFCHF')->textInput() ?>
 
@@ -239,7 +226,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentp" class="tab-pane fade">
             <?= $form->field($model, 'L_LOVEMPAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_LOVEMPPF')->textInput() ?>
+            <?= $form->field($model, 'L_LOVEMPPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_LOVEMPHF')->textInput() ?>
             
@@ -251,7 +238,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentf" class="tab-pane fade">
             <?= $form->field($model, 'L_FAWUAdj')->textInput() ?>
          
-            <?= $form->field($model, 'L_FAWUPF')->textInput() ?>
+            <?= $form->field($model, 'L_FAWUPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
         
             <?= $form->field($model, 'L_FAWUHF')->textInput() ?>
 
@@ -264,7 +251,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="HAdjustmentf" class="tab-pane fade">
             <?= $form->field($model, 'L_HFFAWUAdj')->textInput() ?>
            
-            <?= $form->field($model, 'L_HFFAWUPF')->textInput() ?>
+            <?= $form->field($model, 'L_HFFAWUPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HFFAWUHF')->textInput() ?>
 
@@ -276,7 +263,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentho" class="tab-pane fade">
             <?= $form->field($model, 'L_CEUHousingIntAdj')->textInput() ?>
          
-            <?= $form->field($model, 'L_CEUHousingIntPF')->textInput() ?>
+            <?= $form->field($model, 'L_CEUHousingIntPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_CEUHousingIntHF')->textInput() ?>
             <?= $form->field($model, 'L_CEUHousingIntAdtnlD')->textInput() ?>
@@ -287,7 +274,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="PAdjustmentho" class="tab-pane fade">
             <?= $form->field($model, 'L_CEUHousingPcplAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_CEUHousingPcplPF')->textInput() ?>
+            <?= $form->field($model, 'L_CEUHousingPcplPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_CEUHousingPcplHF')->textInput() ?>
             
@@ -300,7 +287,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentmed" class="tab-pane fade">
             <?= $form->field($model, 'L_MedicalAdj')->textInput() ?>
  
-            <?= $form->field($model, 'L_MedicalPF')->textInput() ?>
+            <?= $form->field($model, 'L_MedicalPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_MedicalHF')->textInput() ?>
 
@@ -312,7 +299,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmenttech" class="tab-pane fade">
             <?= $form->field($model, 'L_TechnologyAdj')->textInput() ?>
  
-            <?= $form->field($model, 'L_TechnologyPF')->textInput() ?>
+            <?= $form->field($model, 'L_TechnologyPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_TechnologyHF')->textInput() ?>
      
@@ -324,7 +311,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmenthos" class="tab-pane fade">
             <?= $form->field($model, 'L_HospitalAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_HospitalPF')->textInput() ?>
+            <?= $form->field($model, 'L_HospitalPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HospitalHF')->textInput() ?>
 
@@ -338,7 +325,7 @@ $url = Url::to(['payroll-employee-list/find']);
             <?= $form->field($model, 'L_EmergencyAdj')->textInput() ?>
 
 
-            <?= $form->field($model, 'L_EmergencyPF')->textInput() ?>
+            <?= $form->field($model, 'L_EmergencyPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_EmergencyHF')->textInput() ?>
 
@@ -350,7 +337,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentuni" class="tab-pane fade">
             <?= $form->field($model, 'L_UnifiedAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_UnifiedPF')->textInput() ?>
+            <?= $form->field($model, 'L_UnifiedPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_UnifiedHF')->textInput() ?>
 
@@ -362,7 +349,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'L_BDayAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_BDayPF')->textInput() ?>
+            <?= $form->field($model, 'L_BDayPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_BDayHF')->textInput() ?>
 
@@ -373,7 +360,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmenttra" class="tab-pane fade">
             <?= $form->field($model, 'L_TravelAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_TravelPF')->textInput() ?>
+            <?= $form->field($model, 'L_TravelPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_TravelHF')->textInput() ?>
 
@@ -384,7 +371,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentpett" class="tab-pane fade">
             <?= $form->field($model, 'L_PettyCashAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_PettyCashPF')->textInput() ?>
+            <?= $form->field($model, 'L_PettyCashPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_PettyCashHF')->textInput() ?>
 
@@ -396,7 +383,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentspe" class="tab-pane fade">
              <?= $form->field($model, 'L_SpecialAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_SpecialPF')->textInput() ?>
+            <?= $form->field($model, 'L_SpecialPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_SpecialHF')->textInput() ?>
 
@@ -408,7 +395,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentphi" class="tab-pane fade">
             <?= $form->field($model, 'L_PhilamcareAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_PhilamcarePF')->textInput() ?>
+            <?= $form->field($model, 'L_PhilamcarePF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_PhilamcareHF')->textInput() ?>
 
@@ -419,7 +406,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentsav" class="tab-pane fade">
             <?= $form->field($model, 'L_SavingsDepAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_SavingsDepPF')->textInput() ?>
+            <?= $form->field($model, 'L_SavingsDepPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_SavingsDepHF')->textInput() ?>
 
@@ -430,7 +417,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentfix" class="tab-pane fade">
             <?= $form->field($model, 'L_FixedDepAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_FixedDepPF')->textInput() ?>
+            <?= $form->field($model, 'L_FixedDepPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_FixedDepHF')->textInput() ?>
 
@@ -441,7 +428,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentpen" class="tab-pane fade">
             <?= $form->field($model, 'L_PensionDepAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_PensionDepPF')->textInput() ?>
+            <?= $form->field($model, 'L_PensionDepPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_PensionDepHF')->textInput() ?>
 
@@ -453,7 +440,7 @@ $url = Url::to(['payroll-employee-list/find']);
         
             <?= $form->field($model, 'L_SeminarAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_SeminarPF')->textInput() ?>
+            <?= $form->field($model, 'L_SeminarPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...'])?>
 
             <?= $form->field($model, 'L_SeminarHF')->textInput() ?>
 
@@ -465,7 +452,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentcoo" class="tab-pane fade">
             <?= $form->field($model, 'L_CoopAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_CoopPF')->textInput() ?>
+            <?= $form->field($model, 'L_CoopPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_CoopHF')->textInput() ?>
 
@@ -477,7 +464,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmenttui" class="tab-pane fade">
             <?= $form->field($model, 'L_TuitionAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_TuitionPF')->textInput() ?>
+            <?= $form->field($model, 'L_TuitionPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_TuitionHF')->textInput() ?>
 
@@ -489,7 +476,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmenttrip" class="tab-pane fade">
             <?= $form->field($model, 'L_FieldTripAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_FieldTripPF')->textInput() ?>
+            <?= $form->field($model, 'L_FieldTripPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_FieldTripHF')->textInput() ?>
 
@@ -502,7 +489,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'L_CCLoveAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_CCLovePF')->textInput() ?>
+            <?= $form->field($model, 'L_CCLovePF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_CCLoveHF')->textInput() ?>
 
@@ -515,7 +502,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'L_HFCCLoveAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_HFCCLovePF')->textInput() ?>
+            <?= $form->field($model, 'L_HFCCLovePF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HFCCLoveHF')->textInput() ?>
 
@@ -527,7 +514,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'L_EuroUSAIntAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_EuroUSAIntPF')->textInput() ?>
+            <?= $form->field($model, 'L_EuroUSAIntPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_EuroUSAIntHF')->textInput() ?>
 
@@ -539,7 +526,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmenteuusprin" class="tab-pane fade">
             <?= $form->field($model, 'L_EuroUSAPcplAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_EuroUSAPcplPF')->textInput() ?>
+            <?= $form->field($model, 'L_EuroUSAPcplPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_EuroUSAPcplHF')->textInput() ?>
 
@@ -551,7 +538,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'L_HolyLandTourAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_HolyLandTourPF')->textInput() ?>
+            <?= $form->field($model, 'L_HolyLandTourPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HolyLandTourHF')->textInput() ?>
 
@@ -563,7 +550,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
              <?= $form->field($model, 'L_HKTravelAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_HKTravelPF')->textInput() ?>
+            <?= $form->field($model, 'L_HKTravelPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_HKTravelHF')->textInput() ?>
 
@@ -576,7 +563,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'L_PAFTETourAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_PAFTETourPF')->textInput() ?>
+            <?= $form->field($model, 'L_PAFTETourPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_PAFTETourHF')->textInput() ?>
 
@@ -589,7 +576,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'L_AsiaPacConfeAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_AsiaPacConfePF')->textInput() ?>
+            <?= $form->field($model, 'L_AsiaPacConfePF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_AsiaPacConfeHF')->textInput() ?>
 
@@ -601,7 +588,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'L_ParkingAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_ParkingPF')->textInput() ?>
+            <?= $form->field($model, 'L_ParkingPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_ParkingHF')->textInput() ?>
 
@@ -613,7 +600,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
              <?= $form->field($model, 'L_ComputerAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_ComputerPF')->textInput() ?>
+            <?= $form->field($model, 'L_ComputerPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_ComputerHF')->textInput() ?>
 
@@ -624,7 +611,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentbasic" class="tab-pane fade">
             <?= $form->field($model, 'L_OPBasicAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_OPBasicPF')->textInput() ?>
+            <?= $form->field($model, 'L_OPBasicPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_OPBasicHF')->textInput() ?>
 
@@ -636,7 +623,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentefa" class="tab-pane fade">
             <?= $form->field($model, 'L_OPEFAAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_OPEFAPF')->textInput() ?>
+            <?= $form->field($model, 'L_OPEFAPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_OPEFAHF')->textInput() ?>
 
@@ -647,7 +634,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="Adjustmentcola" class="tab-pane fade">
              <?= $form->field($model, 'L_OPCOLAAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_OPCOLAPF')->textInput() ?>
+            <?= $form->field($model, 'L_OPCOLAPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_OPCOLAHF')->textInput() ?>
 
@@ -660,7 +647,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'L_AdjTaxAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_AdjTaxPF')->textInput() ?>
+            <?= $form->field($model, 'L_AdjTaxPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_AdjTaxHF')->textInput() ?>
 
@@ -672,7 +659,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'L_AdjTaxSBAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_AdjTaxSBPF')->textInput() ?>
+            <?= $form->field($model, 'L_AdjTaxSBPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...'])?>
 
             <?= $form->field($model, 'L_AdjTaxSBHF')->textInput() ?>
 
@@ -685,7 +672,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
              <?= $form->field($model, 'L_ALWOPCOLAAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_ALWOPCOLAPF')->textInput() ?>
+            <?= $form->field($model, 'L_ALWOPCOLAPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_ALWOPCOLAHF')->textInput() ?>
 
@@ -698,7 +685,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'L_ALWOPEFAAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_ALWOPEFAPF')->textInput() ?>
+            <?= $form->field($model, 'L_ALWOPEFAPF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_ALWOPEFAHF')->textInput() ?>
 
@@ -710,7 +697,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
              <?= $form->field($model, 'L_VaccineAdj')->textInput() ?>
 
-            <?= $form->field($model, 'L_VaccinePF')->textInput() ?>
+            <?= $form->field($model, 'L_VaccinePF')->dropDownList($model->getFactorList(),['prompt'=>'Select...']) ?>
 
             <?= $form->field($model, 'L_VaccineHF')->textInput() ?>
 

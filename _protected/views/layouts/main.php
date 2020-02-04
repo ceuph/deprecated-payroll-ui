@@ -8,6 +8,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use lo\modules\noty\Wrapper;
 
 AppAsset::register($this);
 ?>
@@ -20,10 +21,29 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <style type="text/css">
+        .table>tbody>tr.info>td, .table>tbody>tr.info>th, .table>tbody>tr>td.info, .table>tbody>tr>th.info, .table>tfoot>tr.info>td, .table>tfoot>tr.info>th, .table>tfoot>tr>td.info, .table>tfoot>tr>th.info, .table>thead>tr.info>td, .table>thead>tr.info>th, .table>thead>tr>td.info, .table>thead>tr>th.info {
+    background-color: #272b30;
+}
+</style> 
 </head>
 <body>
 <?php $this->beginBody() ?>
 <div class="wrap">
+
+    <?php echo Wrapper::widget([
+    'layerClass' => 'lo\modules\noty\layers\Toastr',
+    'layerOptions' => [
+            'customTitleDelimiter' => '|', // by default
+        ],
+    'options' => [
+        'progressBar' => true,
+        'timeOut'=> 3000,
+        'showMethod' => 'fadeIn',
+        'hideMethod' => 'fadeOut',
+    ]
+    ]); ?>
+
     <?php
     NavBar::begin([
         'brandLabel' => Yii::t('app', Yii::$app->name),
@@ -46,12 +66,14 @@ AppAsset::register($this);
     ]];
     }*/
 
-    $menuItems[] = ['label' => Yii::t('app', 'Employee-List'), 'url' => ['/payroll-employee-list/index']];
-
-    $menuItems[] = ['label' => Yii::t('app', 'Pay-Period'), 'url' => ['/payroll-pay-period-list/index']];
-
+    
    
     if (Yii::$app->user->can('premium')) {
+
+        $menuItems[] = ['label' => Yii::t('app', 'Employee-List'), 'url' => ['/payroll-employee-list/index']];
+
+        $menuItems[] = ['label' => Yii::t('app', 'Pay-Period'), 'url' => ['/payroll-pay-period-list/index']];
+
         $menuItems[] = ['label' => Yii::t('app', 'Leave-Credits'), 'items'=> [
             ['label' => 'Under-Grad', 'url' => ['/ug-leave-credits/index']],
             ['label' => 'Grad-School', 'url' => ['/gs-leave-credits/index']],
@@ -134,10 +156,6 @@ AppAsset::register($this);
     ?>
 
     <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
         <?= $content ?>
     </div>
 </div>

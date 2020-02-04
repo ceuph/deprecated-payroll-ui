@@ -2,6 +2,11 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
+
+use app\models\PayrollCampus;
+use app\models\PayrollSchoolCollege;
+use app\models\PayrollDepartment;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\search\PayrollEmployeeListSearch */
@@ -29,14 +34,38 @@ $this->params['breadcrumbs'][] = $this->title;
             'EmpID',
             'LName',
             'FName',
-            'SchoolCollege',
-            //'Gender',
-            'Department',
-            //'Position',
-            'Campus',
-            //'MainJob',
+            [
+                'attribute'=> 'Campus',
+                'filter' =>ArrayHelper::map(PayrollCampus::find()->asArray()->all(), 'campus_name', 'campus_name'),
+                'value' => function ($data) {
+                    return !empty ($data->Campus) ? $data->Campus : '-';
+                },
+            ],
+            [
+                'attribute'=> 'SchoolCollege',
+                'filter' =>ArrayHelper::map(PayrollSchoolCollege::find()->asArray()->all(), 'school_college_name', 'school_college_name'),
+                'value' => function ($data) {
+                    return !empty ($data->SchoolCollege) ? $data->SchoolCollege : '-';
+                },
+            ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'attribute'=> 'Department',
+                'filter' =>ArrayHelper::map(PayrollDepartment::find()->asArray()->all(), 'department_name', 'department_name'),
+                'value' => function ($data) {
+                    return !empty ($data->Department) ? $data->Department : '-';
+                },
+            ],
+
+
+            ['class' => 'yii\grid\ActionColumn',
+
+            'visibleButtons' => [
+                    'delete' => function ($model) {
+                        return \Yii::$app->user->can('theCreator');
+                    },
+                ],
+            ],
         ],
     ]); ?>
 

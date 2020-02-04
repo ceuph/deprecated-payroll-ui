@@ -1,34 +1,55 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 
 use yii\widgets\Pjax;
 use yii\bootstrap\Modal;
 use yii\helpers\Url;
+use yii\helpers\ArrayHelper;
+use app\models\PayrollCampus;
+use app\models\PayrollSchoolCollege;
+use app\models\PayrollDepartment;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\search\TcTeachingLoadSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tc Teaching Loads';
+$this->title = 'Teaching Loads Summary';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="tc-teaching-load-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 align="center"><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::button('Create', ['value'=>Url::to(['tc-teaching-load/create']),'class' => 'btn btn-success', 'id'=>'tctId']) ?>
+    <p align="center">
+        <?= Html::button('Create Per Employee', ['value'=>Url::to(['tc-teaching-load/create']),'class' => 'btn btn-success', 'id'=>'tctId']) ?>
+        <?= Html::a('Create Per Group', ['/tc-teaching-load/employee-list'], ['class'=>'btn btn-primary','target' => '_blank']) ?>
     </p>
 
-<?php Pjax::begin(['id' => 'tclTbl','enablePushState' => false]) ?>
+<?php Pjax::begin(['id' => 'tclTbl','timeout'=>5000]) ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
+
+            [
+                'class' => 'kartik\grid\ExpandRowColumn',
+                'width' => '50px',
+                'value' => function ($model, $key, $index, $column) {
+                    return GridView::ROW_COLLAPSED;
+                },
+                // uncomment below and comment detail if you need to render via ajax
+                // 'detailUrl'=>Url::to(['/site/book-details']),
+                'detail' => function ($model, $key, $index, $column) {
+                    return Yii::$app->controller->renderPartial('view',['model'=>$model,'EmpID'=>$model->EmpID, 'PrdID'=>$model->PrdID]);
+                },
+               
+                'headerOptions' => ['class' => 'kartik-sheet-style'],
+                'expandOneOnly' => true,
+            ],
 
             
             'PrdID',
@@ -47,24 +68,35 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             [
                 'attribute'=> 'campus',
+                'filter' =>ArrayHelper::map(PayrollCampus::find()->asArray()->all(), 'campus_name', 'campus_name'),
                 'value' => function ($data) {
-                    return $data->employeeList->Campus;
+                    return !empty ($data->employeeList->Campus) ? $data->employeeList->Campus : '-';
                 },
             ],
             [
                 'attribute'=> 'schoolCollege',
+                'filter' =>ArrayHelper::map(PayrollSchoolCollege::find()->asArray()->all(), 'school_college_name', 'school_college_name'),
                 'value' => function ($data) {
-                    return $data->employeeList->SchoolCollege;
+                    return !empty ($data->employeeList->SchoolCollege) ? $data->employeeList->SchoolCollege : '-';
                 },
             ],
+
             [
                 'attribute'=> 'department',
+                'filter' =>ArrayHelper::map(PayrollDepartment::find()->asArray()->all(), 'department_name', 'department_name'),
                 'value' => function ($data) {
-                    return $data->employeeList->Department;
+                    return !empty ($data->employeeList->Department) ? $data->employeeList->Department : '-';
                 },
             ],
 
             ['class' => 'yii\grid\ActionColumn',
+                'template' => '{update}{delete}',
+
+                'visibleButtons' => [
+                    'delete' => function ($model) {
+                        return \Yii::$app->user->can('theCreator');
+                    },
+                ],
                 'buttons' => [
                 'update' => function ($url, $model, $key) {
 

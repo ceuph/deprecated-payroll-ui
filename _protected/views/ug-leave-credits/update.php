@@ -91,7 +91,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGVLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGVLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGVLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGVL')->textInput() ?>
         </div>
@@ -100,7 +100,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGOLVLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGOLVLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGOLVLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGOLVL')->textInput() ?>
         </div>
@@ -109,7 +109,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGSLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGSLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGSLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGSL')->textInput() ?>
 
@@ -119,7 +119,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGOLSLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGOLSLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGOLSLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGOLSL')->textInput() ?>
         </div>
@@ -128,7 +128,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGBLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGBLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGBLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGBL')->textInput() ?>
         </div>
@@ -137,7 +137,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGELHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGELRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGELRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGEL')->textInput() ?>
         </div>
@@ -146,7 +146,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGSPLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGSPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGSPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGSPL')->textInput() ?>
         </div>
@@ -155,7 +155,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGPLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGPL')->textInput() ?>
         </div>
@@ -164,7 +164,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGMLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGMLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGMLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGML')->textInput() ?>
         </div>
@@ -173,7 +173,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGULHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGULRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGULRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGUL')->textInput() ?>
         </div>
@@ -182,7 +182,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGSLWHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGSLWRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGSLWRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGSLW')->textInput() ?>
         </div>
@@ -191,14 +191,14 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LEC_UGNLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LEC_UGNLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LEC_UGNLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LEC_UGNL')->textInput() ?>
         </div>
         <div id="officialu" class="tab-pane fade">
             <?= $form->field($model, 'UGOBLec')->textInput() ?>
 
-            <?= $form->field($model, 'UGOBLecRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'UGOBLecRem')->textarea(['rows' => 4]) ?>
         </div>
 
         <div id="lvlu" class="tab-pane fade">
@@ -206,7 +206,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LAB_UGVLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGVLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGVLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGVL')->textInput() ?>
 
@@ -216,7 +216,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LAB_UGOLVLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGOLVLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGOLVLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGOLVL')->textInput() ?>
 
@@ -226,7 +226,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LAB_UGSLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGSLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGSLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGSL')->textInput() ?>
 
@@ -236,7 +236,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LAB_UGOLSLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGOLSLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGOLSLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGOLSL')->textInput() ?>
 
@@ -246,7 +246,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LAB_UGBLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGBLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGBLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGBL')->textInput() ?>
 
@@ -257,7 +257,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LAB_UGELHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGELRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGELRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGEL')->textInput() ?>
 
@@ -267,7 +267,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LAB_UGSPLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGSPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGSPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGSPL')->textInput() ?>
 
@@ -277,7 +277,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LAB_UGPLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGPL')->textInput() ?>
 
@@ -287,7 +287,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LAB_UGMLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGMLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGMLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGML')->textInput() ?>
 
@@ -297,7 +297,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LAB_UGULHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGULRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGULRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGUL')->textInput() ?>
 
@@ -307,7 +307,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LAB_UGSLWHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGSLWRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGSLWRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGSLW')->textInput() ?>
 
@@ -317,7 +317,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'LAB_UGNLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LAB_UGNLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LAB_UGNLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LAB_UGNL')->textInput() ?>
 
@@ -325,7 +325,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="lofficialu" class="tab-pane fade">
             <?= $form->field($model, 'UGOBLab')->textInput() ?>
 
-            <?= $form->field($model, 'UGOBLabRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'UGOBLabRem')->textarea(['rows' => 4]) ?>
 
         </div>
         <div id="clvlu" class="tab-pane fade">
@@ -333,7 +333,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'CLC_UGVLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGVLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGVLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGVL')->textInput() ?>
 
@@ -343,7 +343,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'CLC_UGOLVLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGOLVLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGOLVLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGOLVL')->textInput() ?>
 
@@ -353,7 +353,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'CLC_UGSLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGSLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGSLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGSL')->textInput() ?>
 
@@ -364,7 +364,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'CLC_UGOLSLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGOLSLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGOLSLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGOLSL')->textInput() ?>
 
@@ -374,7 +374,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'CLC_UGBLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGBLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGBLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGBL')->textInput() ?>
 
@@ -384,7 +384,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'CLC_UGELHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGELRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGELRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGEL')->textInput() ?>
 
@@ -394,7 +394,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'CLC_UGSPLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGSPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGSPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGSPL')->textInput() ?>
 
@@ -404,7 +404,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'CLC_UGPLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGPL')->textInput() ?>
 
@@ -414,7 +414,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'CLC_UGMLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGMLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGMLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGML')->textInput() ?>
 
@@ -424,7 +424,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'CLC_UGULHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGULRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGULRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGUL')->textInput() ?>
 
@@ -435,7 +435,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'CLC_UGSLWHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGSLWRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGSLWRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGSLW')->textInput() ?>
 
@@ -445,7 +445,7 @@ $this->params['breadcrumbs'][] = 'Update';
 
             <?= $form->field($model, 'CLC_UGNLHAWP')->textInput() ?>
 
-            <?= $form->field($model, 'CLC_UGNLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'CLC_UGNLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'CLC_UGNL')->textInput() ?>
 
@@ -453,7 +453,7 @@ $this->params['breadcrumbs'][] = 'Update';
         <div id="clofficialu" class="tab-pane fade">
             <?= $form->field($model, 'UGOBClc')->textInput() ?>
 
-            <?= $form->field($model, 'UGOBClcRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'UGOBClcRem')->textarea(['rows' => 4]) ?>
 
         </div>
     </div>

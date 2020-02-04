@@ -64,16 +64,16 @@ $url = Url::to(['payroll-employee-list/find']);
                 ],
                 'escapeMarkup' => new JsExpression('function (markup) { return markup; }'),
                 'templateResult' => new JsExpression('function(employee) { return (
-                    employee.EmpID || "") + " " + (employee.text || "")  + ", " + (
-                    employee.LName || ""); }'),
+                    employee.EmpID || "") + " " + (employee.LName || "")  + ", " + (
+                    employee.FName || ""); }'),
                 'templateSelection' => new JsExpression('function (employee) { return (
-                    employee.EmpID || "") + " " + (employee.text || "")  + ", " + (
+                    employee.EmpID || "") + " " + (employee.LName || "")  + ", " + (
                     employee.FName || ""); }'),
 
             ],
         ])->label('Employee ID'); ?>
 
-            <?= $form->field($model, 'PrdID')->dropDownList(ArrayHelper::map(PayrollPayPeriodList::find()->where(['status'=>PayrollPayPeriodList::STATUS_YES])->all(), 'PrdID', 'decription'),['prompt'=>'Select Pay Period', 'class'=>'form-control']) ?>
+        <?= $form->field($model, 'PrdID')->dropDownList(ArrayHelper::map(PayrollPayPeriodList::find()->where(['status'=>PayrollPayPeriodList::STATUS_YES])->orderBy("PrdID DESC")->all(), 'PrdID', 'decription')) ?>
         </div>
         </div>
         <div class="col-sm-7">
@@ -83,7 +83,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LC_NT_VLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_VLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_VLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_VL')->textInput() ?>
 
@@ -93,7 +93,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LC_NT_SLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_SLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_SLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_SL')->textInput() ?>
 
@@ -103,7 +103,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LC_NT_BLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_BLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_BLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_BL')->textInput() ?>
         </div>
@@ -113,7 +113,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LC_NT_ELDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_ELRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_ELRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_EL')->textInput() ?>
 
@@ -123,7 +123,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LC_NT_SPLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_SPLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_SPLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_SPL')->textInput() ?>
         </div>
@@ -132,7 +132,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LC_NT_PLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_PLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_PLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_PL')->textInput() ?>
    
@@ -142,7 +142,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LC_NT_MLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_MLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_MLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_ML')->textInput() ?>
 
@@ -153,7 +153,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LC_NT_ULDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_ULRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_ULRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_UL')->textInput() ?>
    
@@ -164,7 +164,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LC_NT_SLWDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_SLWRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_SLWRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_SLW')->textInput() ?>
    
@@ -174,7 +174,7 @@ $url = Url::to(['payroll-employee-list/find']);
 
             <?= $form->field($model, 'LC_NT_NLDAWP')->textInput() ?>
 
-            <?= $form->field($model, 'LC_NT_NLRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'LC_NT_NLRem')->textarea(['rows' => 4]) ?>
 
             <?= $form->field($model, 'LC_NT_NL')->textInput() ?>
 
@@ -182,7 +182,7 @@ $url = Url::to(['payroll-employee-list/find']);
         <div id="official" class="tab-pane fade">
             <?= $form->field($model, 'NT_OB')->textInput() ?>
 
-            <?= $form->field($model, 'NT_OBRem')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'NT_OBRem')->textarea(['rows' => 4]) ?>
 
         </div>
 
