@@ -25,6 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
      <p align="center">
         <?= Html::button('Create Per Employee', ['value'=>Url::to(['ug-leave-credits/create']),'class' => 'btn btn-success', 'id'=>'uglId']) ?>
+        
         <?= Html::a('Create Per Group', ['/ug-leave-credits/employee-list'], ['class'=>'btn btn-primary','target' => '_blank']) ?>
     </p>
 

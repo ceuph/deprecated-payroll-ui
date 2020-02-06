@@ -18,7 +18,7 @@ use app\models\search\PayrollEmployeeListSearch;
 /**
  * LoansController implements the CRUD actions for Loans model.
  */
-class LoansController extends Appcontroller
+class LoansController extends AppController
 {
     /**
      * {@inheritdoc}
