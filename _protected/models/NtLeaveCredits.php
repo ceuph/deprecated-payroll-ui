@@ -131,7 +131,7 @@ class NtLeaveCredits extends \yii\db\ActiveRecord
         ];
     }
 
-    public function beforeSave($insert)
+    /*public function beforeSave($insert)
     {
         if(substr($this->PrdID, -2) == 01)
         {
@@ -148,7 +148,7 @@ class NtLeaveCredits extends \yii\db\ActiveRecord
         }
         
         return parent::beforeSave($insert);
-    }
+    }*/
 
     public function getEmployeeList()
     {
