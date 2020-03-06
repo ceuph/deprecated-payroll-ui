@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use kartik\grid\GridView;
+use kartik\export\ExportMenu;
 
 use yii\widgets\Pjax;
 use yii\bootstrap\Modal;
@@ -11,6 +12,7 @@ use yii\helpers\ArrayHelper;
 use app\models\PayrollCampus;
 use app\models\PayrollSchoolCollege;
 use app\models\PayrollDepartment;
+use app\models\PayrollPayPeriodList;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\search\TcDtrSearch */
@@ -32,10 +34,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
 <?php Pjax::begin(['id' => 'tcdtrTbl','timeout'=>5000]) ?>
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
+<?php
+    $gridColumns = [
             ['class' => 'yii\grid\SerialColumn'],
             [
                 'class' => 'kartik\grid\ExpandRowColumn',
@@ -53,7 +53,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'expandOneOnly' => true,
             ],
 
-            'PrdID',
+            [
+                'attribute'=> 'PrdID',
+                'filter' =>ArrayHelper::map(PayrollPayPeriodList::find()->asArray()->orderBy('PrdID DESC')->all(), 'PrdID', 'decription'),
+                'value'=> function($data){
+
+                    return $data->payPeriod->decription;
+                }
+            ],
             'EmpID',
             [
                 'attribute'=> 'lname',
@@ -90,26 +97,214 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
 
+            [
+
+                'attribute' => 'UG_HAbsntLec',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HAbsntLecRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HCMTLec',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HCMTLecRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HLWOPLec',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HLWOPLecRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HAbsntLab',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HAbsntLabRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HCMTLab',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HCMTLabRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HLWOPLab',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HLWOPLabRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HAbsntClc',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HAbsntClcRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HCMTClc',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HCMTClcRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HLWOPClc',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_HLWOPClcRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HAbsntLec',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HAbsntLecRem',
+                'hidden' => true
+            ],
+
+            [
+
+                'attribute' => 'GS_HCMTLec',
+                'hidden' => true
+            ],
+
+            [
+
+                'attribute' => 'GS_HCMTLecRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HLWOPLec',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HLWOPLecRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HAbsntLab',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HAbsntLabRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HCMTLab',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HCMTLabRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HLWOPLab',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HLWOPLabRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HAbsntClc',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HAbsntClcRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HCMTClc',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HCMTClcRem',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HLWOPClc',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_HLWOPClcRem',
+                'hidden' => true
+            ],
+
+           
 
             ['class' => 'yii\grid\ActionColumn',
+
             'template' => '{update}{delete}',
+            
             'visibleButtons' => [
                     'delete' => function ($model) {
                         return \Yii::$app->user->can('theCreator');
                     },
+
                 ],
-                'buttons' => [
+
+            'buttons' => [
                 'update' => function ($url, $model, $key) {
 
                       return Html::a('<span class="glyphicon glyphicon-pencil"></span>',$url,
                           [
                               'title' => 'Update',
-                              'id' => 'update-tcdtr-' . $model->EmpID . $model->PrdID,
+                              'id' => 'update-ugl-' . $model->EmpID . $model->PrdID,
                               'data-toggle' => 'modal',
-                              'data-target' => '#tcdtr-modals',
+                              'data-target' => '#ugl-modals',
                               'data-id' => $key,
                               'data-pjax' => '0',
-                              'onclick' => "ajaxmodal('#tcdtr-modal', '" . Url::to(['tc-dtr/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
+                              'onclick' => "ajaxmodal('#ugl-modal', '" . Url::to(['ug-leave-credits/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
                           ]
                       );
 
@@ -118,9 +313,32 @@ $this->params['breadcrumbs'][] = $this->title;
                   },
                 ],
             ],
-            
-        ],
-    ]); ?>
+        
+
+    ];
+    
+    echo ExportMenu::widget([
+    'dataProvider' => $dataProvider,
+    'columns' => $gridColumns,
+    'filename'=> Yii::$app->controller->id.'-'.date('Y-m-d'),
+    'dropdownOptions' => [
+        'label' => 'Export All',
+        'class' => 'btn btn-secondary'
+    ],
+    'exportConfig' => [
+        ExportMenu::FORMAT_TEXT => false,
+        ExportMenu::FORMAT_PDF => false,
+         ExportMenu::FORMAT_HTML => false
+    ]
+    ]) . "<hr>\n".
+
+    GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+
+        'columns' => $gridColumns
+           ]); 
+?>
 <?php Pjax::end() ?>
 
 </div>

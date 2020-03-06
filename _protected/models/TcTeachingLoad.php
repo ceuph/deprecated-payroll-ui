@@ -61,4 +61,9 @@ class TcTeachingLoad extends \yii\db\ActiveRecord
     {
         return $this->hasOne(PayrollEmployeeList::className(), ['EmpID' => 'EmpID']);
     }
+
+    public function getPayPeriod()
+    {
+        return $this->hasOne(PayrollPayPeriodList::className(), ['PrdID' => 'PrdID']);
+    }
 }

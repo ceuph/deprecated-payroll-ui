@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use kartik\grid\GridView;
+use kartik\export\ExportMenu;
 
 use yii\widgets\Pjax;
 use yii\bootstrap\Modal;
@@ -11,6 +12,8 @@ use yii\helpers\ArrayHelper;
 use app\models\PayrollCampus;
 use app\models\PayrollSchoolCollege;
 use app\models\PayrollDepartment;
+
+use app\models\PayrollPayPeriodList;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\search\NtLeaveCreditsSearch */
@@ -30,14 +33,10 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
 <?php Pjax::begin(['id' => 'ntTbl','timeout'=>5000]) ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
+<?php
+    $gridColumns = [
             ['class' => 'yii\grid\SerialColumn'],
-
-             [
+            [
                 'class' => 'kartik\grid\ExpandRowColumn',
                 'width' => '50px',
                 'value' => function ($model, $key, $index, $column) {
@@ -53,7 +52,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'expandOneOnly' => true,
             ],
 
-            'PrdID',
+            [
+                'attribute'=> 'PrdID',
+                'filter' =>ArrayHelper::map(PayrollPayPeriodList::find()->asArray()->orderBy('PrdID DESC')->all(), 'PrdID', 'decription'),
+                'value'=> function($data){
+
+                    return $data->payPeriod->decription;
+                }
+            ],
             'EmpID',
             [
                 'attribute'=> 'lname',
@@ -90,39 +96,233 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
 
-
+            [
+                'attribute'=> 'LC_NT_VLAdj',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_VLDAWP',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_VLRem',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_VL',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_SLAdj',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_SLDAWP',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_SLRem',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_SL',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_BLAdj',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_BLDAWP',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_BLRem',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_BL',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_ELAdj',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_ELDAWP',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_ELRem',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_EL',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_SPLAdj',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_SPLDAWP',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_SPLRem',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_SPL',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_PLAdj',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_PLDAWP',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_PLRem',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_PL',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_MLAdj',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_MLDAWP',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_MLRem',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_ML',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_ULAdj',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_ULDAWP',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_ULRem',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_UL',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_SLWAdj',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_SLWDAWP',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_SLWRem',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_SLW',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_NLAdj',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_NLDAWP',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_NLRem',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'LC_NT_NL',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'NT_OB',
+                'hidden'=> true,
+            ],
+            [
+                'attribute'=> 'NT_OBRem',
+                'hidden'=> true,
+            ],
+           
 
             ['class' => 'yii\grid\ActionColumn',
-              'template' => '{update}{delete}',
-              'visibleButtons' => [
+
+            'template' => '{update}{delete}',
+            
+            'visibleButtons' => [
                     'delete' => function ($model) {
                         return \Yii::$app->user->can('theCreator');
                     },
+
                 ],
-                'buttons' => [
-                  'update' => function ($url, $model, $key) {
+
+            'buttons' => [
+                'update' => function ($url, $model, $key) {
 
                       return Html::a('<span class="glyphicon glyphicon-pencil"></span>',$url,
                           [
                               'title' => 'Update',
-                              'id' => 'update-nt-' . $model->EmpID . $model->PrdID,
+                              'id' => 'update-ugl-' . $model->EmpID . $model->PrdID,
                               'data-toggle' => 'modal',
-                              'data-target' => '#nt-modals',
+                              'data-target' => '#ugl-modals',
                               'data-id' => $key,
                               'data-pjax' => '0',
-                              'onclick' => "ajaxmodal('#nt-modal', '" . Url::to(['nt-leave-credits/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
+                              'onclick' => "ajaxmodal('#ugl-modal', '" . Url::to(['ug-leave-credits/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
                           ]
                       );
 
            
 
                   },
-                
-                  ],
+                ],
             ],
-        ],
-    ]); ?>
+        
 
+    ];
+    
+    echo ExportMenu::widget([
+    'dataProvider' => $dataProvider,
+    'columns' => $gridColumns,
+    'filename'=> Yii::$app->controller->id.'-'.date('Y-m-d'),
+    'dropdownOptions' => [
+        'label' => 'Export All',
+        'class' => 'btn btn-secondary'
+    ],
+    'exportConfig' => [
+        ExportMenu::FORMAT_TEXT => false,
+        ExportMenu::FORMAT_PDF => false,
+         ExportMenu::FORMAT_HTML => false
+    ]
+    ]) . "<hr>\n".
+
+    GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+
+        'columns' => $gridColumns
+           ]); 
+?>
 <?php Pjax::end() ?>
 </div>
 <?php

@@ -105,4 +105,9 @@ class OtherDeductions extends \yii\db\ActiveRecord
 
         ];
     }
+
+    public function getPayPeriod()
+    {
+        return $this->hasOne(PayrollPayPeriodList::className(), ['PrdID' => 'PrdID']);
+    }
 }

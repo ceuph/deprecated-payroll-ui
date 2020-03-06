@@ -533,4 +533,9 @@ class Loans extends \yii\db\ActiveRecord
             'L_Vaccine' => 'VACCINE ( FLU, HEPA ) Deduction',
         ];
     }
+
+    public function getPayPeriod()
+    {
+        return $this->hasOne(PayrollPayPeriodList::className(), ['PrdID' => 'PrdID']);
+    }
 }

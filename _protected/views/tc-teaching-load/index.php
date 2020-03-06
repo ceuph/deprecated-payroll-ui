@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use kartik\grid\GridView;
+use kartik\export\ExportMenu;
 
 use yii\widgets\Pjax;
 use yii\bootstrap\Modal;
@@ -10,6 +11,7 @@ use yii\helpers\ArrayHelper;
 use app\models\PayrollCampus;
 use app\models\PayrollSchoolCollege;
 use app\models\PayrollDepartment;
+use app\models\PayrollPayPeriodList;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\search\TcTeachingLoadSearch */
@@ -28,13 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
 <?php Pjax::begin(['id' => 'tclTbl','timeout'=>5000]) ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
+<?php
+    $gridColumns = [
             ['class' => 'yii\grid\SerialColumn'],
-
             [
                 'class' => 'kartik\grid\ExpandRowColumn',
                 'width' => '50px',
@@ -51,8 +49,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'expandOneOnly' => true,
             ],
 
-            
-            'PrdID',
+            [
+                'attribute'=> 'PrdID',
+                'filter' =>ArrayHelper::map(PayrollPayPeriodList::find()->asArray()->orderBy('PrdID DESC')->all(), 'PrdID', 'decription'),
+                'value'=> function($data){
+
+                    return $data->payPeriod->decription;
+                }
+            ],
             'EmpID',
             [
                 'attribute'=> 'lname',
@@ -89,26 +93,61 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
 
-            ['class' => 'yii\grid\ActionColumn',
-                'template' => '{update}{delete}',
+            [
 
-                'visibleButtons' => [
+                'attribute' => 'UG_LoadLec',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_LoadLab',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'UG_LoadClc',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_LoadLec',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_LoadLab',
+                'hidden' => true
+            ],
+            [
+
+                'attribute' => 'GS_LoadClc',
+                'hidden' => true
+            ],
+           
+
+            ['class' => 'yii\grid\ActionColumn',
+
+            'template' => '{update}{delete}',
+            
+            'visibleButtons' => [
                     'delete' => function ($model) {
                         return \Yii::$app->user->can('theCreator');
                     },
+
                 ],
-                'buttons' => [
+
+            'buttons' => [
                 'update' => function ($url, $model, $key) {
 
                       return Html::a('<span class="glyphicon glyphicon-pencil"></span>',$url,
                           [
                               'title' => 'Update',
-                              'id' => 'update-tct-' . $model->EmpID . $model->PrdID,
+                              'id' => 'update-ugl-' . $model->EmpID . $model->PrdID,
                               'data-toggle' => 'modal',
-                              'data-target' => '#tct-modals',
+                              'data-target' => '#ugl-modals',
                               'data-id' => $key,
                               'data-pjax' => '0',
-                              'onclick' => "ajaxmodal('#tct-modal', '" . Url::to(['tc-teaching-load/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
+                              'onclick' => "ajaxmodal('#ugl-modal', '" . Url::to(['ug-leave-credits/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
                           ]
                       );
 
@@ -117,8 +156,32 @@ $this->params['breadcrumbs'][] = $this->title;
                   },
                 ],
             ],
-        ],
-    ]); ?>
+        
+
+    ];
+    
+    echo ExportMenu::widget([
+    'dataProvider' => $dataProvider,
+    'columns' => $gridColumns,
+    'filename'=> Yii::$app->controller->id.'-'.date('Y-m-d'),
+    'dropdownOptions' => [
+        'label' => 'Export All',
+        'class' => 'btn btn-secondary'
+    ],
+    'exportConfig' => [
+        ExportMenu::FORMAT_TEXT => false,
+        ExportMenu::FORMAT_PDF => false,
+         ExportMenu::FORMAT_HTML => false
+    ]
+    ]) . "<hr>\n".
+
+    GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+
+        'columns' => $gridColumns
+           ]); 
+?>
 <?php Pjax::end() ?>
 
 </div>
