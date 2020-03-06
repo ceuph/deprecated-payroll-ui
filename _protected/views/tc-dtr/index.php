@@ -282,7 +282,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
            
 
-            ['class' => 'yii\grid\ActionColumn',
+            ['class' => 'kartik\grid\ActionColumn',
 
             'template' => '{update}{delete}',
             
@@ -296,18 +296,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'buttons' => [
                 'update' => function ($url, $model, $key) {
 
-                      return Html::a('<span class="glyphicon glyphicon-pencil"></span>',$url,
+                       return Html::a('<span class="glyphicon glyphicon-pencil"></span>',$url,
                           [
                               'title' => 'Update',
-                              'id' => 'update-ugl-' . $model->EmpID . $model->PrdID,
+                              'id' => 'update-tcdtr-' . $model->EmpID . $model->PrdID,
                               'data-toggle' => 'modal',
-                              'data-target' => '#ugl-modals',
+                              'data-target' => '#tcdtr-modals',
                               'data-id' => $key,
                               'data-pjax' => '0',
-                              'onclick' => "ajaxmodal('#ugl-modal', '" . Url::to(['ug-leave-credits/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
+                              'onclick' => "ajaxmodal('#tcdtr-modal', '" . Url::to(['tc-dtr/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
                           ]
                       );
-
            
 
                   },

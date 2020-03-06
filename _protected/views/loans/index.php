@@ -1226,14 +1226,15 @@ $this->params['breadcrumbs'][] = $this->title;
                       return Html::a('<span class="glyphicon glyphicon-pencil"></span>',$url,
                           [
                               'title' => 'Update',
-                              'id' => 'update-ugl-' . $model->EmpID . $model->PrdID,
+                              'id' => 'update-loans-' . $model->EmpID . $model->PrdID,
                               'data-toggle' => 'modal',
-                              'data-target' => '#ugl-modals',
+                              'data-target' => '#loans-modals',
                               'data-id' => $key,
                               'data-pjax' => '0',
-                              'onclick' => "ajaxmodal('#ugl-modal', '" . Url::to(['ug-leave-credits/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
+                              'onclick' => "ajaxmodal('#loans-modal', '" . Url::to(['loans/update','EmpID'=>$model->EmpID,'PrdID'=>$model->PrdID]) . "')"
                           ]
                       );
+
 
            
 
